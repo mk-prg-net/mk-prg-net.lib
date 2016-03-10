@@ -47,6 +47,7 @@ namespace mko.NaLisp.Core
 {
     public partial class Inspector
     {
+        public static Inspector _ = new Inspector();
 
         /// <summary>
         /// Protokolliert die Interpretation eines TASP

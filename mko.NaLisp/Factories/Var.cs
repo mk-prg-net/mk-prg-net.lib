@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mko.NaLisp
+namespace mko.NaLisp.Factories
 {
-    public partial class Factory
+    public class Var
     {
+        public static Var _ = new Var();
+
         public static Data.VarOfComp<int> VarInt(string ID)
         {
             return new Data.VarOfComp<int>(ID);
@@ -33,9 +35,9 @@ namespace mko.NaLisp
             return new Data.VarOfComp<string>(ID);
         }
 
-        public static Data.VarOfComp<DateTime> VarDateTime(string ID)
+        public static Data.VarOfComp<System.DateTime> VarDateTime(string ID)
         {
-            return new Data.VarOfComp<DateTime>(ID);
+            return new Data.VarOfComp<System.DateTime>(ID);
         }
 
 
@@ -66,9 +68,9 @@ namespace mko.NaLisp
             return new Data.VarOfComp<string>(ID, Value);
         }
 
-        public static Data.VarOfComp<DateTime> VarDateTime(string ID, DateTime dat)
+        public static Data.VarOfComp<System.DateTime> VarDateTime(string ID, System.DateTime dat)
         {
-            return new Data.VarOfComp<DateTime>(ID, dat);
+            return new Data.VarOfComp<System.DateTime>(ID, dat);
         }
 
     }

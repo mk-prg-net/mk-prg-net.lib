@@ -41,7 +41,7 @@ using System.Threading.Tasks;
 
 namespace mko.NaLisp.Core
 {
-    public interface ITerminal
+    public interface ITerminal : INaLisp
     {
         Inspector.ProtocolEntry Validate(NaLispStack Stack);
 

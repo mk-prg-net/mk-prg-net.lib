@@ -41,7 +41,7 @@ using System.Threading.Tasks;
 
 namespace mko.NaLisp.Core
 {
-    public interface INonTerminal
+    public interface INonTerminal : INaLisp
     {
         /// <summary>
         /// Parameterliste der NaLisp- Funktion

@@ -45,15 +45,15 @@ namespace mko.NaLisp.ComparsionOps
     public interface IFactory<T>
         where T : IComparable<T>
     {
-        ComparsionOps.Equal<T> EQ(Core.NaLisp Left, Core.NaLisp Right);
+        ComparsionOps.Equal<T> EQ(Core.INaLisp Left, Core.INaLisp Right);
 
-        ComparsionOps.GreaterThen<T> GT(Core.NaLisp Left, Core.NaLisp Right);
+        ComparsionOps.GreaterThen<T> GT(Core.INaLisp Left, Core.INaLisp Right);
 
-        ComparsionOps.GreaterEqualThen<T> GE(Core.NaLisp Left, Core.NaLisp Right);
+        ComparsionOps.GreaterEqualThen<T> GE(Core.INaLisp Left, Core.INaLisp Right);
 
-        ComparsionOps.LowerThen<T> LT(Core.NaLisp Left, Core.NaLisp Right);
+        ComparsionOps.LowerThen<T> LT(Core.INaLisp Left, Core.INaLisp Right);
 
-        ComparsionOps.LowerEqualThen<T> LE(Core.NaLisp Left, Core.NaLisp Right);
+        ComparsionOps.LowerEqualThen<T> LE(Core.INaLisp Left, Core.INaLisp Right);
 
     }
 }

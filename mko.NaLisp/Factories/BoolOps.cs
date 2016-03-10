@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mko.NaLisp
+namespace mko.NaLisp.Factories
 {
-    public class BoolOpsFactory : BoolOps.IFactory
+    public partial class Bool : BoolOps.IFactory
     {
-        public static Factory Instance = new BoolOpsFactory() {
-            ConstBoolValueFactory = 
-        }
+        public static Bool _ = new Bool();
 
         public BoolOps.AND AND(params Core.INaLisp[] Elements)
         {
@@ -25,12 +23,6 @@ namespace mko.NaLisp
         public BoolOps.NOT NOT(Core.INaLisp Element)
         {
             return new BoolOps.NOT(new Core.INaLisp[]{ Element});
-        }
-
-        public Data.IConstValueFactory<bool> ConstBoolValueFactory
-        {
-            get;
-            set;            
         }
     }
 }

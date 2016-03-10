@@ -48,8 +48,6 @@ namespace mko.NaLisp.BoolOps
     /// </summary>
     public interface IFactory
     {
-        Data.IConstValueFactory<bool> ConstBoolValueFactory { get; set; }
-
         /// <summary>
         /// Erzeugt eine logische UND- Operation
         /// </summary>

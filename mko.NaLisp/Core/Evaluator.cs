@@ -80,6 +80,7 @@ namespace mko.NaLisp.Core
 {
     public partial class Evaluator
     {
+        public static Evaluator _ = new Evaluator();
 
         public class EvalException : Exception
         {
