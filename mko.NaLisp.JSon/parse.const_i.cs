@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Base = mko.Algo.FormalLanguages.NaLisp;
+using Base = mko.NaLisp;
 
 namespace mko.NaLisp.JSon
 {
@@ -12,9 +12,9 @@ namespace mko.NaLisp.JSon
     {
         public const string Name = "const_i";
 
-        protected override Base.Core.NaLisp CreateNaLisp(long Parameter)
+        protected override Base.Core.INaLisp CreateNaLisp(long Parameter)
         {
-            return Base.Factory.Int((int)Parameter);
+            return Base.Factories.Int._.Create((int)Parameter);
         }
 
         public override string FunctionName

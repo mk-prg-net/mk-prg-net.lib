@@ -8,14 +8,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
-using Base = mko.Algo.FormalLanguages.NaLisp;
+using Base = mko.NaLisp;
 
 namespace mko.NaLisp.JSon
 {
     public class Parser
     {
 
-        public bool TryParse(string jsonNaLispExpression, Dictionary<string, IFuncParser> FuncParsers, out Base.Core.NaLisp NaLispExpression)
+        public bool TryParse(string jsonNaLispExpression, Dictionary<string, IFuncParser> FuncParsers, out Base.Core.INaLisp NaLispExpression)
         {
             var reader = new Newtonsoft.Json.JsonTextReader(new StringReader(jsonNaLispExpression));
             return parseFunc(reader, FuncParsers, out NaLispExpression);
@@ -26,7 +26,7 @@ namespace mko.NaLisp.JSon
         /// </summary>
         /// <param name="reader"></param>
         /// <returns></returns>
-        internal static bool parseFunc(Newtonsoft.Json.JsonTextReader reader, Dictionary<string, IFuncParser> FuncParsers, out Base.Core.NaLisp NaExp)
+        internal static bool parseFunc(Newtonsoft.Json.JsonTextReader reader, Dictionary<string, IFuncParser> FuncParsers, out Base.Core.INaLisp NaExp)
         {
             NaExp = null;
             if(reader.Read())
@@ -74,7 +74,7 @@ namespace mko.NaLisp.JSon
         /// </summary>
         /// <param name="reader"></param>
         /// <returns></returns>
-        internal static bool parseParameterlist(Newtonsoft.Json.JsonTextReader reader, Dictionary<string, IFuncParser> FuncParsers, out Base.Core.NaLisp[] parameters)
+        internal static bool parseParameterlist(Newtonsoft.Json.JsonTextReader reader, Dictionary<string, IFuncParser> FuncParsers, out Base.Core.INaLisp[] parameters)
         {
             parameters = null;
             if (reader.Read())
@@ -83,8 +83,8 @@ namespace mko.NaLisp.JSon
 
                 if (reader.TokenType == Newtonsoft.Json.JsonToken.StartArray)
                 {
-                    var parametersDraft = new List<Base.Core.NaLisp>();
-                    Base.Core.NaLisp expression;
+                    var parametersDraft = new List<Base.Core.INaLisp>();
+                    Base.Core.INaLisp expression;
                     while (parseFunc(reader, FuncParsers, out expression))
                     {
                         parametersDraft.Add(expression);

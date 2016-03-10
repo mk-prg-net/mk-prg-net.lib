@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Base = mko.Algo.FormalLanguages.NaLisp;
+using Base = mko.NaLisp;
 
 
 namespace mko.NaLisp.JSon
@@ -25,6 +25,6 @@ namespace mko.NaLisp.JSon
         /// <param name="reader"></param>
         /// <param name="NaExp"></param>
         /// <returns></returns>
-        bool TryParse(Newtonsoft.Json.JsonTextReader reader, Dictionary<string, IFuncParser> FuncParsers, out Base.Core.NaLisp NaExp);
+        bool TryParse(Newtonsoft.Json.JsonTextReader reader, Dictionary<string, IFuncParser> FuncParsers, out Base.Core.INaLisp NaExp);
     }
 }

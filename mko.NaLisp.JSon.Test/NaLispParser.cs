@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.Collections.Generic;
 
-using Base = mko.Algo.FormalLanguages.NaLisp;
+using Base = mko.NaLisp;
 
 
 namespace mko.NaLisp.JSon.Test
@@ -31,7 +31,7 @@ namespace mko.NaLisp.JSon.Test
 
             var Parser = new Parser();
 
-            Base.Core.NaLisp expr;
+            Base.Core.INaLisp expr;
             if (Parser.TryParse(jsonString, FuncParser, out expr))            {
 
                 var inspector = new Base.Core.Inspector();

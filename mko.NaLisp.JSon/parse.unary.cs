@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Base = mko.Algo.FormalLanguages.NaLisp;
+using Base = mko.NaLisp;
 
 namespace mko.NaLisp.JSon
 {
     public abstract class ParseUnary<T> : FuncParserBase
     {
-        protected abstract Base.Core.NaLisp CreateNaLisp(T Parameter);
+        protected abstract Base.Core.INaLisp CreateNaLisp(T Parameter);
 
         Newtonsoft.Json.JsonToken TokenType
         {
@@ -48,7 +48,7 @@ namespace mko.NaLisp.JSon
         }
 
 
-        public override bool TryParse(Newtonsoft.Json.JsonTextReader reader, Dictionary<string, IFuncParser> FuncParsers, out Algo.FormalLanguages.NaLisp.Core.NaLisp NaExp)
+        public override bool TryParse(Newtonsoft.Json.JsonTextReader reader, Dictionary<string, IFuncParser> FuncParsers, out mko.NaLisp.Core.INaLisp NaExp)
         {
             NaExp = null;
 

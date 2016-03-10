@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Base = mko.Algo.FormalLanguages.NaLisp;
+using Base = mko.NaLisp;
 
 namespace mko.NaLisp.JSon
 {
@@ -18,9 +18,9 @@ namespace mko.NaLisp.JSon
             get { return Name; }
         }
 
-        protected override Base.Core.NaLisp CreateNaLisp(Base.Core.NaLisp[] parameters)
+        protected override Base.Core.NaLisp CreateNaLisp(Base.Core.INaLisp[] parameters)
         {
-            return Base.Factory.ADD_to_Int(parameters);
+            return Base.Factories.Int._.ADD(parameters);
         }
     }
 }
