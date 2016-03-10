@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JsRomToArab</title>
+</head>
+<body>
+    <h1>Umwandeln von r&ouml;mischen in arabische Zahlen</h1>
+
+    <form name="rom">
+
+    <input type="text" id="roemzahl" size="25" />
+    &lt;= r&ouml;mische Zahl<br />
+    <input type="button" id="transformieren" value="römisch in arabisch"/><br />
+    <hr />
+    <input type="text" id="arabzahl" size="25" />&lt;= arabische Zahl
+    
+    </form>
+    <script src="../Scripts/jquery-2.1.0.js"></script>
+    <script src="../Scripts/mko/Rom-to-Arab.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // Eventhandler am Button "römisch in arabisch" registrieren
+            $("#transformieren").click(function (event) {
+
+                var romzahl = $("#roemzahl").val();
+
+                var arabzahl = mko.algo.RomToArab(romzahl);
+
+                if (isNaN(arabzahl))
+                    $("#arabzahl").val("ungültige Romzahl");
+                else
+                    $("#arabzahl").val(arabzahl + "");
+                
+            });
+        });
+    </script>
+
+
+</body>
+</html>

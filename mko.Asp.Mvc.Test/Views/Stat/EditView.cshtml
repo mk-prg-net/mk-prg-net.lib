@@ -1,0 +1,76 @@
+﻿@model mko.Asp.Mvc.Test.Models.StatModelData
+@{
+    ViewBag.Title = "Daten erfassen";    
+}
+
+<h2>Stat: Daten erfassen</h2>
+
+@using (Html.BeginForm("Edit", "Stat"))
+{
+    @Html.ValidationSummary(false)    
+    
+    <div class="OpContainer" style="width: 170px;">
+        <h3>Operationen</h3>
+        <div class="Op">
+            <!-- Edit Operation auswählen -->
+
+            @Html.LabelFor(model => model.EditOperator) <br />
+            @Html.DropDownListFor(model => model.EditOperatorAsString,
+                                  mko.Asp.Mvc.Test.Models.StatisticsOperatorConverter.Create(Model).AllEditOperatorsAsSelectListItem)
+
+        </div>
+        <!-- Anzufügenden Wert eingeben -->
+        <div class="Op">
+
+            @Html.LabelFor(model => model.ValueToAdd, new { style = "" })
+           <br />
+            @Html.EditorFor(model => model.ValueToAdd)
+            @Html.ValidationMessageFor(model => model.ValueToAdd, "*")
+            <input type="submit" value="EXE" />
+        </div>
+
+        <!-- Position des Wegzunehmenden definieren -->
+        <div class="Op">
+
+            @Html.LabelFor(model => model.IxValueToRemove)
+            <br />           
+            @Html.EditorFor(model => model.IxValueToRemove)
+        </div>
+        <div class="Op">
+            @Html.ActionLink("Statistische Auswertung", "StatCalc1", "Stat")
+        </div>
+    </div>
+
+    <div class="OpContainer" style="width: 200px;">
+        <h3>Erfasste Daten</h3>
+
+        <ol start="0">
+            @if (Model.Values != null)
+            {
+                var i = 0;
+                foreach (var entry in Model.Values)
+                {
+                <li style="clear: both;">
+                    <div class="DataItem">
+                        @entry.ToString()
+                    </div>
+                    <div class="DataItemOp" style="background-color: red; color: #ffffff;">
+                        @Html.ActionLink("delete", "Delete", new { id = i++ }, new { style = "color: white; width: 30px; padding: 2px" })
+                    </div>
+                </li>
+                }
+            }
+        </ol>
+    </div>
+}
+
+
+@* Benannter Abschnitt, der in der Layoutseite im Kopf eingeblendet wird, und die Styles enthält *@
+@section Styles {
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/StatCalc/css")    
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

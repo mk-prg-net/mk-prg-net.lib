@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "RomToArab";
+}
+
+@using (Html.BeginForm())
+{   
+    @Html.ActionLink("Weiter ...", "StartRussland")
+
+    <div>
+        <h2>Umwandeln von r&ouml;mischen in arabische Zahlen</h2>
+
+        <input type="text" id="roemzahl" size="25" /><text>&lt;= r&ouml;mische Zahl</text><br />
+        <input type="button" id="transformieren" value="römisch in arabisch" /><br />
+        <hr />
+        <input type="text" id="arabzahl" size="25" />
+        <text>&lt;= arabische Zahl</text>
+    </div>
+}
+
+@* Benannter Abschnitt, der in der Layoutseite im Kopf eingeblendet wird, und die Styles enthält *@
+
+
+@* Bennanter Abschnitt, der im Fuss der Layoutseite eingeblendet wird, und die Skripte enthält *@
+@section Scripts {
+    @Scripts.Render("~/bundles/RomToArab")
+
+}
+
+

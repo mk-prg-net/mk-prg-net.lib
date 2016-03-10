@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<licenseUrl>http://www.mkoit.de/woc.aspx?path=Wissen.beispielsoftware.lizenz_beispielsoftware</licenseUrl>
+		<projectUrl>http://www.mkoit.de/woc.aspx?path=Wissen.beispielsoftware.mko_db</projectUrl>
+		<iconUrl>http://www.mkoit.de/mko-Logo-2-1.gif</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<releaseNotes></releaseNotes>
+		<copyright>Copyright 2013</copyright>
+		<tags>MVVM Entityframwork SQL To Linq</tags>
+		<dependencies>
+			<dependency id="mko"
+						version="7.1.5"/>
+			<dependency id="mko.Algo"
+						version="1.2.1"/>
+		</dependencies>
+	</metadata>
+</package>

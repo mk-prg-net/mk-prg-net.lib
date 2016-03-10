@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Dbl.ConstDbl">
+    <Position X="1" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAgAEAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Dbl\ConstDbl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Dbl.Dbl" Collapsed="true">
+    <Position X="1" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Dbl\Dbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Long.Long" Collapsed="true">
+    <Position X="6" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Long\Long.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Long.ConstLong">
+    <Position X="3.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAgAEAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Long\ConstLong.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Long.CastLong">
+    <Position X="5.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAQAAAAAAAAAAAAAAAAAEAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Long\CastLong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Long.Add">
+    <Position X="7.75" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAIACAAAAAAAAQAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Long\AddLong.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Core.NaLisp">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\NaLisp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

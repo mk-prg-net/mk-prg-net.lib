@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Russland</title>
+    <style>
+        body
+        {
+            background-color: #0094ff;
+            color: white;
+        }
+
+        a:link
+        {
+            color: whitesmoke;
+            font-weight: normal;
+            text-decoration: underline;
+        }
+
+        a:visited
+        {
+            color: whitesmoke;
+            font-weight: normal;
+            text-decoration: underline;
+        }
+
+        a:hover
+        {
+            color: white;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: gold;
+        }
+
+        h2
+        {
+            color: white;
+        }
+
+        .imgmap
+        {
+            margin-top: 5px;
+            padding: 5px;
+            text-align: center;
+            border-style: solid;
+            border-width: 3px;
+            border-color: gold;
+            border-radius: 15px;
+            width: auto;
+        }
+
+
+        .linklist
+        {
+            padding: 5px;
+            text-align: center;
+            margin-top: 5px;
+            border-style: solid;
+            border-width: 3px;
+            border-color: gold;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="text-align: center">
+        <h1>Schulprojekt Russland</h1>
+        Klicke auf ein Bild, um mehr zu erfahren...
+    </div>
+
+    <div class="imgmap">
+        <a id="all" />
+
+        <img src="russland-karte-interaktiv.png" usemap="#russ-interactive" />
+        <map id="map_russ_interactive" name="russ-interactive">
+            <area shape="rect" coords="130, 290, 215,340" href="#all" alt="Moskau, Hauptstadt" id="Moskau" />
+            <area shape="rect" coords="730, 140, 830,220" href="#all" alt="Kamchatka, Halbinsel im Pazifik" id="Kamchatka" />
+            <area shape="rect" coords="1, 370, 70,430" href="#all" alt="Sotchi, Winterolympiade 2014 und Schwarzes Meer" id="Sotchi" />
+            <area shape="rect" coords="85, 410, 170,520" href="#all" alt="Kaspische Meer, Kaviar und Erdöl" id="Kaspi" />
+            <area shape="rect" coords="220, 360, 290,500" href="#all" alt="Weltraumbahnhof" id="Baikonur" />
+            <area shape="rect" coords="495, 350, 590, 450" href="#all" alt="Baikal, tiefster Süßwassersee der Erde" id="Baikal" />
+            <area shape="rect" coords="85, 170, 130, 270" href="#all" alt="Musik in Russland" id="Musik" />
+            <area shape="rect" coords="280, 250, 385, 360" href="#all" alt="Holzhäuser und Kultur im Heim" id="Holzhaus" />
+            <area shape="rect" coords="400, 210, 510, 325" href="#all" alt="Russlands Flüsse: Kultur und Wasserkraft" id="WolgaWasserkraft" />
+            <area shape="rect" coords="550, 200, 610, 310" href="#all" alt="Matroschka- die berühmteste Russin" id="Matroschka" />
+            <area shape="rect" coords="600, 130, 690, 310" href="#all" alt="Diamanten und die Bodenschätze Sibiriens" id="Diamanten" />
+            <area shape="rect" coords="190, 1, 300, 100" href="#all" alt="Atomeisbrecher- auf zum Nordpol!" id="Atomeisbrecher" />
+            <area shape="rect" coords="330, 370, 440, 440" href="#all" alt="Transsibirische Eisenbahn" id="Transsib" />
+        </map>
+    </div>
+
+    <div id="Holzhaus_info" class="linklist" hidden="hidden">
+        <h2>Kunstvolle Holzhäuser</h2>
+
+        <h2>Teekultur mit dem Samowar</h2>
+        <a href="http://de.wikipedia.org/wiki/Samowar" target="_blank">Wikipedia</a><br />
+
+        
+
+    </div>
+
+    <div id="WolgaWasserkraft_info" class="linklist" hidden="hidden">
+        <h2>Russlands Flüsse und die Wasserkraft</h2>
+        <a href="http://www.youtube.com/watch?v=gTU3dPAm0Ow" target="_blank">Lied über die Wolga</a><br />
+        <a href="http://www.zhiges.rushydro.ru/press/gallery/" target="_blank">Staustufen der russischen Flüsse (Diagramm)</a><br />
+        <a href="http://de.advisor.travel/poi/2651/gallery" target="_blank">Wolgograder Stausee</a><br />
+        <a href="http://www.zhiges.rushydro.ru/press/gallery/" target="_blank">Kuibischefer Stausee</a>
+
+    </div>
+
+    <div id="Matroschka_info" class="linklist" hidden="hidden">
+        <h2>Matroschka- die berühmteste Russin</h2>
+        <a href="http://www.youtube.com/watch?v=F_i7iZJywkI" target="_blank">Matroschkamuseum in Moskau (Doku)</a><br />
+        <a href="http://blog.a-la-russe.com/matroschka-die-geheimnisvolle-russische-puppe/" target="_blank">Diverse Matroschkas</a><br />           
+
+    </div>
+
+    <div id="Transsib_info" class="linklist" hidden="hidden">
+        <h2>Transsib - mit 9288 km die längste Eisenbanhstrecke der Welt!</h2>
+        <a href="http://de.wikipedia.org/wiki/Transsibirische_Eisenbahn" target="_blank">Wikipedia</a><br />
+        <a href="http://www.transsib.de/" target="_blank">Fahrpläne, Strecke etc.</a><br />
+        
+    </div>
+
+    <div id="Diamanten_info" class="linklist" hidden="hidden">
+        <h2>Diamanten und andere Bodenschätze in Russland</h2>
+        <a href="http://de.wikipedia.org/wiki/Orlow-Diamant" target="_blank">Der Orlow- Diamant: Schatz des Zaren</a><br />
+        <a href="http://www.youtube.com/watch?v=T4pmZbblY-c" target="_blank">Diamantenförderung in Archangelsk (Doku)</a><br/>
+        <a href="http://de.wikipedia.org/wiki/Udatschny" target="_blank">Diamantmine in Udatschny</a><br />
+        <a href="http://www.youtube.com/watch?v=hvgLNwQFvxk" target="_blank">Doku über synthetische Diamanten (russisch)</a><br />
+        <h2>Edelmetalle</h2>
+        <a href="http://www.youtube.com/watch?v=kKTg4TXAEl0" target="_blank">Paltinförderung in Russland (Doku russisch)</a>
+    </div>
+
+    <div id="Musik_info" class="linklist" hidden="hidden">
+        <h2>Musik</h2>
+        <a href="http://ololo.fm/search/" target="_blank">ololo.fm: aktuelle, russische Musik downloaden</a>
+        <h2>Radio</h2>
+        <a href="http://www.surfmusik.de/radio/radio-chanson,5001.html" target="_blank">Russische Chansons</a><br/>
+    </div>
+
+    <div id="Moskau_info" class="linklist" hidden="hidden">
+        <h2>Moskau und Petersburg, Russlands Hauptstädte</h2>
+        <h3>Moskau</h3>
+        <a href="http://www.airpano.com/360Degree-VirtualTour.php?3D=Moscow-Over-the-Kremlin" target="_blank">Moskau, Panorama</a><br />
+        <a href="http://www.airpano.ru/files/Around-Kremlin/2-2" target="_blank">Moskau, Kremel bei Nacht, Panorama</a>
+        <a href="http://www.airpano.ru/files/Moscow-State-University/2-2" target="_blank">Moskau- Universität, Panorama</a><br />
+        <a href="http://skyscraperpage.com/diagrams/?searchID=63136887" target="_blank">Moskauer Fernsehturm- eines der höchsten Türme der Welt</a>
+        <h3>St. Petersburg</h3>
+        <a href="http://www.airpano.ru/files/Saint-Petersburg-Virtual-Tour/2-2" target="_blank">Petersburg, Panorama</a><br />
+        <a href="http://www.airpano.ru/files/Peterhof-Sankt-Petersburg-Russia/2-2" target="_blank">Petersburg Schloss, Panorama</a>
+        
+    </div>
+
+
+    <div id="Kamchatka_info" class="linklist" hidden="hidden">
+        <h2>Kamchatka, wilde Halbinsel im Pazifik</h2>
+        <a href="http://www.airpano.com/360Degree-VideoTour.php?3D=video_360_heli_tolbachik_volcano" target="_blank">Vulkan Plosky Tolbatchik, Panoramavideo</a><br />
+        <a href="http://www.faz.net/aktuell/wissen/erde/russische-vulkane-ein-blick-auf-die-riesen-von-kamtschatka-12703577.html" target="_blank">Kamtschatkas Vulkane aus dem All fotografiert (FAZ 12.3.2013)</a>
+    </div>
+
+
+    <div id="Sotchi_info" class="linklist" hidden="hidden">
+        <h2>Sotchi- Schwarzes Meer und Olympische Winterspiele</h2>
+        <a href="https://de.wikipedia.org/wiki/Olympische_Winterspiele_2014" target="_blank">Wikipedia</a><br />
+        <a href="http://www.sochi2014.com/en" target="_blank">Offizielle Seite der Winterspiele 2014</a><br />
+    </div>
+
+
+    <div id="Kaspi_info" class="linklist" hidden="hidden">
+        <h2>Kaspische Meer, Kaviar und Erdöl</h2>
+        
+        <a href="https://de.wikipedia.org/wiki/Kaspisches_Meer" target="_blank">Das Kaspische Meer, Wikipedia</a><br />
+        <a href="http://de.wikipedia.org/wiki/Kaviar" target="_blank">Kaviar- Wikipedia</a><br />
+        <a href="http://www.aquaristik.de/artikel/suss43.htm" target="_blank">Der Stör- die Quelle des Kaviars</a><br />
+        <a href="http://www.youtube.com/watch?v=b2lKmX5tESI" target="_blank">Doku Kaspisches Meer</a><br />
+        <a href="http://www.youtube.com/watch?v=rMmEI7uK-o4" target="_blank">Impressionen</a><br />
+        <a href="http://www.youtube.com/watch?v=WlEt0bCeTy8" target="_blank">Das Kaspische Seemonster</a><br/>
+        <a href="http://www.airpano.ru/files/Kazan-Russia/2-2" target="_blank">Kazan- der Orient mitten in Russland</a><br />
+    </div>
+
+    <div id="Baikal_info" class="linklist" hidden="hidden">
+        <h2>Baikal, tiefster Süßwassersee der Erde</h2>
+        <a href="http://www.airpano.com/360Degree-VirtualTour.php?3D=Baikal-Lake-Russia" target="_blank">Baikal See, gefroren, Panorama</a><br />
+        <a href="http://www.airpano.ru/files/Irkutsk-Lake-Baikal-Russia/2-2" target="_blank">Sonnenuntergang auf dem Baikal See</a><br />
+        <a href="http://www.airpano.com/360Degree-VirtualTour.php?3D=Irkutsk-Lake-Baikal-Russia" target="_blank">Irkutsk, Großstadt am Baikal</a><br />
+        <a href="http://www.youtube.com/watch?v=qA3qC_r-5iM" target="_blank">Mit dem Tragflächenbot über den Baikal rasen</a><br />
+        <a href="http://www.youtube.com/watch?v=Dzu2nvMCKQo&list=PLD7BDED0B750CEC81" target="_blank">Fahrt mit dem Katameran</a><br />
+        <a href="http://www.youtube.com/watch?v=KDbW-o6TJcg&list=PLD7BDED0B750CEC81" target="_blank">Baden ...</a><br />
+        <a href="http://www.youtube.com/watch?v=qlHJq2aGQRk&list=PLD7BDED0B750CEC81" target="_blank">Wandern am Ufer</a>
+        <a href="http://www.youtube.com/watch?v=br5-P78byZ4&list=PLD7BDED0B750CEC81" target="_blank">Autofahrt durch die Taiga</a>
+    </div>
+
+    <div id="Baikonur_info" class="linklist" hidden="hidden">
+        <h2>Auf dem Weltraumbahnhof Baikonur</h2>
+        <a href="http://www.youtube.com/watch?v=lVlwzTc0xis" target="_blank">Sojus- Rakete, das Arbeitspferd der Raumfahrt</a><br />
+        <a href="http://www.youtube.com/watch?v=lFPblwNe11M" target="_blank">Sojus Raumschiff koppelt an Raumstation an</a><br />
+        <a href="http://www.youtube.com/watch?v=K47QJ63d8EA" target="_blank">Animation einer Sojus- Mission</a>
+        <a href="http://www.bernd-leitenberger.de/russ-raketen.shtml" target="_blank">Bernd Leitenberger: russische Raketen</a>
+
+    </div>
+
+    <div id="Atomeisbrecher_info" class="linklist" hidden="hidden">
+        <h2>Atomeisbrecher- auf zum Nordpol!</h2>
+        <a href="http://www.youtube.com/watch?v=Q6OHHGrVM3g" target="_blank">Fahrt zum Nordpol (Doku in englisch)</a><br />
+        <a href="http://www.youtube.com/watch?v=xkKPWPW_fnE" target="_blank">Fahrt zum Nordpol mit dem Atomeisbrecher "50 Jahre Sieg"</a><br />
+        <a href="http://www.youtube.com/watch?v=r4cmuv5d1ng" target="_blank">Atomeisbrecher</a><br />
+
+    </div>
+
+
+    <script src="jquery-2.1.0.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery("#map_russ_interactive")
+                .children("area")
+                .click(function () {
+                    console.log("click auf area")
+
+                    jQuery("div.linklist").toggle(false);
+
+                    // Id vom Divblock bestimmen, der angezeigt oder versteckt werden soll
+                    var idDiv = jQuery(this).attr("id");
+                    if (!idDiv) {
+                        console.log("area- Element hat keine id");
+                        return;
+                    }
+
+                    idDiv += "_info";
+                    console.log("toggle für" + idDiv)
+
+                    jQuery("#" + idDiv).toggle();
+                });
+
+
+        });
+
+    </script>
+
+
+
+</body>
+</html>

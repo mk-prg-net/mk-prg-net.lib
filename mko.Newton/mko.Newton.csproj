@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A0F1C60-DE64-4965-BA4A-C62CAEC54A65}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mko.Newton</RootNamespace>
+    <AssemblyName>mko.Newton</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>mkoIT.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acceleration.eq_dVelocity_div_dTime.cs" />
+    <Compile Include="Acceleration.Constants.cs" />
+    <Compile Include="Acceleration.Convert.cs" />
+    <Compile Include="Acceleration.Create.cs" />
+    <Compile Include="Acceleration.eq_Force_div_Mass.cs" />
+    <Compile Include="Acceleration.Operators.cs" />
+    <Compile Include="AccelerationInMeterPerSec.cs" />
+    <Compile Include="Angle.Constants.cs" />
+    <Compile Include="Angle.Convert.cs" />
+    <Compile Include="Angle.Create.cs" />
+    <Compile Include="AngleInDegree.cs" />
+    <Compile Include="AngleInRad.cs" />
+    <Compile Include="Energy.Constants.cs" />
+    <Compile Include="Energy.Convert.cs" />
+    <Compile Include="Energy.Create.cs" />
+    <Compile Include="Energy.Epot.cs" />
+    <Compile Include="Energy.eq_F_mul_s.cs" />
+    <Compile Include="Energy.eq_Power_mul_time.cs" />
+    <Compile Include="EnergyInJoule.cs" />
+    <Compile Include="EnergyInSKE.cs" />
+    <Compile Include="EnergyInWs.cs" />
+    <Compile Include="Force.Convert.cs" />
+    <Compile Include="Force.Create.cs" />
+    <Compile Include="Force.eq_Mass_mul_Acceleration.cs" />
+    <Compile Include="Force.Operatoren.cs" />
+    <Compile Include="ForceInNewton.cs" />
+    <Compile Include="Init.cs" />
+    <Compile Include="Length.Constants.cs" />
+    <Compile Include="Length.Convert.cs" />
+    <Compile Include="LengthInAU.cs" />
+    <Compile Include="LengthInLightYear.cs" />
+    <Compile Include="LengthInMiles.cs" />
+    <Compile Include="LengthInNauticMiles.cs" />
+    <Compile Include="Mass.Constants.cs" />
+    <Compile Include="Mass.Convert.cs" />
+    <Compile Include="Mass.Create.cs" />
+    <Compile Include="MassInCarat.cs" />
+    <Compile Include="MassInEarthmasses.cs" />
+    <Compile Include="MassInGram.cs" />
+    <Compile Include="MassInOunce.cs" />
+    <Compile Include="OrderOfMagnitudeBase.cs" />
+    <Compile Include="Ballistik.cs" />
+    <Compile Include="OrderOfMagnitude.cs" />
+    <Compile Include="MeasuredValue.cs" />
+    <Compile Include="Acceleration.cs" />
+    <Compile Include="Angle.cs" />
+    <Compile Include="MeasuredVector.cs" />
+    <Compile Include="Power.Constants.cs" />
+    <Compile Include="Power.Convert.cs" />
+    <Compile Include="Power.Create.cs" />
+    <Compile Include="Power.eq_dEnergy_div_dt.cs" />
+    <Compile Include="PowerInHorsePower.cs" />
+    <Compile Include="PowerInPS.cs" />
+    <Compile Include="PowerInWatt.cs" />
+    <Compile Include="SIBaseType.cs" />
+    <Compile Include="Energy.cs" />
+    <Compile Include="EnergyInWh.cs" />
+    <Compile Include="EnergyInNm.cs" />
+    <Compile Include="Force.cs" />
+    <Compile Include="Mass.cs" />
+    <Compile Include="Power.cs" />
+    <Compile Include="Length.cs" />
+    <Compile Include="Length.Create.cs" />
+    <Compile Include="Length.Parse.cs" />
+    <Compile Include="LengthInInch.cs" />
+    <Compile Include="LengthInMeter.cs" />
+    <Compile Include="LengthInPoint.cs" />
+    <Compile Include="Time.Constants.cs" />
+    <Compile Include="Time.Convert.cs" />
+    <Compile Include="Time.cs" />
+    <Compile Include="Time.Create.cs" />
+    <Compile Include="Velocity.Constants.cs" />
+    <Compile Include="Velocity.Convert.cs" />
+    <Compile Include="Velocity.Create.cs" />
+    <Compile Include="Velocity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeInDays.cs" />
+    <Compile Include="TimeInHours.cs" />
+    <Compile Include="TimeInMinutes.cs" />
+    <Compile Include="TimeInSec.cs" />
+    <Compile Include="Velocity.eq_a_mul_t.cs" />
+    <Compile Include="Velocity.eq_ds_div_dt.cs" />
+    <Compile Include="Velocity.Operators.cs" />
+    <Compile Include="VelocityInKilometerPerHour.cs" />
+    <Compile Include="VelocityInKnots.cs" />
+    <Compile Include="VelocityInMeterPerMinute.cs" />
+    <Compile Include="VelocityInMeterPerSec.cs" />
+    <Compile Include="VelocityInMilesPerHour.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="mko.Newton.nuspec" />
+    <None Include="mkoIT.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mko.Euklid\mko.Euklid.csproj">
+      <Project>{695D15FC-879A-407F-9E1D-D50C9733B0A6}</Project>
+      <Name>mko.Euklid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

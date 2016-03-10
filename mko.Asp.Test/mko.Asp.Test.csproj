@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1845D1B3-A44E-4B87-987C-886459C4CB1E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mko.Asp.Test</RootNamespace>
+    <AssemblyName>mko.Asp.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Design1\mkoitHeader.css" />
+    <Content Include="App_Themes\mkoitHeader\mkoitHeader.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="HtmlPure\JsCalculator.html" />
+    <Content Include="HtmlPure\JsRomToArab.html" />
+    <Content Include="HtmlPure\JLispDev.html" />
+    <Content Include="HtmlPure\Titel-Icon.html" />
+    <Content Include="Pictures\Asteroid-Black.png" />
+    <Content Include="Pictures\Asteroid.png" />
+    <Content Include="Pictures\bearbeiten.gif" />
+    <Content Include="Pictures\bearbeiten.png" />
+    <Content Include="Pictures\delete.gif" />
+    <Content Include="Pictures\delete.png" />
+    <Content Include="Pictures\Diagramm2.gif" />
+    <Content Include="Pictures\escape.gif" />
+    <Content Include="Pictures\FilterAus.gif" />
+    <Content Include="Pictures\Galaxie-Black.png" />
+    <Content Include="Pictures\Galaxie.png" />
+    <Content Include="Pictures\Gondeln.jpg" />
+    <Content Include="Pictures\Komet-Black.png" />
+    <Content Include="Pictures\Komet.png" />
+    <Content Include="Pictures\KubyBoese.gif" />
+    <Content Include="Pictures\KubyLieb.gif" />
+    <Content Include="Pictures\KubyLiebBoese.gif" />
+    <Content Include="Pictures\KubyLiebBoese.png" />
+    <Content Include="Pictures\KubyLiebVollformat.bmp" />
+    <Content Include="Pictures\mko-Email-Icon-16-16.png" />
+    <Content Include="Pictures\mko-Email-Icon-32-32.png" />
+    <Content Include="Pictures\mko-Excel-Icon-16-16.png" />
+    <Content Include="Pictures\mko-Excel-Icon-32-32.png" />
+    <Content Include="Pictures\mko-Gif-Icon-16-16.png" />
+    <Content Include="Pictures\mko-Gif-Icon-32-32.png" />
+    <Content Include="Pictures\mko-Jpg-Icon-16-16.png" />
+    <Content Include="Pictures\mko-Jpg-Icon-32-32.png" />
+    <Content Include="Pictures\mko-Logo-18-mal-52.gif" />
+    <Content Include="Pictures\mko-Logo-2-1-1.gif" />
+    <Content Include="Pictures\mko-Logo-20-mal-88.gif" />
+    <Content Include="Pictures\mko-PDF-Icon-16-16.png" />
+    <Content Include="Pictures\mko-PDF-Icon-32-32.png" />
+    <Content Include="Pictures\mko-Png-Icon-16-16.png" />
+    <Content Include="Pictures\mko-Png-Icon-32-32.png" />
+    <Content Include="Pictures\mko-PPT-Icon-16-16.png" />
+    <Content Include="Pictures\mko-PPT-Icon-32-32.png" />
+    <Content Include="Pictures\mko-Tif-Icon-16-16.png" />
+    <Content Include="Pictures\mko-Tif-Icon-32-32.png" />
+    <Content Include="Pictures\mko-Word-Icon-16-16.png" />
+    <Content Include="Pictures\mko-Word-Icon-32-32.png" />
+    <Content Include="Pictures\mko-Zip-Icon-16-16.png" />
+    <Content Include="Pictures\mko-Zip-Icon-32-32.png" />
+    <Content Include="Pictures\Mond-Black.png" />
+    <Content Include="Pictures\ok.gif" />
+    <Content Include="Pictures\Planet-2-Black.png" />
+    <Content Include="Pictures\Planet-2.png" />
+    <Content Include="Pictures\Raumschiff-Black.png" />
+    <Content Include="Pictures\Schwarzes-Loch-black.png" />
+    <Content Include="Pictures\Schwarzes-Loch.png" />
+    <Content Include="Pictures\smiley-boese.gif" />
+    <Content Include="Pictures\smiley.gif" />
+    <Content Include="Pictures\smiley.png" />
+    <Content Include="Pictures\Sonne-Black.png" />
+    <Content Include="Pictures\Sonne.png" />
+    <Content Include="Pictures\StopVerboten.png" />
+    <Content Include="Pictures\SymbolFilterAktiv.PNG" />
+    <Content Include="Pictures\SymbolIntervall.png" />
+    <Content Include="Pictures\SymbolIntervallAusschluss.png" />
+    <Content Include="Pictures\SymbolIntervallEinschluss.PNG" />
+    <Content Include="Pictures\SymbolKeinFilter.png" />
+    <Content Include="Pictures\Unbekannt.png" />
+    <Content Include="packages.config" />
+    <Content Include="MkoTOC.2.Master" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Pictures\Urknall.png" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\mko\JLisp.js" />
+    <Content Include="Scripts\mko\Rom-to-Arab.js" />
+    <Content Include="TASP\Default.aspx" />
+    <Content Include="TASP\Planetarium.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MkoContent.Master.cs">
+      <DependentUpon>MkoContent.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MkoContent.Master.designer.cs">
+      <DependentUpon>MkoContent.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MkoTOC.2.Master.cs">
+      <DependentUpon>MkoTOC.2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MkoTOC.2.Master.designer.cs">
+      <DependentUpon>MkoTOC.2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MkoTOC.Master.cs">
+      <DependentUpon>MkoTOC.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MkoTOC.Master.designer.cs">
+      <DependentUpon>MkoTOC.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\mko\Class1.cs" />
+    <Compile Include="TASP\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TASP\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TASP\Planetarium.aspx.cs">
+      <DependentUpon>Planetarium.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TASP\Planetarium.aspx.designer.cs">
+      <DependentUpon>Planetarium.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MkoTOC.Master" />
+    <Content Include="Pictures\mko-Jpg-Icon.odg" />
+    <Content Include="Pictures\mko-PDF-Icon.odg" />
+    <Content Include="MkoContent.Master" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\mko.Euklid\mko.Euklid.csproj">
+      <Project>{695d15fc-879a-407f-9e1d-d50c9733b0a6}</Project>
+      <Name>mko.Euklid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko.Newton\mko.Newton.csproj">
+      <Project>{3a0f1c60-de64-4965-ba4a-c62caec54a65}</Project>
+      <Name>mko.Newton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko.Xhtml\mko.Xhtml.csproj">
+      <Project>{edb7190f-0f5a-495f-adf9-681e0b58a009}</Project>
+      <Name>mko.Xhtml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko\mko.csproj">
+      <Project>{fd808f4f-00bd-4bc6-8142-ef944200c901}</Project>
+      <Name>mko</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58178/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

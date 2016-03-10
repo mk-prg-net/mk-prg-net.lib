@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5435103B-0DFA-4767-AF62-F37D580B1F6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DB.Kepler.EF60</RootNamespace>
+    <AssemblyName>DB.Kepler.EF60</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dynamic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c83bd5627d5f505c, processorArchitecture=MSIL">
+      <HintPath>..\packages\mko.BI.2.0.1.0\lib\net45\Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mko, Version=7.1.5.0, Culture=neutral, PublicKeyToken=f4d93f46e53e0656, processorArchitecture=MSIL">
+      <HintPath>..\packages\mko.7.1.5.0\lib\net45\mko.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mko.Algo, Version=1.2.2.0, Culture=neutral, PublicKeyToken=f4d93f46e53e0656, processorArchitecture=MSIL">
+      <HintPath>..\packages\mko.Algo.1.2.2.0\lib\net45\mko.Algo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mko.BI, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mko.BI.2.0.1.0\lib\net45\mko.BI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mko.Euklid, Version=1.1.1.0, Culture=neutral, PublicKeyToken=f4d93f46e53e0656, processorArchitecture=MSIL">
+      <HintPath>..\packages\mko.Euklid.1.1.1.0\lib\net45\mko.Euklid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mko.Newton, Version=1.1.2.0, Culture=neutral, PublicKeyToken=f4d93f46e53e0656, processorArchitecture=MSIL">
+      <HintPath>..\packages\mko.Newton.1.1.2.0\lib\net45\mko.Newton.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aufgabe.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bild.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bo\GalaxieenBo.cs" />
+    <Compile Include="Bo\NatuerlicherHimmelskoerperBo.cs" />
+    <Compile Include="Bo\PlanetBo.cs" />
+    <Compile Include="Bo\MondBo.cs" />
+    <Compile Include="Bo\RaumschiffBo.cs" />
+    <Compile Include="Bo\SternBo.cs" />
+    <Compile Include="Bo\UmlaufbahnBo.cs" />
+    <Compile Include="Container\GalaxieenCo.cs" />
+    <Compile Include="Container\HimmelskoerperCo.cs" />
+    <Compile Include="Container\HimmelskoerperCo.Flt.cs" />
+    <Compile Include="Container\MondeCo.cs" />
+    <Compile Include="Container\PlanetenCo.cs" />
+    <Compile Include="Container\RaumschiffeCo.cs" />
+    <Compile Include="Container\SpektralklassenCo.cs" />
+    <Compile Include="Container\SterneCo.cs" />
+    <Compile Include="Container\UmlaufbahnenCo.cs" />
+    <Compile Include="EdmFunctions.cs" />
+    <Compile Include="EnumUrlTypen.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Himmelskoerper.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HimmelskoerperTyp.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KeplerDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KeplerDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KeplerDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KeplerDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KeplerDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="KeplerDBInstaller.cs" />
+    <Compile Include="Land.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raumschiff.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Spektralklasse.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bo\SpektralklasseBo.cs" />
+    <Compile Include="Sterne_Planeten_Monde.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Umlaufbahn.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UrlSammlung.cs">
+      <DependentUpon>KeplerDB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="KeplerDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KeplerDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KeplerDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KeplerDB.edmx</DependentUpon>
+      <LastGenOutput>KeplerDB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="KeplerDB.edmx.diagram">
+      <DependentUpon>KeplerDB.edmx</DependentUpon>
+    </None>
+    <None Include="KeplerDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KeplerDB.edmx</DependentUpon>
+      <LastGenOutput>KeplerDB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KeplerDB.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kepler\Kepler.csproj">
+      <Project>{312d3165-25db-428c-97b8-3e7c20b9dc5c}</Project>
+      <Name>Kepler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

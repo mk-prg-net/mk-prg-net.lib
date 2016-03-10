@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4390E39-D913-4A9A-9227-5E2CDCF04A4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mko.Algo</RootNamespace>
+    <AssemblyName>mko.Algo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>mkoIT.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algebra\FiniteGroups.cs" />
+    <Compile Include="Algebra\ZZGroup.cs" />
+    <Compile Include="Analysis\InfiniteSeries.cs" />
+    <Compile Include="Automaton\FiniteStateMachine.cs" />
+    <Compile Include="Automaton\StateBase.cs" />
+    <Compile Include="Automaton\StateMachine\BehaviorOfState.cs" />
+    <Compile Include="Automaton\StateMachine\Exception.cs" />
+    <Compile Include="Automaton\StateMachine\FinalState.cs" />
+    <Compile Include="Automaton\StateMachine\FinitStateMachine.cs" />
+    <Compile Include="Automaton\StateMachine\NormalState.cs" />
+    <Compile Include="Automaton\StateMachine\StartState.cs" />
+    <Compile Include="Automaton\StateMachine\State.cs" />
+    <Compile Include="Automaton\StateMachine\IStateTransistion.cs" />
+    <Compile Include="ForEachEnumMember.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\IConstValueProp.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\INonTerminal.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\ITerminal.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\IValueProp.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\VariableBase.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Dbl\ConstDbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Dbl\Dbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Factory.List.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Factory.ComparsionOps.cs" />
+    <Compile Include="FormalLanguages\NaLisp\BoolOps\AND.cs" />
+    <Compile Include="FormalLanguages\NaLisp\BoolOps\NOT.cs" />
+    <Compile Include="FormalLanguages\NaLisp\BoolOps\OpBaseBin.cs" />
+    <Compile Include="FormalLanguages\NaLisp\BoolOps\OR.cs" />
+    <Compile Include="FormalLanguages\NaLisp\ComparsionOps\Equal.cs" />
+    <Compile Include="FormalLanguages\NaLisp\ComparsionOps\GreaterEqualThen.cs" />
+    <Compile Include="FormalLanguages\NaLisp\ComparsionOps\GreaterThen.cs" />
+    <Compile Include="FormalLanguages\NaLisp\ComparsionOps\LowerEqualThen.cs" />
+    <Compile Include="FormalLanguages\NaLisp\ComparsionOps\LowerThen.cs" />
+    <Compile Include="FormalLanguages\NaLisp\ComparsionOps\OpBase.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Control\IfThen.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Control\Pipe.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\Evaluator.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\Evaluator.Result.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\NaLisp.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\NaLispStack.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\NameDir.Entry.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\NaLispNonTerminal.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\NaLispTerminal.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\NameDir.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\NameDir.Names.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\Inspector.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Core\Inspector.Protocol.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\ConstBool.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\ConstDateTime.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\ConstDbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\ConstString.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\ConstVal.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\ConstInt.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\VarDateTime.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\VarString.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\VarBool.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\VarDbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\VariableOf.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Data\VarInt.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Factory.BoolOps.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Factory.Const.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Factory.Control.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Factory.MathOps.Int.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Factory.MathOps.Dbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Factory.Var.cs" />
+    <Compile Include="FormalLanguages\NaLisp\ImplHelper\Cast.cs" />
+    <Compile Include="FormalLanguages\NaLisp\ImplHelper\ConstVal.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Lisp\First.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Lisp\Last.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Lisp\Skip.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Lisp\Take.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Lisp\Tuple.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Lisp\Reverse.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Long\AddLong.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Long\CastLong.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Long\ConstLong.cs" />
+    <Compile Include="FormalLanguages\NaLisp\Long\Long.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\ADDtoDbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\ADDtoInt.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\DIVtoInt.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\DIVtoDbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\SUBtoDbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\MULtoDbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\OpBaseToDbl.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\OpBaseToInt.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\MULtoInt.cs" />
+    <Compile Include="FormalLanguages\NaLisp\MathOps\SUBtoInt.cs" />
+    <Compile Include="FunctionalProgramming.cs" />
+    <Compile Include="FormalLanguages\FunctorBase.cs" />
+    <Compile Include="FormalLanguages\FunctorBinary.cs" />
+    <Compile Include="FormalLanguages\FunctorConst.cs" />
+    <Compile Include="FormalLanguages\FunctorConvert.cs" />
+    <Compile Include="FormalLanguages\FunctorUnary.cs" />
+    <Compile Include="GraphTheory\Pathfinder.cs" />
+    <Compile Include="GraphTheory\Tree.cs" />
+    <Compile Include="FormalLanguages\Interpreter.cs" />
+    <Compile Include="Combinatorics\PermutationsFunctional.cs" />
+    <Compile Include="Interval.cs" />
+    <Compile Include="Listprocessing\ListprocessingFunctional.cs" />
+    <Compile Include="Metrics.cs" />
+    <Compile Include="NumberTheory\Fibonacci.cs" />
+    <Compile Include="NumberTheory\PrimeFactorsFunctional.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Radian.cs" />
+    <Compile Include="Statistics\Fn.cs" />
+    <Compile Include="NumberTheory\IntervalLong.cs" />
+    <Compile Include="NumberTheory\LongExtensions.cs" />
+    <Compile Include="NumberTheory\PrimeFactors.cs" />
+    <Compile Include="NumberTheory\Zahlensysteme.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="mko.Algo.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mkoIT.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Automaton\Slim\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mko\mko.csproj">
+      <Project>{fd808f4f-00bd-4bc6-8142-ef944200c901}</Project>
+      <Name>mko</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

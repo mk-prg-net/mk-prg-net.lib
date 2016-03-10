@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="mko.Newton.Acceleration" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAMAABQAAABAAAAAAAABAEAAAAAAwAFEBAAAUAAA=</HashCode>
+      <FileName>Acceleration.Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.AccelerationInMeterPerSec&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABABQAAAAAAYEUAAAAAAAAAAEQAgAAAAAAUAmA=</HashCode>
+      <FileName>AccelerationInMeterPerSec.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Angle" Collapsed="true">
+    <Position X="19.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAABQAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Angle.Convert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.AngleInDegree" Collapsed="true">
+    <Position X="18.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAAAAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>AngleInDegree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.AngleInRad" Collapsed="true">
+    <Position X="20.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAAAAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>AngleInRad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Ballistik" Collapsed="true">
+    <Position X="70.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ballistik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Energy" Collapsed="true">
+    <Position X="63.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KABJUiAgAAAAYEAAAEAAgINBAAFBRAAAhJgJEAATAAA=</HashCode>
+      <FileName>Energy.Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.EnergyInJoule&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="59" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYEUAABAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>EnergyInJoule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.EnergyInNm&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="61.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYEUAABAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>EnergyInNm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.EnergyInSKE" Collapsed="true">
+    <Position X="63.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAABAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>EnergyInSKE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.EnergyInWh&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="65.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYEUAABAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>EnergyInWh.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.EnergyInWs&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="68" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYEUAABAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>EnergyInWs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Force" Collapsed="true">
+    <Position X="23" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIAAAAAAAAAgABAAIIgAAAAAFAAIBIAAEA=</HashCode>
+      <FileName>Force.Convert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.ForceInNewton&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="23" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIBAACIAQAAAYEUAAAAAAAAAAEQAAAAAIAIAAmA=</HashCode>
+      <FileName>ForceInNewton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Init" Collapsed="true">
+    <Position X="72.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Init.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Length" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAgEAAQgAMAiAAAAQAAQCBgEAEAAUQAgBAQECIAAAA=</HashCode>
+      <FileName>Length.Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.LengthInAU" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAEAAAAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>LengthInAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.LengthInInch" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAEAAAAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>LengthInInch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.LengthInLightYear" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAEAAAAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>LengthInLightYear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.LengthInMeter&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYEEAAAAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>LengthInMeter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.LengthInMiles" Collapsed="true">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAEAAAAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>LengthInMiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.LengthInNauticalMiles" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAEAAAAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>LengthInNauticMiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.LengthInPoint" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAEAAAAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>LengthInPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Mass" Collapsed="true">
+    <Position X="47.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABQEACQAQCIIACAAQABQABAAAKAEBBQEAIAAgAA=</HashCode>
+      <FileName>Mass.Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.MassInCarat" Collapsed="true">
+    <Position X="45.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAABAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>MassInCarat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.MassInGram&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="47.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYEUAABAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>MassInGram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.MassInOunce" Collapsed="true">
+    <Position X="50" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAABAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>MassInOunce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.MeasuredValue" Collapsed="true">
+    <Position X="52.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAABAIAEAACAABAAAABAAEACAAAgAABAAAA=</HashCode>
+      <FileName>MeasuredValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.MeasuredVector" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAJAAAAAAIAEAACAAAAAAABAQEACAEAAAABAAAQ=</HashCode>
+      <FileName>MeasuredVector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.OrderOfMagnitude" Collapsed="true">
+    <Position X="70.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIsKAQCooEAMxAAQAQABgJEIC4AIAFACAkBCJTIgBIA=</HashCode>
+      <FileName>OrderOfMagnitude.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.OrderOfMagnitudeBase" Collapsed="true">
+    <Position X="72.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACIAAAAAAQAAAAAAAAEA=</HashCode>
+      <FileName>OrderOfMagnitudeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Power" Collapsed="true">
+    <Position X="54.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBgAAAAAAEQAAgAAIAAAAAFAAAQAICAAABAEAAAAAAA=</HashCode>
+      <FileName>Power.Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.PowerInHorsePower" Collapsed="true">
+    <Position X="52.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAABAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>PowerInHorsePower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.PowerInPS" Collapsed="true">
+    <Position X="54.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAABAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>PowerInPS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.PowerInWatt&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="56.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYEUAABAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>PowerInWatt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.SIBaseType" Collapsed="true">
+    <Position X="34.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAABAAIAAAAQAABAAAAAAAEE=</HashCode>
+      <FileName>SIBaseType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Time" Collapsed="true">
+    <Position X="40" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgEAAAAAQBAAAQAAAAABAEAAAAAAAQBAAgAAAAAA=</HashCode>
+      <FileName>Time.Convert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.TimeInDays" Collapsed="true">
+    <Position X="36.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAABAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>TimeInDays.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.TimeInHours" Collapsed="true">
+    <Position X="38.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAABAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>TimeInHours.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.TimeInMinutes" Collapsed="true">
+    <Position X="41" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYAUAABAAAAAAAEQAAAAAAAAAAiA=</HashCode>
+      <FileName>TimeInMinutes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.TimeInSec&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="43.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAYEEAABAAAAAAAEQAAAAAAAAAAmA=</HashCode>
+      <FileName>TimeInSec.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.Velocity" Collapsed="true">
+    <Position X="29.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAMBAAAEIAAAEQAgABAABAgAABaAFAAAACEAAA=</HashCode>
+      <FileName>Velocity.Convert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.VelocityInKilometerPerHour" Collapsed="true">
+    <Position X="25.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABIBAAAAAAAYAUAAAAAAAEAAEQAAAAAAACEAiA=</HashCode>
+      <FileName>VelocityInKilometerPerHour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.VelocityInKnots" Collapsed="true">
+    <Position X="27.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABIBAAAAAAAYAUAAAAAAAEAAEQAAAAAAACEAiA=</HashCode>
+      <FileName>VelocityInKnots.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.VelocityInMeterPerMinute&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="29.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABIBAAAAAAAYEUAAAAAAAEAAEQAAAAAAACEAmA=</HashCode>
+      <FileName>VelocityInMeterPerMinute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.VelocityInMeterPerSec&lt;TOrderOfMagnitude&gt;" Collapsed="true">
+    <Position X="32" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABIBAAAAAAAYEUAAAAAAAEAAEQAAAAAAACEAmA=</HashCode>
+      <FileName>VelocityInMeterPerSec.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Newton.VelocityInMilesPerHour" Collapsed="true">
+    <Position X="34.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABIBAAAAAAAYAUAAAAAAAEAAEQAAAAAAACEAiA=</HashCode>
+      <FileName>VelocityInMilesPerHour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

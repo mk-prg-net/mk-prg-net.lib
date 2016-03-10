@@ -1,0 +1,94 @@
+﻿@model MVC.Calculator.Models.Calc.CalcOpModel
+
+@{
+    ViewBag.Title = "Calculator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="clearfix">
+    <div style="float: left; background-color: darkgoldenrod">
+        <h2>CalcView 1</h2>
+        @using (Html.BeginForm("ExeOp", "Calc"))
+        {
+    
+            <text>
+
+            <table class="tabStyle">
+                <tr>
+                    <td>A=</td>
+                    <td>@Html.EditorFor(r => r.OpA) &nbsp; @Html.ValidationMessageFor(r => r.OpA, "*")</td>
+                </tr>
+                <tr>
+                    <td>B=</td>
+                    <td>@Html.EditorFor(r => r.OpB) &nbsp; @Html.ValidationMessageFor(r => r.OpB, "*")</td>
+                </tr>
+                <tr>
+                    <td>Op</td>
+                    <td>
+
+                        @Html.DropDownListFor(r => r.Op, Model.OpList)
+                        <input type="submit" value="EXE" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        R=
+                    </td>
+                    <td>
+                        @Html.DisplayFor(r => r.Res)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Infos
+                    </td>
+                    <td>
+                        @Html.DisplayFor(r => r.Msg)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Infos
+                    </td>
+                    <td>
+                        @Html.ValidationSummary()
+                    </td>
+                </tr>
+
+            </table>
+
+            @* Der Submit- Button bewirkt das Senden der Eingaben an den Server *@
+
+            </text>
+    
+        }
+
+    </div>
+        <div style="float: left;">
+            <h2>Protokoll</h2>
+            <table class="tabStyle">
+                <tr>
+                    <th class="tabItem">LogDate</th>
+                    <th class="tabItemL">Op</th>
+                    <th class="tabItemL">A</th>
+                    <th class="tabItemL">B</th>
+                    <th class="tabItemL">Res</th>
+                </tr>
+                @foreach (var pe in Model.Protocol)
+                {
+                    <tr>
+                        <td class="tabItem">@pe.LogDate.ToShortDateString()</td>
+                        <td class="tabItemL">@pe.Op</td>
+                        <td class="tabItemL">@pe.OpA</td>
+                        <td class="tabItemL">@pe.OpB</td>
+                        <td class="tabItemL">@pe.Res</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+</div>
+

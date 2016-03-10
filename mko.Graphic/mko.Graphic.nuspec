@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<licenseUrl>http://www.mkoit.de/woc.aspx?path=Wissen.beispielsoftware.lizenz_beispielsoftware</licenseUrl>
+		<projectUrl>http://www.mkoit.de/woc.aspx?path=Wissen.beispielsoftware.mko_Graphic</projectUrl>
+		<iconUrl>http://www.mkoit.de/mko-Logo-2-1.gif</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<releaseNotes></releaseNotes>
+		<copyright>Copyright Martin Korneffel, Stuttgart 2013</copyright>
+		<tags>Grafik 2D Linie Kreis Rechteck</tags>
+		<dependencies>
+			<dependency id="mko.Xhtml"
+						version="1.1.2"/>
+		</dependencies>
+
+
+	</metadata>
+</package>

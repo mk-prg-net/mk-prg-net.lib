@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DtxEventLog">
+  <DataContextMoniker Name="/DtxEventLogDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ef43affa-7064-49c7-994a-2e9542e7d725" absoluteBounds="1.375, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DtxEventLogDataContext/EventLogTypes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50d02669-ad43-4016-b66f-6b5c009c1e2f" absoluteBounds="1.3900000000000001, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ba2e97e-c921-4686-80dd-339c93ed3ede" absoluteBounds="1.375, 2.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DtxEventLogDataContext/EventLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b17822b9-e6b7-416b-9bc9-d392c4cc0d52" absoluteBounds="1.3900000000000001, 3.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.375 : 1.60495441665252); (2.375 : 2.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DtxEventLogDataContext/EventLogTypes/EventLogTypes_EventLog" />
+      <nodes>
+        <classShapeMoniker Id="ef43affa-7064-49c7-994a-2e9542e7d725" />
+        <classShapeMoniker Id="7ba2e97e-c921-4686-80dd-339c93ed3ede" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

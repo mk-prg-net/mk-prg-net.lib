@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Index Statistik</h2>
+
+<menu type="list">
+    @Html.ActionLink("Eine neue statistische Berechnung starten", "Create")
+    @Html.ActionLink("Daten erfassen", "Edit");
+    @Html.ActionLink("Daten sortieren", "Sort");
+    @Html.ActionLink("Statistische Momente berechnen", "StatCalc1")
+</menu>
+
+@* Benannte Sektion "Styles". Wird in der _Layout.cshtml im Header eingebunden *@
+@section Styles {
+    @Styles.Render("~/Content/StatCalc/css")
+}

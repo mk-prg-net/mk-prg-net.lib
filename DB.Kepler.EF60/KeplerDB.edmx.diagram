@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="02d6809106294917acee4ed87852b1a5" Name="Diagram1">
+        <EntityTypeShape EntityType="KeplerDBModel.Aufgabe" Width="1.875" PointX="9.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeplerDBModel.Himmelskoerper" Width="2.125" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeplerDBModel.HimmelskoerperTyp" Width="2" PointX="0.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeplerDBModel.Land" Width="1.75" PointX="9.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeplerDBModel.Raumschiff" Width="2" PointX="6.625" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeplerDBModel.Sterne_Planeten_Monde" Width="2" PointX="0.625" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeplerDBModel.Umlaufbahn" Width="3.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeplerDBModel.UrlSammlung" Width="1.875" PointX="0.5" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="KeplerDBModel.FK_RaumschiffeTab_HimmelskoerperTab" ManuallyRouted="false" />
+        <AssociationConnector Association="KeplerDBModel.FK_Sterne_Planeten_MondeTab_HimmelskoerperTab" ManuallyRouted="true" >
+          <ConnectorPoint PointX="3" PointY="8.63121139039855" />
+          <ConnectorPoint PointX="2.75" PointY="8.63121139039855" />
+          <ConnectorPoint PointX="2.75" PointY="8.302958984375" />
+          <ConnectorPoint PointX="1.9385197227340447" PointY="8.302958984375" />
+          <ConnectorPoint PointX="1.9385197227340447" PointY="10.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="KeplerDBModel.HimmelskoerperHimmelskoerperTyp" ManuallyRouted="false" />
+        <AssociationConnector Association="KeplerDBModel.HimmelskoerperUrlSammlung" ManuallyRouted="false" />
+        <AssociationConnector Association="KeplerDBModel.TrabantUmlaufbahn" ManuallyRouted="false" />
+        <AssociationConnector Association="KeplerDBModel.UmlaufbahnZentralobjekt" ManuallyRouted="false" />
+        <AssociationConnector Association="KeplerDBModel.LandRaumschiffe" ManuallyRouted="false" />
+        <AssociationConnector Association="KeplerDBModel.RaumschiffAufgabenTab" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KeplerDBModel.Bild" Width="2.125" PointX="4.875" PointY="3.25" />
+        <AssociationConnector Association="KeplerDBModel.HimmelskoerperBild" />
+        <EntityTypeShape EntityType="KeplerDBModel.Spektralklasse" Width="3" PointX="3.375" PointY="10.125" />
+        <AssociationConnector Association="KeplerDBModel.HimmelskoerperSpektralklasse" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

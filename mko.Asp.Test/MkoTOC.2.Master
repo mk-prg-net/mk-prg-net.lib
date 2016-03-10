@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MkoTOC.2.master.cs" Inherits="mko.Asp.Test.MkoTOC__2" %>
+
+<!DOCTYPE html>
+
+<%-- Einbindung von Bibliotheken 
+--%>
+<%@ Register Assembly="mko.Asp" Namespace="mkoIt.Asp" TagPrefix="mko" %>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Orienta|Noto+Sans|Cantata+One|Lato|Noto+Serif|Source+Code+Pro|Oxygen|Roboto+Slab|Varela|Capriola' rel='stylesheet' type='text/css' />
+    <link href="./Pictures/KubyLiebVollformat.bmp" rel="shortcut icon" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Index</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" StartFromCurrentNode="true" StartingNodeOffset="0" ShowStartingNode="false" />
+    <div class="headLine">
+        <div class="headLineLogo" style="margin-bottom: 0px; vertical-align: central">
+            <div>
+                Martin Korneffel 
+                <br />
+                <span style="font-size: 9pt">IT-Beratung/</span>
+                <br />
+                <span style="font-size: 9pt">Softwareentwicklung</span>
+            </div>
+            <div style="float: left; width: 100%; text-align: center">
+                <div class="leftPicBarElem">
+                    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Pictures/mko-Logo-18-mal-52.gif" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image6" runat="server" ImageUrl="~/Pictures/Urknall.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image7" runat="server" ImageUrl="~/Pictures/Galaxie-black.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Pictures/Sonne-black.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image9" runat="server" ImageUrl="~/Pictures/Schwarzes-Loch-black.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+
+
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Pictures/Planet-2-black.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image5" runat="server" ImageUrl="~/Pictures/Mond-black.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image4" runat="server" ImageUrl="~/Pictures/Asteroid-black.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image8" runat="server" ImageUrl="~/Pictures/Komet-black.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+
+                <div class="leftPicBarElem">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Pictures/Raumschiff-black.png" AlternateText="(c) www.mkoit.de" Width="50" />
+                </div>
+            </div>
+        </div>
+
+        <div class="headLineMenu">
+
+            <div>
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                    <RootNodeStyle CssClass="SiteMapPathRootNode" />
+                    <NodeStyle CssClass="SiteMapPathNode" />
+                    <PathSeparatorTemplate>
+                        /
+                    </PathSeparatorTemplate>
+                    <CurrentNodeStyle CssClass="SiteMapPathCurrentNode" />
+                </asp:SiteMapPath>
+            </div>
+            <br />
+            <div>
+                <div style="margin-left: 5px">
+
+                    <h1 style="color: white; text-align: left">Inhalt</h1>
+                    <br />
+                    <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <div style="text-align: left; font-weight:normal;">
+                        <mko:TableOfContentControl ID="TableOfContentControl1" runat="server" />
+                    </div>
+                    <div>
+                        <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Always">
+                            <ContentTemplate>
+                                <mko:StatusLabel ID="StatusLabelMaster" runat="server">
+                                </mko:StatusLabel>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="headLineLogo" style="float:left; width:15%; margin-bottom: 0px; vertical-align: central">
+            <asp:LoginName ID="LoginName1" runat="server" BackColor="#FFCC00" BorderColor="#FFCC00" ForeColor="#0000CC" />
+        </div>
+
+    </div>
+    <br />
+
+    <div style="clear: both"></div>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MkoTOC.master.cs" Inherits="mko.Asp.Test.MkoTOC" EnableTheming="true" %>
+<!DOCTYPE html>
+
+<%-- Einbindung von Bibliotheken 
+    --%>
+<%@ Register Assembly="mko.Asp" Namespace="mkoIt.Asp" TagPrefix="mko" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Orienta|Noto+Sans|Cantata+One|Lato|Noto+Serif|Source+Code+Pro|Oxygen|Roboto+Slab|Varela|Capriola' rel='stylesheet' type='text/css' />
+    <link href="./Pictures/KubyLiebVollformat.bmp" rel="shortcut icon"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="App_Themes/StartUpDesign/main_layout.css" />
+
+</head>
+<body id="bodyHtml" runat="server">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <div class="headLine">
+        <div class="headLineLogo" style="margin-bottom: 0px; vertical-align: central">
+            Martin Korneffel IT-
+            <br />
+            <span style="font-size: 10pt">Beratung/Softwareentwicklung</span>
+        </div>
+
+        <div class="headLineMenu">
+            &nbsp;
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                <RootNodeStyle CssClass="SiteMapPathRootNode" />
+                <NodeStyle CssClass="SiteMapPathNode" />
+                <PathSeparatorTemplate>
+                    /
+                </PathSeparatorTemplate>
+                <CurrentNodeStyle CssClass="SiteMapPathCurrentNode" />
+            </asp:SiteMapPath>
+            &nbsp;&nbsp;             
+             <asp:LoginName ID="LoginName1" runat="server" />
+        </div>
+    </div>
+    <br />
+
+    <div style="clear: both"></div>
+
+    <div>
+        <div style="float: left; width: 15%">
+            <div class="leftPicBarElem">
+                <asp:Image ID="imgMkoLogo" runat="server" ImageUrl="~/Pictures/mko-Logo-2-1-1.gif" AlternateText="(c) www.mkoit.de" Width="100"/>
+            </div>
+
+
+        </div>
+        <div style="float: left; width: 85%; text-align: center;">
+            <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:Panel ID="panIndex" runat="server" Width="100%" CssClass="pTabItem">
+                <mko:TableOfContentControl ID="TableOfContentControl1" runat="server" />
+            </asp:Panel>
+            <asp:Panel ID="panStatusBar" runat="server" BackColor="Menu" Width="100%">
+                <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Always">
+                    <ContentTemplate>
+                        <mko:StatusLabel ID="StatusLabelMaster" runat="server">
+                        </mko:StatusLabel>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </asp:Panel>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

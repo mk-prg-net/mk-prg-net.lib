@@ -1,0 +1,65 @@
+﻿@model mko.Asp.Mvc.Test.Models.BinOpModel
+@{
+    ViewBag.Title = "BinOpView";
+}
+
+
+@using Props = mko.Asp.Mvc.Test.Properties
+
+@using (Html.BeginForm("BinOp", "Math"))
+{
+    <div>
+        <h2>Binäre Arithmetik</h2>
+        @Html.ValidationSummary(true)
+
+        <section>
+            <div>
+                @Html.LabelFor(model => model.A, new { Class = "mathOpLabel" })
+                @Html.EditorFor(model => model.A, new { Class = "mathOpField" })
+                @Html.ValidationMessageFor(model => model.A)
+
+                @Html.DropDownListFor(model => model.OperatorTxt, Model.OperatorSelection, new { Class = "mathOperator" })
+
+                @* Anstatt MVC- Helper Html.Display wird hier direkt mit Html label und jQuery.UI Tooltip gearbeitet.
+               Das title- Attribut ist dabei die Datenquelle der Tooltips. Das Verhalten mit den Tooltips wird durch
+               die jQuery- Operation auf dem DOM im Scriptblock ganz unten realisiert.
+               Vorteil: der Tooltip ist auch aus einer Resource einlesbar
+             *@
+                <label title="@Props.Resources.BinOpViewOperand2Description" class="mathOpLabel">@Props.Resources.BinOpViewOperand2Name :&nbsp;</label>
+                @Html.EditorFor(model => model.B, new { Class = "mathOpField" })
+                @Html.ValidationMessageFor(model => model.B)
+
+                @* @Html.ActionLink("=", "BinOp", null, new { Class = "mathEval" }) *@
+
+                <input type="submit" value="=" />
+
+
+                @Html.DisplayFor(model => model.Result, new { Class = "mathOpField" })
+            </div>
+
+        </section>
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+    
+}
+
+@* Benannter Abschnitt, der in der Layoutseite im Kopf eingeblendet wird, und die Styles enthält *@
+@section Styles {
+    @Styles.Render("~/Content/themes/base/css")
+}
+
+@* Bennanter Abschnitt, der im Fuss der Layoutseite eingeblendet wird, und die Skripte enthält *@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        // Hier wird auf dem DOM mittels jQuery eine Operation ausgeführt, welche bewirkt,
+        // das alle title- Attribute als Tooltips dienen
+        jQuery(document).tooltip();
+    </script>
+}
+
+

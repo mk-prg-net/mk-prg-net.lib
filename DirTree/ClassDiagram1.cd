@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DMS.DirTree">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <NestedTypes>
+      <Class Name="DMS.DirTree.DirTreeProgressInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DirTree.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Delegate Name="DMS.DirTree.DGEventProgress" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DirTree.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAwSAIMAAIEQAAAAAAAEAABAAAqAAAAgAAAAIgAAAA=</HashCode>
+      <FileName>DirTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

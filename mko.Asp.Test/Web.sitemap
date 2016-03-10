@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="mko.Asp.Test"  description="Testen der mko.Asp Bibliothek.">
+		<siteMapNode url="~/HtmlPure/Default.aspx"
+					 title="HTML- Experimente"
+					 description="HTML5, CSS, JavaScript etc.">
+			<siteMapNode url="~/HtmlPure/Titel-Icon.html"
+						 title="Browsertab Icon"
+						 description="Erzeugen von Icons in Browertabs" />	
+		</siteMapNode>
+		<siteMapNode url="~/TASP/Default.aspx"
+					 title="TASP"
+					 description="">
+			<siteMapNode url="~/TASP/Planetarium.aspx"
+						 title="Verschachtelte Tabellen"
+						 description="" />
+		</siteMapNode>
+		
+        
+        
+    </siteMapNode>
+</siteMap>

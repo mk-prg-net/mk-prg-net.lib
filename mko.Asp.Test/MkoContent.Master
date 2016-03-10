@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MkoContent.master.cs" Inherits="mko.Asp.Test.MkoContent" EnableTheming="true" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="bodyHtml" runat="server">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <div class="headLine">
+        <div class="headLineLogo" style="margin-bottom: 0px; vertical-align: central">
+            Martin Korneffel IT-
+            <br />
+            <span style="font-size: 10pt">Beratung/Softwareentwicklung</span>
+        </div>
+
+        <div class="headLineMenu">
+            &nbsp;
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                <RootNodeStyle CssClass="SiteMapPathRootNode" />
+                <NodeStyle CssClass="SiteMapPathNode" />
+                <PathSeparatorTemplate>
+                    /
+                </PathSeparatorTemplate>
+                <CurrentNodeStyle CssClass="SiteMapPathCurrentNode" />
+            </asp:SiteMapPath>
+            &nbsp;&nbsp;             
+             <asp:LoginName ID="LoginName1" runat="server" />
+        </div>
+    </div>
+    <br />
+
+    <div style="clear: both"></div>
+
+    <div>
+        <div style="float: left; width: 15%">
+            <asp:ContentPlaceHolder ID="leftPicBarContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div style="float: left; width: 85%; text-align: center;">
+            <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

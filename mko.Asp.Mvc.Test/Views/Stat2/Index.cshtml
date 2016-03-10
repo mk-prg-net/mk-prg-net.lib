@@ -1,0 +1,83 @@
+﻿@model mko.Asp.Mvc.Test.Models.Stat2Data
+
+@using mko.Asp.Mvc.Test;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    editConsole
+    {
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 15px;
+        width: 200px;
+        float: left;
+    }
+
+
+    List
+    {
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 15px;
+        width: 200px;
+        float: left;
+    }
+</style>
+
+@using (Html.BeginForm("Update", "Stat2"))
+{
+    <div>
+        <h2>Daten erfassen</h2>
+
+        @* Editconsole für die Listbox  *@
+
+        <div class="editConsole">
+            <input type="number" value="0" style="width: 100px; text-align: right" id="tbxNewValue" />
+            <input type="button" value="Add" id="btnAdd" />
+            &nbsp;
+        <input type="button" value="Delete Selected" id="btnDeleteSelected" style="background-color: red" />
+            &nbsp;
+        <input type="submit" value="Änderungen sichern" id="btnSubmit" />
+        </div>
+
+        <div class="List">
+            @Html.ListBoxFor(model => model.Data, mko.Asp.Mvc.Test.Models.Stat2DataHelper.CreateDataAsSelectedListItems(Model), new { style = "width: 100px; text-align: right; height: 300px" })
+        </div>
+
+        <div>
+            @* Keine Bindung über Html- Helper, da hier nicht an das Modell StatData, sondern an StatDataMinMeanMax "gebunden wird"
+           auf dem Browser *@
+            <input id="tbxMin" type="number" value="0" />
+            <= Min<br />
+            <input id="tbxMean" type="number" value="0" />
+            <= Mean<br />
+            <input id="tbxMax" type="number" value="0" />
+            <= Max<br />
+            <input id="btnRefreshStatistic" type="button" value="Aktualisieren" />
+        </div>
+    </div>
+    
+
+    
+}
+
+@* Benannter Abschnitt, der in der Layoutseite im Kopf eingeblendet wird, und die Styles enthält *@
+@section Styles {
+    @Styles.Render("~/Content/css")
+}
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/Stat2")
+
+}
+
+
+
+
+
+

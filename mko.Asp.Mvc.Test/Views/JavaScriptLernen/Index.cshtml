@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <h2>Java Script lernen</h2>
+
+    <ol>
+        <li>@Html.ActionLink("Basics", "JsBasics")</li>
+
+        <li>@Html.ActionLink("Römische in arabische Zahlen umwandeln", "StartRomToArab")</li>
+
+        <li>@Html.ActionLink("Anwendung: Interaktive Karte", "StartRussland")</li>
+    </ol>
+</div>
+
+@* Benannter Abschnitt, der in der Layoutseite im Kopf eingeblendet wird, und die Styles enthält *@
+@section Styles {
+    @Styles.Render("~/Content/css")
+}
+

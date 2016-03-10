@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JsCalculator</title>
+    <style>
+        .lisp_func_menu
+        {
+            float: left;
+            width: 130px;
+            height: 300px;
+        }
+
+        .lisp_func_menu_block
+        {
+            width: 110px;
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 3px;
+            text-align: center;
+            background-color: beige;
+            margin-top: 3px;
+            padding: 4px;
+        }
+
+
+        .lisp_func_menu_item
+        {
+            width: 100px;
+        }
+
+
+        .lisp_browser_window
+        {
+            float: left;
+        }
+
+        .lisp_list
+        {
+            border-style: solid;
+            border-width: 3px;
+            border-color: darkblue;
+            border-radius: 10px;
+            margin-left: 15px;
+            margin-top: 3px;
+            padding: 4px;
+        }
+
+        .lisp_const_num
+        {
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LISP - Evaluator in JavaScript</h1>
+
+    <form>
+
+    <div class="lisp_func_menu">
+
+        <div id="FuncEdit" class="lisp_func_menu_block">
+            <input id="btnUp" type="button" value="Up" class="lisp_func_menu_item" />
+            <input id="btnDown" type="button" value="Down" class="lisp_func_menu_item" />
+            <div style="text-align: left">
+                <span class="lisp_func_menu_item">
+                    <input id="rbtInsertFunc" name="editmode" type="radio" checked="checked" />insert</span><br />
+                <span class="lisp_func_menu_item">
+                    <input id="rbtAppendFunc" name="editmode" type="radio" />apend</span><br />
+                <span class="lisp_func_menu_item">
+                    <input id="rbtPrependFunc" name="editmode" type="radio" />prepend</span>
+            </div>
+            <input id="btnDelete" type="button" value="Delete" class="lisp_func_menu_item" style="color: white; background-color: darkred" />
+
+        </div>
+        <div id="FuncLISP" class="lisp_func_menu_block">
+            <input id="btnVal" type="button" value="(Val a)" class="lisp_func_menu_item" />
+
+        </div>
+
+        <div id="FuncArithmetik" class="lisp_func_menu_block">
+            <input id="btnAdd" type="button" value="(ADD a b ...)" class="lisp_func_menu_item" />
+            <input id="btnSub" type="button" value="(SUB a b)" class="lisp_func_menu_item" />
+            <input id="btnMul" type="button" value="(MUL a b ...)" class="lisp_func_menu_item" />
+            <input id="btnDiv" type="button" value="(DIV a b)" class="lisp_func_menu_item" />
+            <input id="btnPow" type="button" value="(Pow a b ...)" class="lisp_func_menu_item" />
+            <input id="btnRoot" type="button" value="(Root a b)" class="lisp_func_menu_item" />
+        </div>
+        <div id="FuncAlgebra" class="lisp_func_menu_block">
+            <input id="btnMod" type="button" value="(MOD a b)" class="lisp_func_menu_item" />
+            <input id="btnIsPrim" type="button" value="(IsPrim a)" class="lisp_func_menu_item" />
+            <input id="btnPrimefactors" type="button" value="(Factors a)" class="lisp_func_menu_item" />
+        </div>
+        <div id="FuncLogic" class="lisp_func_menu_block">
+            <input id="btnIf" type="button" value="(IF cond t f)" class="lisp_func_menu_item" />
+            <input id="btnOr" type="button" value="(OR a b)" class="lisp_func_menu_item" />
+            <input id="btnAnd" type="button" value="(AND a b)" class="lisp_func_menu_item" />
+            <input id="btnNOT" type="button" value="(NOT a)" class="lisp_func_menu_item" />
+
+        </div>
+        <div id="FuncRel" class="lisp_func_menu_block">
+            <input id="btnEqu" type="button" value="(Eq a b)" class="lisp_func_menu_item" />
+            <input id="btnGT" type="button" value="(GT a b)" class="lisp_func_menu_item" />
+            <input id="btnGEqT" type="button" value="(GTEq a b)" class="lisp_func_menu_item" />
+            <input id="btnLT" type="button" value="(LT a b)" class="lisp_func_menu_item" />
+            <input id="btnLEqT" type="button" value="(LTEq a b)" class="lisp_func_menu_item" />
+        </div>
+
+
+    </div>
+    <div id="guid1" class="lisp_browser_window" style="width: 500px; margin-left: 0px">
+        <div id="guid2" class="lisp_list">
+            <input type="button" value="IF" id="if" />
+            <div id="guid3" class="lisp_list">
+                <input type="button" value="IsPrime" />
+                <div id="guid4" class="lisp_const_num">
+                    <input type="button" value="Val" /><input type="text" value="99" style="text-align: right" />
+                </div>
+            </div>
+            <div id="guid5" class="lisp_list">
+                <input type="button" value="ADD" />
+                <div id="guid6" class="lisp_const_num">
+                    <input type="button" value="Val" /><input type="text" value="12" style="text-align: right" />
+                </div>
+                <div id="guid7" class="lisp_const_num">
+                    <input type="button" value="Val" /><input type="text" value="13" style="text-align: right" />
+                </div>
+            </div>
+            <div id="guid8" class="lisp_list">
+                <input type="button" value="MUL" />
+                <div id="guid9" class="lisp_const_num">
+                    <input type="button" value="Val" /><input type="text" value="12" style="text-align: right" />
+                </div>
+                <div id="guid10" class="lisp_const_num">
+                    <input type="button" value="Val" /><input type="text" value="13" style="text-align: right" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </form>
+
+</body>
+</html>

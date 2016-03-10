@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="mko.BI.Repositories.BoCoBase&lt;TBo, TBoId&gt;" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="2.75" Width="2.25" />
+    <NestedTypes>
+      <Class Name="mko.BI.Repositories.BoCoBase&lt;TBo, TBoId&gt;.BoCoBaseException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Repositories\BoCo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="mko.BI.Repositories.BoCoBase&lt;TBo, TBoId&gt;.BoSetDescriptorEntry" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Repositories\BoCo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>JABAhEAEACCAAAAACQAYABhWIgAoQQAAICBAAAgAAQA=</HashCode>
+      <FileName>Repositories\BoCo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mko.BI.Repositories.DefSortOrder&lt;TBo&gt;" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAEEAAAAAAAAAQAAAAQQAEAAAAAAAAEA=</HashCode>
+      <FileName>Repositories\DefSortOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.BI.Repositories.DefSortOrderCol&lt;TBo, TCol&gt;" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEEAAAAAAAACQAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\DefSortOrderCol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.BI.Repositories.FilterController&lt;TFilter, TEntity, TEntityID, TRValue, TFilterAndSortable&gt;" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAgAAAAAAAAAAAAAAAQAAAAACAIA=</HashCode>
+      <FileName>Repositories\FilterController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.BI.Repositories.Filter&lt;TEntity&gt;" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAACAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\FilterFunctor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.BI.Repositories.FilterFunctor&lt;TEntity, TRvalue&gt;" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAABEAAAAAAAAAAAAAAACAAAAAEAAAAA=</HashCode>
+      <FileName>Repositories\FilterFunctor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.BI.Repositories.FiltersCombine&lt;TEntity&gt;" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAgAQAAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\FiltersCombine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.BI.Repositories.TraceEnv" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\TraceEnv.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.BI.Repositories.Interfaces.BoSetDescriptorEntry" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\IFilterAndSort.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="mko.BI.Repositories.Interfaces.ICrud&lt;TBo, TBoId&gt;" Collapsed="true">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAACAAAAAAAAIAAAAAAAAAQAAIAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\ICrud.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.BI.Repositories.Interfaces.IFilterAndSort&lt;TBo&gt;" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAABAAAACAAAAAAAQAQAAAUAAAoQAAAACBAAAgAEQA=</HashCode>
+      <FileName>Repositories\Interfaces\IFilterAndSort.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.BI.Repositories.Interfaces.IGetBo&lt;TBo, TBoId&gt;" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\IGetBo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

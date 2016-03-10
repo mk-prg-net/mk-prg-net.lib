@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9F9CCA3-8EF5-4071-98D2-8233188F39A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mko.NaLisp</RootNamespace>
+    <AssemblyName>mko.NaLisp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoolOps\AND.cs" />
+    <Compile Include="BoolOps\IFactory.cs" />
+    <Compile Include="BoolOps\NOT.cs" />
+    <Compile Include="BoolOps\OpBaseBin.cs" />
+    <Compile Include="BoolOps\OR.cs" />
+    <Compile Include="ComparsionOps\Equal.cs" />
+    <Compile Include="ComparsionOps\GreaterEqualThen.cs" />
+    <Compile Include="ComparsionOps\GreaterThen.cs" />
+    <Compile Include="ComparsionOps\IFactory.cs" />
+    <Compile Include="ComparsionOps\LowerEqualThen.cs" />
+    <Compile Include="ComparsionOps\LowerThen.cs" />
+    <Compile Include="ComparsionOps\OpBase.cs" />
+    <Compile Include="Control\IfThen.cs" />
+    <Compile Include="Control\Pipe.cs" />
+    <Compile Include="Core\Evaluator.cs" />
+    <Compile Include="Core\Evaluator.Result.cs" />
+    <Compile Include="Core\IConstValueProp.cs" />
+    <Compile Include="Core\INaLisp.cs" />
+    <Compile Include="Core\INonTerminal.cs" />
+    <Compile Include="Core\Inspector.cs" />
+    <Compile Include="Core\Inspector.Protocol.cs" />
+    <Compile Include="Core\ITerminal.cs" />
+    <Compile Include="Core\IValueProp.cs" />
+    <Compile Include="Core\NaLisp.cs" />
+    <Compile Include="Core\NaLispNonTerminal.cs" />
+    <Compile Include="Core\NaLispStack.cs" />
+    <Compile Include="Core\NaLispTerminal.cs" />
+    <Compile Include="Data\ConstVal.cs" />
+    <Compile Include="Data\ConstValComp.cs" />
+    <Compile Include="Data\Convert.cs" />
+    <Compile Include="Data\IConstValComp.cs" />
+    <Compile Include="Data\IConstValue.cs" />
+    <Compile Include="Data\IVarOf.cs" />
+    <Compile Include="Data\IVarOfComp.cs" />
+    <Compile Include="Data\VarOf.cs" />
+    <Compile Include="Data\VarOfComp.cs" />
+    <Compile Include="Factory.BoolOps.cs" />
+    <Compile Include="Factory.ComparsionOps.cs" />
+    <Compile Include="Factory.Const.cs" />
+    <Compile Include="Factory.Control.cs" />
+    <Compile Include="Factory.List.cs" />
+    <Compile Include="Factory.MathOps.Dbl.cs" />
+    <Compile Include="Factory.MathOps.Int.cs" />
+    <Compile Include="Factory.MathOpsInt64.cs" />
+    <Compile Include="Factory.Var.cs" />
+    <Compile Include="Lisp\First.cs" />
+    <Compile Include="Lisp\Last.cs" />
+    <Compile Include="Lisp\Reverse.cs" />
+    <Compile Include="Lisp\Skip.cs" />
+    <Compile Include="Lisp\Take.cs" />
+    <Compile Include="Lisp\Tuple.cs" />
+    <Compile Include="MathOps\ADD.cs" />
+    <Compile Include="MathOps\ArithmetikOpsInt64.cs" />
+    <Compile Include="MathOps\DIV.cs" />
+    <Compile Include="MathOps\IArithmetikOps.cs" />
+    <Compile Include="MathOps\ArithmetikOpsDbl.cs" />
+    <Compile Include="MathOps\ArithmetikOpsInt.cs" />
+    <Compile Include="MathOps\MUL.cs" />
+    <Compile Include="MathOps\OpBase.cs" />
+    <Compile Include="MathOps\SUB.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mko.Algo\mko.Algo.csproj">
+      <Project>{e4390e39-d913-4a9a-9227-5e2cdcf04a4e}</Project>
+      <Name>mko.Algo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko\mko.csproj">
+      <Project>{fd808f4f-00bd-4bc6-8142-ef944200c901}</Project>
+      <Name>mko</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mko.NaLisp.nuspec" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

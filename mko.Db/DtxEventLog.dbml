@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GblDb" EntityNamespace="mkoIt.EventLogDb" ContextNamespace="mkoIt.EventLogDb" Class="DtxEventLogDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=GblDb;Integrated Security=True" SettingsObjectName="mko.Db.Properties.Settings" SettingsPropertyName="GblDbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="mko.EventLogTypes" Member="EventLogTypes">
+    <Type Name="EventLogTypes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Association Name="EventLogTypes_EventLog" Member="EventLog" ThisKey="id" OtherKey="EventLogType_id" Type="EventLog" />
+    </Type>
+  </Table>
+  <Table Name="mko.EventLog" Member="EventLog">
+    <Type Name="EventLog">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventLogType_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="author" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="[log]" Member="log" Type="System.Xml.Linq.XElement" DbType="Xml NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="EventLogTypes_EventLog" Member="EventLogTypes" ThisKey="EventLogType_id" OtherKey="id" Type="EventLogTypes" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

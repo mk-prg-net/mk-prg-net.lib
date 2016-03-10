@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="mkoIt.Asp.HtmlCtrl.AjaxExtenderControlBase&lt;TAjaxExtenderCtrl&gt;" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAABAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlAjaxExtenderControlBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.BR" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlBR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.Button" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAIAAAAAAAAAAAAAAAAAAAAIAAAAAAACgAACBAAAAA=</HashCode>
+      <FileName>HtmlButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.HtmlContainerCtrlBase" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAIAAAAAAACAAAABAAAAA=</HashCode>
+      <FileName>HtmlContainerCtrlBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.DateBox" Collapsed="true">
+    <Position X="7.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAIIAAAAAAAAAYAAACAAAAAAAAAA=</HashCode>
+      <FileName>HtmlDateBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.DIV" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlDIV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.DropDownList" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAACEAAAAMAAAAAEAAAAAAAAJAABAAAAAA=</HashCode>
+      <FileName>HtmlDropDownList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.FormCtrlBase&lt;TWebCtrl&gt;" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAIAACAAAACAAAABAAAAA=</HashCode>
+      <FileName>HtmlFormCtrlBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.Label" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAIAAAAAIAAAAAAACgAAABAgAAA=</HashCode>
+      <FileName>HtmlLabel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.P" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.SPAN" Collapsed="true">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlSPAN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.Table" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAEAAAAAAAAAAIAAAAAAACgAAABAAAAA=</HashCode>
+      <FileName>HtmlTable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.TableRow" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAIAAAAAIAAAAAAACgAAABAAAAA=</HashCode>
+      <FileName>HtmlTable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.TableCell" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAgAAAAAAAAAAAAAAIAAAAAAACgAAABAAAAA=</HashCode>
+      <FileName>HtmlTable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.TextBox" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAIAAAAAIAAAQAAACgAAABAAAAA=</HashCode>
+      <FileName>HtmlTextBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.TimeSpanLabelSmart" Collapsed="true">
+    <Position X="5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlTimeSpanLabelSmart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mkoIt.Asp.HtmlCtrl.CssOutputGenerator">
+    <Position X="11.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CssOutputGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="mkoIt.Asp.HtmlCtrl.IXhtml" Collapsed="true">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>HtmlIXhtml.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mkoIt.Asp.HtmlCtrl.ICss">
+    <Position X="9.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAIAAAAAAACgAAABAAAAA=</HashCode>
+      <FileName>HtmlICss.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

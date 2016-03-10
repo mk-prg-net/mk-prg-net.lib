@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Factory" Collapsed="true">
+    <Position X="86.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIgNAQAACBEAxAgEBAAgBAAACiMAAQACAECEAgAUCA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Factory.BoolOps.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.BoolOps.AND" Collapsed="true">
+    <Position X="43.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\BoolOps\AND.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.BoolOps.NOT" Collapsed="true">
+    <Position X="18.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\BoolOps\NOT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.BoolOps.OpBaseBin" Collapsed="true">
+    <Position X="44.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAACAAAAAAAAAAAAAAAAAAEAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\BoolOps\OpBaseBin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.BoolOps.OR" Collapsed="true">
+    <Position X="45.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\BoolOps\OR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.ComparsionOps.Equal" Collapsed="true">
+    <Position X="25.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAACAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\ComparsionOps\Equal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.ComparsionOps.GreaterEqualThen" Collapsed="true">
+    <Position X="27.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAACAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\ComparsionOps\GreaterEqualThen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.ComparsionOps.GreaterThen" Collapsed="true">
+    <Position X="29.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAACAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\ComparsionOps\GreaterThen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.ComparsionOps.LowerEqualThen" Collapsed="true">
+    <Position X="20.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAACAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\ComparsionOps\LowerEqualThen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.ComparsionOps.LowerThen" Collapsed="true">
+    <Position X="23" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAACAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\ComparsionOps\LowerThen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.ComparsionOps.OpBase" Collapsed="true">
+    <Position X="25.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAACAAAAECAAAAAAAAAAAAEAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\ComparsionOps\OpBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Control.IfThen" Collapsed="true">
+    <Position X="47.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAGBA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Control\IfThen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Control.Pipe" Collapsed="true">
+    <Position X="52.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Control\Pipe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Core.Evaluator" Collapsed="true">
+    <Position X="89.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAIAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\Evaluator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Core.Inspector" Collapsed="true">
+    <Position X="88" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\Inspector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Core.NaLisp" Collapsed="true">
+    <Position X="42.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\NaLisp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Core.NaLispNonTerminal" Collapsed="true">
+    <Position X="33.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAEAAAQAAAAAgAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\NaLispNonTerminal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Core.NaLispStack" Collapsed="true">
+    <Position X="89.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\NaLispStack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Core.NaLispTerminal" Collapsed="true">
+    <Position X="71.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\NaLispTerminal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Core.NameDir" Collapsed="true">
+    <Position X="86.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAABAAAAAAAAAEAAAAAAAAAAAgCAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\NameDir.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.ConstBool" Collapsed="true">
+    <Position X="72.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\ConstBool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.ConstDateTime" Collapsed="true">
+    <Position X="74.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\ConstDateTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.ConstDbl" Collapsed="true">
+    <Position X="77" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\ConstDbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.ConstInt" Collapsed="true">
+    <Position X="79.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\ConstInt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.ConstString" Collapsed="true">
+    <Position X="81.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\ConstString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.ConstVal&lt;T&gt;" Collapsed="true">
+    <Position X="77" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAABAEAAAAAAAAAAAAAAEAAAAgAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\ConstVal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.VarBool" Collapsed="true">
+    <Position X="68" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQBA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\VarBool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.VarDateTime" Collapsed="true">
+    <Position X="70.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQBA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\VarDateTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.VarDbl" Collapsed="true">
+    <Position X="61.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQBA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\VarDbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.VariableBase" Collapsed="true">
+    <Position X="65.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAggAAAAAAAAAAAAAAAAAAAAAAAAAEQAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\VariableBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.VariableOf&lt;T&gt;" Collapsed="true">
+    <Position X="65.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\VariableOf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.VarInt" Collapsed="true">
+    <Position X="63.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQBA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\VarInt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Data.VarString" Collapsed="true">
+    <Position X="65.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQBA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Data\VarString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Dbl.ConstDbl" Collapsed="true">
+    <Position X="83.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAgAEAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Dbl\ConstDbl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Dbl.Dbl" Collapsed="true">
+    <Position X="83.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Dbl\Dbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.ImplHelper.Cast&lt;TNaLispTarget&gt;" Collapsed="true">
+    <Position X="86.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIgCAAAAAAAAQAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\ImplHelper\Cast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.ImplHelper.ConstVal&lt;TNaLispConst, TConstValue&gt;" Collapsed="true">
+    <Position X="88" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAIACACBAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\ImplHelper\ConstVal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Lisp.First" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Lisp\First.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Lisp.Last" Collapsed="true">
+    <Position X="32" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Lisp\Last.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Lisp.Reverse" Collapsed="true">
+    <Position X="50" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Lisp\Reverse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Lisp.Skip" Collapsed="true">
+    <Position X="54.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Lisp\Skip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Lisp.Take" Collapsed="true">
+    <Position X="56.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Lisp\Take.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Lisp.Tuple" Collapsed="true">
+    <Position X="59" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Lisp\Tuple.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Long.Add" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAIACAAAAAAAAQAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Long\AddLong.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Long.CastLong" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAQAAAAAAAAAAAAAAAAAEAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Long\CastLong.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Long.ConstLong" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAgAEAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Long\ConstLong.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.Long.Long" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Long\Long.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.ADDtoDbl" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\ADDtoDbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.ADDtoInt" Collapsed="true">
+    <Position X="36.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\ADDtoInt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.DIVtoDbl" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\DIVtoDbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.DIVtoInt" Collapsed="true">
+    <Position X="41" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\DIVtoInt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.MULtoDbl" Collapsed="true">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\MULtoDbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.MULtoInt" Collapsed="true">
+    <Position X="34.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\MULtoInt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.OpBaseToDbl" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAQAAAAACAAAAAAAAAAAAAAAAAAEAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\OpBaseToDbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.OpBaseToInt" Collapsed="true">
+    <Position X="37.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAQAAAAACAAAAAAAAAAAAAAAAAAEAAAAAAAAAAABA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\OpBaseToInt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.SUBtoDbl" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\SUBtoDbl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mko.Algo.FormalLanguages.NaLisp.MathOps.SUBtoInt" Collapsed="true">
+    <Position X="38.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\MathOps\SUBtoInt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="mko.Algo.FormalLanguages.NaLisp.Core.IConstValueProp&lt;T&gt;" Collapsed="true">
+    <Position X="86.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\IConstValueProp.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.Algo.FormalLanguages.NaLisp.Core.INonTerminal" Collapsed="true">
+    <Position X="88" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\INonTerminal.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.Algo.FormalLanguages.NaLisp.Core.ITerminal" Collapsed="true">
+    <Position X="89.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\ITerminal.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.Algo.FormalLanguages.NaLisp.Core.IValueProp&lt;T&gt;" Collapsed="true">
+    <Position X="86.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>FormalLanguages\NaLisp\Core\IValueProp.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Basics";
+}
+
+@using (Html.BeginForm())
+{   
+    <div>
+        <h2>Basics</h2>
+
+        <input type="button" id="start" value="starte Skripte" /><br />
+
+
+    </div>
+    
+}
+
+
+@* Benannter Abschnitt, der in der Layoutseite im Kopf eingeblendet wird, und die Styles enthält *@
+@section Styles {
+    @Styles.Render("~/Content/css")
+}
+
+
+@* Bennanter Abschnitt, der im Fuss der Layoutseite eingeblendet wird, und die Skripte enthält *@
+@section Scripts {
+    @Scripts.Render("~/bundles/Basics")
+
+}

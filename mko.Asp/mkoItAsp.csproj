@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A05C978-DBCD-4D29-BC70-DC19FA63A646}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mkoIt.Asp</RootNamespace>
+    <AssemblyName>mkoItAsp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>mkoIT.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AjaxControlToolkit4\v4-Nov-2011\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminBoUsers.cs" />
+    <Compile Include="ApplicationVar.cs" />
+    <Compile Include="AspWebSitePath.cs" />
+    <Compile Include="BoSessionStateSortColumnDefs.cs" />
+    <Compile Include="ClientComponentScriptBldBase.cs" />
+    <Compile Include="CssOutputGenerator.cs" />
+    <Compile Include="DataBindBinding.cs" />
+    <Compile Include="DataBindBindingGridViewRow.cs" />
+    <Compile Include="DataBindBindingBase.cs" />
+    <Compile Include="DataBindMultiBinding.cs" />
+    <Compile Include="DirectorySiteMapProvider.cs" />
+    <Compile Include="FilterAndSortEntities.cs" />
+    <Compile Include="GirdViewColItemTemplateBase.cs" />
+    <Compile Include="GrdFilterDblIntervalCtrl.cs" />
+    <Compile Include="GrdFilterDropDownCtrl.cs" />
+    <Compile Include="GridViewColDecorator.cs" />
+    <Compile Include="GridViewColFilterSelectUpdateDecorator.cs" />
+    <Compile Include="GridViewColHeaderWithAutoCompleteTbx.cs" />
+    <Compile Include="GridEditDpdHf.cs" />
+    <Compile Include="GridFilterNumBoxCtrl.cs" />
+    <Compile Include="GridFilterRemoveFilterButton.cs" />
+    <Compile Include="GridFilterRemoveFilterButton2.cs" />
+    <Compile Include="GridFilterSetFilterButton.cs" />
+    <Compile Include="GridFilterTextBoxCtrl.cs" />
+    <Compile Include="GridFilterZeitintervallCtrl.cs" />
+    <Compile Include="GridLineNumberDeko.cs" />
+    <Compile Include="GridNewLineDeko.cs" />
+    <Compile Include="GridViewColEditItemFilterSelectUpdate.cs" />
+    <Compile Include="GridViewColHeaderFilterSelectUpdate.cs" />
+    <Compile Include="GridViewColHeaderWithDblIntervalFilter.cs" />
+    <Compile Include="GridViewColHeaderWithDropDownSelectFilter.cs" />
+    <Compile Include="GridViewColHeaderWithTimeIntervalFilter.cs" />
+    <Compile Include="GridViewColItemFilterSelectUpdate.cs" />
+    <Compile Include="GridViewColTemplateBase.cs" />
+    <Compile Include="GridViewDecorator.cs" />
+    <Compile Include="GridViewEmptyDataTemplate.cs" />
+    <Compile Include="GridViewTemplateBase.cs" />
+    <Compile Include="GridViewUtils.cs" />
+    <Compile Include="HtmlAjaxExtenderControlBase.cs" />
+    <Compile Include="HtmlBR.cs" />
+    <Compile Include="HtmlButton.cs" />
+    <Compile Include="HtmlCanvas.cs" />
+    <Compile Include="HtmlCanvasClientComponentScriptBuilder.cs" />
+    <Compile Include="HtmlContainerCtrlBase.cs" />
+    <Compile Include="HtmlDateBox.cs" />
+    <Compile Include="HtmlDIV.cs" />
+    <Compile Include="HtmlDropDownList.cs" />
+    <Compile Include="HtmlFormCtrlBase.cs" />
+    <Compile Include="HtmlGenericSelfClosing.cs" />
+    <Compile Include="HtmlICss.cs" />
+    <Compile Include="HtmlLabel.cs" />
+    <Compile Include="HtmlNumBox.cs" />
+    <Compile Include="HtmlNumBoxClientComponentScriptBld.cs" />
+    <Compile Include="HtmlP.cs" />
+    <Compile Include="HtmlSPAN.cs" />
+    <Compile Include="HtmlTable.cs" />
+    <Compile Include="HtmlTextBox.cs" />
+    <Compile Include="HtmlTimeSpanLabelSmart.cs" />
+    <Compile Include="IBoBaseView.cs" />
+    <Compile Include="IDblIntervalCtrl.cs" />
+    <Compile Include="InitBeginAndEndOfTimeArgs.cs" />
+    <Compile Include="ITimeIntervalCtrl.cs" />
+    <Compile Include="GirdViewColEditItemTemplateBase.cs" />
+    <Compile Include="GirdViewColHeaderTemplateBase.cs" />
+    <Compile Include="HtmlIXhtml.cs" />
+    <Compile Include="MembershipCollectionExtensions.cs" />
+    <Compile Include="DataBindMultiBindingGridViewRow.cs" />
+    <Compile Include="OdsDecorator.cs" />
+    <Compile Include="OdsToLinq.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestartApp.cs" />
+    <Compile Include="SessionHistory.cs" />
+    <Compile Include="SessionStateFilterAndSortEntities.cs" />
+    <Compile Include="SessionVar.cs" />
+    <Compile Include="StatusLabel.cs" />
+    <Compile Include="TableOfContent.cs" />
+    <Compile Include="TableOfContentControl.cs" />
+    <Compile Include="ViewStateCreator.cs" />
+    <Compile Include="ViewStateWithFiltersBase.cs" />
+    <Compile Include="WocSecurity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicQuery\DynamicQuery.csproj">
+      <Project>{F285CEB0-4108-440C-AD94-1C1A7C159D7C}</Project>
+      <Name>DynamicQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko.Euklid\mko.Euklid.csproj">
+      <Project>{79A13D86-8D8F-472D-8AE1-40BA08BDC75C}</Project>
+      <Name>mko.Euklid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko.Graphic\mko.Graphic.csproj">
+      <Project>{1BF5C87C-746F-4475-B152-62E8693EFD43}</Project>
+      <Name>mko.Graphic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko.Newton\mko.Newton.csproj">
+      <Project>{3A0F1C60-DE64-4965-BA4A-C62CAEC54A65}</Project>
+      <Name>mko.Newton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mkoDb\mkoDb.csproj">
+      <Project>{0D1C659D-FD81-44FE-9C25-18EE27795909}</Project>
+      <Name>mkoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mkoItXhtml\mkoItXhtml.csproj">
+      <Project>{2C5035E3-6D6F-4B77-A0DE-FEF173B0FC8B}</Project>
+      <Name>mkoItXhtml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko\mko\mko.csproj">
+      <Project>{FD808F4F-00BD-4BC6-8142-EF944200C901}</Project>
+      <Name>mko</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="mkoIT.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HtmlNumBox.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HtmlCanvas.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

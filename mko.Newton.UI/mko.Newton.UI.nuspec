@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>www.mkoit.de</authors>
+		<owners>www.mkoit.de</owners>
+		<licenseUrl>http://www.mkoit.de/woc.aspx?path=Wissen.beispielsoftware.lizenz_beispielsoftware</licenseUrl>
+		<projectUrl>http://www.mkoit.de/woc.aspx?path=Wissen.beispielsoftware.mko_newton_ui</projectUrl>
+		<iconUrl>http://www.mkoit.de/mko-Logo-2-1.gif</iconUrl>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<description>mko.Newton.UI: Klassen zur Darstellung von Einheiten und Werten aus mko.Newton;</description>
+		<releaseNotes></releaseNotes>
+		<copyright>Copyright Martin Korneffel, Stuttgart 2013</copyright>
+		<tags>Dropdown Maszzahlen</tags>
+		<dependencies>
+			<dependency id="mko.Algo"
+						version="1.2.1"/>
+			<dependency id="mko.Euklid"
+						version="1.1.1"/>
+			<dependency id="mko.Newton"
+						version="1.1.2"/>
+
+		</dependencies>
+
+	</metadata>
+</package>

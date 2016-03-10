@@ -1,0 +1,50 @@
+﻿@model  mko.Asp.Mvc.Test.Models.StatModelMinMeanMax
+
+@{
+    ViewBag.Title = "BasicsResultView";    
+}
+
+<h2>Statistische Momente</h2>
+
+    <div class="OpContainer" style="width: 170px;">
+        <h3>Operationen</h3>
+        
+        <div class="Op">
+            @Html.ActionLink("Daten erfassen und editieren", "Index", "Stat")
+        </div>
+    </div>
+
+
+<fieldset class="OpContainer">
+    <legend>StatisticsModel</legend>    
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Min)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Min)
+    </div>  
+
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mean)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mean)
+    </div>  
+
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.Max)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Max)
+    </div>  
+
+    
+</fieldset>
+
+
+@* Benannte Sektion "Styles". Wird in der _Layout.cshtml im Header eingebunden *@
+@section Styles {
+    @Styles.Render("~/Content/StatCalc/css")
+}
+

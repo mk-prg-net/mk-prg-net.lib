@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "InteractiveStatistic";
+}
+
+<style>
+
+    .rbt
+    {
+        width: 25px
+    }
+
+    input[type="submit"],
+    input[type="button"],
+    button
+    {
+        width: 100px
+    }
+
+    .lisp_func_menu
+    {
+        float: left;
+        width: 130px;
+        height: 300px;
+    }
+
+    .lisp_func_menu_block
+    {
+        width: 110px;
+        border-style: solid;
+        border-radius: 10px;
+        border-width: 3px;
+        text-align: center;
+        background-color: beige;
+        margin-top: 3px;
+        padding: 4px;
+    }
+
+
+    .lisp_func_menu_item
+    {
+        width: 100px;
+    }
+
+
+    .lisp_editor_window
+    {
+        float: left;
+    }
+
+    .lisp_list
+    {
+        border-style: solid;
+        border-width: 3px;
+        border-color: darkblue;
+        border-radius: 10px;
+        margin-left: 15px;
+        margin-top: 3px;
+        padding: 4px;
+    }
+
+    .lisp_const_num
+    {
+        margin-left: 15px;
+    }
+</style>
+
+
+<h2>InteractiveStatistic</h2>
+
+@Html.BeginForm() {
+
+    <div class="lisp_func_menu">
+
+        <div id="FuncEdit" class="lisp_func_menu_block">
+            <input id="btnUp" type="button" value="Up" class="lisp_func_menu_item" /><br />
+            <input id="btnDown" type="button" value="Down" class="lisp_func_menu_item" />
+            <div style="text-align: left">
+                <span class="lisp_func_menu_item">
+                    <input id="rbtAddBeforeFunc" name="editmode" type="radio" class="rbt" />AddBefore</span><br />
+                <span class="lisp_func_menu_item">
+                    <input id="rbtAddAfterFunc" name="editmode" type="radio" class="rbt" checked="checked" />AddAfter</span><br />
+            </div>
+            <input id="btnDelete" type="button" value="Delete" class="lisp_func_menu_item" style="color: white; background-color: darkred" />
+
+        </div>
+        <div id="FuncLISP" class="lisp_func_menu_block">
+            <input id="btnVal" type="button" value="(Val a)" class="lisp_func_menu_item" />
+        </div>
+
+
+
+    </div>
+
+    <input id="SelectedList" type="hidden" value="lisp_editor" />
+    <!-- -->
+    <div id="lisp_editor" class="lisp_editor_window" style="width: 500px; margin-left: 0px">
+        <input id="btnLispEditRoot" type="button" value="Root" />
+    </div>
+
+
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/Stat")
+
+}
+

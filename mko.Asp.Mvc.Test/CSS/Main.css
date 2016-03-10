@@ -1,0 +1,390 @@
+﻿/*
+    (c) Martin Korneffel, IT-Beratung/Softwareentwicklung, Stuttgart 2014
+    */
+
+body
+{
+    background-color: #404040; /* Schrift */
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 10pt;
+    color: #dfdfdf;
+}
+
+.clearfix:after
+{
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+
+/* ------------------------------------------------------------------------------ */
+/* Hyperlinks */
+
+a:link
+{
+    color: yellow;
+    text-decoration: none;
+}
+
+a:visited
+{
+    color: yellow;
+    text-decoration: none;
+}
+
+a:focus
+{
+    color: aquamarine;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: aquamarine;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: yellow;
+    text-decoration: none;
+}
+
+
+.LikeHyperLink
+{
+    color: #284E98;
+    text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------------------------ */
+/*
+    Dokumentgliederung
+    */
+
+.ProgHeader
+{
+    /* Hintergrund */
+    background-color: #0094ff; /* Schrift */
+    font-family: Sans-Serif;
+    font-weight: bold;
+    font-size: 10pt;
+    color: gold; /* Ausrichtung */
+    text-align: left;
+    vertical-align: bottom; /* Rahmen */
+    border-style: solid;
+    border-width: 3px;
+    border-color: #0094ff;
+    height: 0.6cm;
+    padding: 1mm;
+}
+
+.ProgHeaderItem
+{
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.Programmtitel
+{
+    color: #dfdfdf;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+
+div
+{
+    margin-top: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #0094ff;
+    border-radius: 10px;
+    background-color: #0094ff;
+    width: auto;
+}
+
+.divDataItem
+{
+    margin-top: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: gold;
+    border-radius: 10px;
+    background-color: #404040;
+    width: auto;
+}
+
+h1
+{
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: White;
+}
+
+
+h2
+{
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: White;
+}
+
+h3
+{
+    /* Elemente aus pseudoh3 */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: White;
+}
+
+h4
+{
+    /* Elemente aus pseudoh3 */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #CC0000;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Absätze */
+p
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: White;
+}
+
+ol
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: White;
+}
+
+
+
+/*-------------------------------------------------------------------------------------*/
+/* Schaltflächen */
+
+.btnTall
+{
+    padding: 0px;
+    text-align: center;
+}
+
+.btnOn
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    background-color: Green;
+    color: White;
+}
+
+.btnOff
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    background-color: #404040;
+    color: White;
+}
+
+.btnNewEntity
+{
+    background-color: Green;
+    color: White;
+}
+
+.btnDelete
+{
+    background-color: #CC0000;
+    color: White;
+}
+
+.btnSet
+{
+    background-color: Blue;
+    color: White;
+}
+
+.btnGoto
+{
+    background-color: Blue;
+    color: White;
+    width: 100%;
+}
+
+.btnSave
+{
+    background-color: Blue;
+    color: White;
+    width: 100%;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Inhalte */
+
+.tbx
+{
+    width: 100%;
+}
+
+.dpdBox
+{
+    width: 100%;
+}
+
+.Label
+{
+    background-color: Navy;
+    color: #dfdfdf;
+    width: 100%;
+}
+
+.tabStyle
+{
+    border: solid;
+    border-color: gold;
+    table-layout: fixed;
+    border-radius: 5pt;
+    color: white;
+    background-color: #404040;
+}
+
+.tabItem
+{    
+    border-bottom: solid;
+    border-width: 1pt;
+}
+
+
+.tabItemL
+{
+    border-left: solid;
+    border-bottom: solid;
+    border-width: 1pt;
+}
+
+.tabItemR
+{
+    border-right: solid;
+    border-bottom: solid;
+    border-width: 1pt;
+}
+
+.tabItemLR
+{
+    border-left: solid;
+    border-right: solid;
+    border-bottom: solid;
+    border-width: 1pt;
+}
+
+
+
+.NumValue
+{
+    text-align: right;
+    padding-right: 2px;
+}
+
+
+/* ------------------------------------------------------------------------------ */
+/*
+  Operationen sind Schaltflächenartige Elemente, über die zu in einer Datentabelle
+  aufelisteten Datensätze Auswertefunktionen gestartet werden können.
+*/
+.Operation
+{
+    /* Bezeichner von Funktionsauswahllisten (klassisches Programm- Menü) */
+    color: #dfdfdf;
+    font-weight: normal;
+    font-size: 10pt;
+    padding-left: 3px;
+    padding-right: 6px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    border-top-style: solid;
+    border-top-color: #eeeeee;
+    border-top-width: 1px;
+    border-bottom-style: outset;
+    border-bottom-width: 2px;
+    border-left-style: outset;
+    border-left-width: 2px;
+    border-bottom-color: #202020;
+    background-color: #808080;
+}
+
+/*
+    OperationParameter sind Panel- Elemente, die alle Formularelemente umfassen,
+    über die eine Operation konfiguriert wird
+*/
+.OperationParameter
+{
+    background-color: #dfdfdf;
+    border-bottom-style: outset;
+    border-bottom-width: 2px;
+    border-left-style: outset;
+    border-left-width: 2px;
+    border-bottom-color: #202020; /* 	border-style: inset; 	border-color: ActiveBorder; 	border-width: 3px; 	*/
+    padding-left: 4px;
+    text-align: left;
+    color: Black;
+    font-size: 10pt;
+}
+
+h1.OperationParameter
+{
+    border-bottom-style: none;
+    border-left-style: none;
+    font-size: 12pt;
+    color: Black;
+}
+
+p.OperationParameter
+{
+    border-bottom-style: none;
+    border-left-style: none;
+    color: Black;
+}
+
+.OpListe
+{
+    width: 100%;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Grid Views */
+
+/*
+    Eine Tabelle, deren Zeilen jeweils eine eigenständige Gridview ist. 
+*/
+.MetaGrid
+{
+    width: 100%;
+    text-align: left;
+    padding: 0px;
+}
+
+.MetaGridline
+{
+    width: 100%;
+}

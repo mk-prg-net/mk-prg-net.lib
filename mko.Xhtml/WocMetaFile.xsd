@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WocMetaFile"
+    targetNamespace="http://www.mkoit.de/WocMetaFile.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://www.mkoit.de/WocMetaFile.xsd"
+    xmlns:mstns="http://www.mkoit.de/WocMetaFile.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="WocMetaFile">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="WocGuid" type="xs:string"/>
+        <xs:element name="WocPath" type="xs:string" />
+        <xs:element name="WocTitle"   type="xs:string"/>
+        <xs:element name="WocDescription" type="xs:string"/>
+        <xs:element name="WocCreated" type="xs:dateTime"/>
+        <xs:element name="WocAuthor" type="xs:string"/>
+        <xs:element name="WocMadeInDNS" type="xs:string" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
