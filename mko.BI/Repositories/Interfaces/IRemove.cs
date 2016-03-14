@@ -2,11 +2,11 @@
 //----------------------------------------------------------------
 //
 // Martin Korneffel: IT Beratung/Softwareentwicklung
-// Stuttgart, den 28.9.2015
+// Stuttgart, den 13.3.2016
 //
 //  Projekt.......: mko.BI
-//  Name..........: IGetBo
-//  Aufgabe/Fkt...: Allgemeine Schnittstelle, die den Zugriff auf ein einzelnes Geschäftsobjekt ermöglicht
+//  Name..........: IRemove
+//  Aufgabe/Fkt...: Schnittstelle zum Löschen von Einträgen in einem Repository
 //                  
 //
 //
@@ -41,34 +41,18 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface IGetBo<TBo, TBoId>
+    public interface IRemove<TBoId>
     {
-        //----------------------------------------------------------------------------------------------------------------
-        // Test auf Id       
-
         /// <summary>
-        /// Liefert einen Lambda- Ausdruck zurück, mittels der ein Entity auf seine ID abbildet
-        /// Entity --> ID
-        /// </summary>
-        /// <returns></returns>
-        Func<TBo, bool> GetBoIDTest(TBoId id);
-
-        /// <summary>
-        /// 25.7.2014, mko    
-        /// Zugriff auf einzelnes Entity mit der gegebenen id
+        /// Löschen des durch die ID definierten Entity
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
-        TBo GetBo(TBoId id);
-
+        void RemoveFromCollection(TBoId id);
 
         /// <summary>
-        /// 14.3.2016, mko
-        /// Prüfen, ob zu einem gegebenen Schlüssel ein Eintrag existiert
+        /// Löschen aller Entities
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        bool Any(TBoId id);
+        void RemoveAll();
 
     }
 }

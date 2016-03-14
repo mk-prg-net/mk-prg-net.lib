@@ -82,10 +82,6 @@
     <Compile Include="Session\WorkflowStateCreator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DynamicQuery\DynamicQuery.csproj">
-      <Project>{f285ceb0-4108-440c-ad94-1c1a7c159d7c}</Project>
-      <Name>DynamicQuery</Name>
-    </ProjectReference>
     <ProjectReference Include="..\mko.Algo\mko.Algo.csproj">
       <Project>{e4390e39-d913-4a9a-9227-5e2cdcf04a4e}</Project>
       <Name>mko.Algo</Name>

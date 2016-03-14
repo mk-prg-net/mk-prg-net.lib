@@ -62,14 +62,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BoCo.cs" />
+    <Compile Include="Repositories\BoCoBase.cs" />
     <Compile Include="Repositories\DefSortOrder.cs" />
     <Compile Include="Repositories\DefSortOrderCol.cs" />
     <Compile Include="Repositories\FilterController.cs" />
     <Compile Include="Repositories\FilterFunctor.cs" />
     <Compile Include="Repositories\FiltersCombine.cs" />
+    <Compile Include="Repositories\Interfaces\ICreateUpdate.cs" />
     <Compile Include="Repositories\Interfaces\ICrud.cs" />
     <Compile Include="Repositories\Interfaces\IFilterAndSort.cs" />
     <Compile Include="Repositories\Interfaces\IGetBo.cs" />
+    <Compile Include="Repositories\Interfaces\IRemove.cs" />
     <Compile Include="Repositories\TraceEnv.cs" />
     <Compile Include="StateMachine\Behavior\SingleStateMachineBehavior.cs" />
     <Compile Include="StateMachine\Behavior\IStateBehavior.cs" />
@@ -100,10 +103,6 @@
     <Content Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DynamicQuery\DynamicQuery.csproj">
-      <Project>{f285ceb0-4108-440c-ad94-1c1a7c159d7c}</Project>
-      <Name>DynamicQuery</Name>
-    </ProjectReference>
     <ProjectReference Include="..\mko.Algo\mko.Algo.csproj">
       <Project>{e4390e39-d913-4a9a-9227-5e2cdcf04a4e}</Project>
       <Name>mko.Algo</Name>

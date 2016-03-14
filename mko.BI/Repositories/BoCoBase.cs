@@ -5,7 +5,7 @@
 // Stuttgart, den 17.11.2011
 //
 //  Projekt.......: mko.BI
-//  Name..........: BoCo.cs (vorher BoCoBase, siehe 13.3.2016)
+//  Name..........: BoCoBase.cs
 //  Aufgabe/Fkt...: Basisklasse für die Verarbeitung von Geschäftsobjektlisten
 //                  Aus der Klasse mkoIt.DB.BoBase abgeleitet,
 //                  die wiederumg aus GblDbLayer.OdsToLinq vom 13.11.2010
@@ -90,12 +90,7 @@
 //  Autor.........: Martin Korneffel (mko)
 //  Datum.........: 28.9.2015
 //  Änderungen....: Member der Schnittstelle ICrud und IFilterAndSort umbenannt.
-//
-//  Version.......: 2.3
-//  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 13.3.2016
-//  Änderungen....: Mehtoden, die das Liskovsche Substitutionsprinzip verletzen wie CreateBo(), AddToEntityCollection(TBo bo) und Insert(TBo bo) 
-//                  entfernt
+
 //</unit_history>
 //</unit_header>        
 
@@ -116,7 +111,7 @@ using System.Reflection.Emit;
 namespace mko.BI.Repositories
 {
 
-    public abstract class BoCo<TBo, TBoId> : Interfaces.IGetBo<TBo, TBoId>, Interfaces.ICreateUpdate<TBo, TBoId>, Interfaces.IRemove<TBoId>, Interfaces.IFilterAndSort<TBo>
+    public abstract class BoCoBase<TBo, TBoId> : Interfaces.IGetBo<TBo, TBoId>, Interfaces.ICrud<TBo, TBoId>, Interfaces.IFilterAndSort<TBo>
         where TBo : class //, new()
     {
 
@@ -125,41 +120,41 @@ namespace mko.BI.Repositories
         /// Spezielle Exceptionklasse
         /// </summary> 
         [Serializable]
-        public class BoCoException : System.ApplicationException
+        public class BoCoBaseException : System.ApplicationException
         {
-            public static BoCoException Create(string Message)
+            public static BoCoBaseException Create(string Message)
             {
                 string msg = mko.TraceHlp.FormatErrMsg("BoCoBase", "?", "Bo: " + typeof(TBo).Name, Message);
                 Trace.WriteLine(TraceEnv.Switch.TraceError, msg);
-                return new BoCoException(msg);
+                return new BoCoBaseException(msg);
             }
 
-            public static BoCoException Create(Exception ex)
+            public static BoCoBaseException Create(Exception ex)
             {
                 string msg = mko.TraceHlp.FormatErrMsg("BoBase", "?", "Bo: " + typeof(TBo).Name, ex.Message);
                 Trace.WriteLine(TraceEnv.Switch.TraceError, msg);
-                return new BoCoException(msg, ex.InnerException);
+                return new BoCoBaseException(msg, ex.InnerException);
             }
 
-            public static BoCoException Create(string MethodName, Exception ex)
+            public static BoCoBaseException Create(string MethodName, Exception ex)
             {
                 string msg = mko.TraceHlp.FormatErrMsg("BoBase", MethodName, "Entity: " + typeof(TBo).Name, ex.Message);
                 Trace.WriteLine(TraceEnv.Switch.TraceError, msg);
-                return new BoCoException(msg, ex);
+                return new BoCoBaseException(msg, ex);
             }
 
-            public static BoCoException Create(object Obj, string MethodName, params string[] Messages)
+            public static BoCoBaseException Create(object Obj, string MethodName, params string[] Messages)
             {
                 var extMessages = new List<string>(Messages.Count() + 3);
                 extMessages.Add("Entity: " + typeof(TBo).Name);
                 extMessages.AddRange(Messages);
                 string msg = mko.TraceHlp.FormatErrMsg(Obj, MethodName, extMessages.ToArray());
                 Trace.WriteLine(TraceEnv.Switch.TraceError, msg);
-                return new BoCoException(msg);
+                return new BoCoBaseException(msg);
             }
 
 
-            public static BoCoException Create(object Obj, string MethodName, Exception ex, params string[] Messages)
+            public static BoCoBaseException Create(object Obj, string MethodName, Exception ex, params string[] Messages)
             {
                 var extMessages = new List<string>(Messages.Count() + 3);
                 extMessages.Add("Entity: " + typeof(TBo).Name);
@@ -169,13 +164,13 @@ namespace mko.BI.Repositories
                 extMessages.Add("Exception: " + ex.Message);
                 string msg = mko.TraceHlp.FormatErrMsg(Obj, MethodName, extMessages.ToArray());
                 Trace.WriteLine(TraceEnv.Switch.TraceError, msg);
-                return new BoCoException(msg, ex);
+                return new BoCoBaseException(msg, ex);
             }
 
 
             // Konstruktoren
-            private BoCoException(string message) : base(message) { }
-            private BoCoException(string message, Exception innerException) : base(message, innerException) { }
+            private BoCoBaseException(string message) : base(message) { }
+            private BoCoBaseException(string message, Exception innerException) : base(message, innerException) { }
         }
 
 
@@ -187,7 +182,7 @@ namespace mko.BI.Repositories
         /// <param name="ctx"></param>
         /// <param name="DefaultSortCol"></param>
         /// <param name="otherTEntityViews">Liste der Typen der restlichen Views vom Entity</param>
-        public BoCo(DefSortOrder<TBo> DefaultSortCol)
+        public BoCoBase(DefSortOrder<TBo> DefaultSortCol)
         {
             _DefaultSort = DefaultSortCol;
         }
@@ -202,8 +197,7 @@ namespace mko.BI.Repositories
         /// Definiert die Sortierreihenfolgen. Es kann hierarchisch nach mehreren Spalten sortiert werden.
         /// </summary>
         /// <param name="DefSortOrder"></param>
-        public void DefSortOrders(params DefSortOrder<TBo>[] DefSortOrder)
-        {
+        public void DefSortOrders(params DefSortOrder<TBo>[] DefSortOrder){
             SortOrderDefs.Clear();
             SortOrderDefs.AddRange(DefSortOrder);
         }
@@ -284,7 +278,7 @@ namespace mko.BI.Repositories
             if (AllFilter.ContainsKey(flt))
                 AllFilter.Remove(flt);
             else
-                throw BoCoException.Create(this, "RemoveFilter", RemoveFilterErrorMsg(flt));
+                throw BoCoBaseException.Create(this, "RemoveFilter", RemoveFilterErrorMsg(flt));
         }
 
         public void RemoveAllFilters()
@@ -443,7 +437,7 @@ namespace mko.BI.Repositories
             }
             catch (Exception ex)
             {
-                throw BoCoException.Create("IsFilterdListNotEmpty", ex);
+                throw BoCoBaseException.Create("IsFilterdListNotEmpty", ex);
             }
         }
 
@@ -464,7 +458,7 @@ namespace mko.BI.Repositories
             }
             catch (Exception ex)
             {
-                throw BoCoException.Create("GetEntities", ex);
+                throw BoCoBaseException.Create("GetEntities", ex);
             }
         }
 
@@ -492,7 +486,7 @@ namespace mko.BI.Repositories
             }
             catch (Exception ex)
             {
-                throw BoCoException.Create("ApplyFilter", ex);
+                throw BoCoBaseException.Create("ApplyFilter", ex);
             }
         }
 
@@ -506,11 +500,11 @@ namespace mko.BI.Repositories
             try
             {
                 return MultiSort(FilterBoCollection(BoCollection)).AsQueryable();
-
+                
             }
             catch (Exception ex)
             {
-                throw BoCoException.Create("GetEntitiesFilteredAndSorted", ex);
+                throw BoCoBaseException.Create("GetEntitiesFilteredAndSorted", ex);
             }
         }
 
@@ -528,7 +522,7 @@ namespace mko.BI.Repositories
             }
             catch (Exception ex)
             {
-                throw BoCoException.Create("CountFilteredEntities", ex);
+                throw BoCoBaseException.Create("CountFilteredEntities", ex);
             }
         }
 
@@ -544,7 +538,7 @@ namespace mko.BI.Repositories
             }
             catch (Exception ex)
             {
-                throw BoCoException.Create("CountAllEntities", ex);
+                throw BoCoBaseException.Create("CountAllEntities", ex);
             }
         }
 
@@ -560,6 +554,21 @@ namespace mko.BI.Repositories
             get;
         }
 
+        /// <summary>
+        /// Erzeugt ein neues Entity. Kann bei der Implementierung eines Insert- Befehls 
+        /// eines Geschäftsobjektes eingesetzt werden, um z.B. den Schlüssel des Entities zu definieren
+        /// </summary>
+        /// <returns></returns>
+        public abstract TBo CreateBo();
+
+
+        /// <summary>
+        /// Hinzufügen eines Entity zu einer Entitycollection. Erst durch 
+        /// SubmitChanges wird das Entity der Datenbank hinzugefügt.
+        /// </summary>
+        /// <param name="entity"></param>
+        public abstract void AddToCollection(TBo entity);
+
 
         /// <summary>
         /// Erzeugt ein neues Entity und fügt dieses sofort der Collection hinzu.
@@ -567,14 +576,60 @@ namespace mko.BI.Repositories
         /// erheblich von der Darstellung als TBo abweicht.
         /// </summary>
         /// <returns></returns>
-        public abstract TBo CreateBoAndAddToCollection(TBoId id);
+        public abstract TBo CreateBoAndAddToCollection();
+
+        /// <summary>
+        /// Eine elementare Einfügeoperation
+        /// </summary>
+        /// <param name="entity"></param>
+        public virtual void Insert(TBo entity)
+        {
+            try
+            {
+                AddToCollection(entity);
+                SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw BoCoBaseException.Create(this, "Insert", ex);
+            }
+        }
+
+
+        /// <summary>
+        /// Ein Entity für das Löschen in der EntityCollection markieren
+        /// </summary>
+        /// <param name="entity"></param>
+        public abstract void RemoveFromCollection(TBo entity);
+
 
         /// <summary>
         /// Löschen des durch die ID definierten Entity
         /// </summary>
         /// <param name="id"></param>
-        public abstract void RemoveFromCollection(TBoId id);
-        
+        public virtual void RemoveFromCollection(TBoId id)
+        {
+            try
+            {
+                if (BoCollection.Any(GetBoIDTest(id)))
+                {
+                    //var flt = CreateIdFilter(id);
+                    //var entity = flt.filterImpl(EntityCollection).Single();
+                    var DbEntity = BoCollection.Single(GetBoIDTest(id));
+                    RemoveFromCollection(DbEntity);
+                    SubmitChanges();
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("ID nicht gefunden: " + id);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw BoCoBaseException.Create(this, "Delete", ex);
+            }
+        }
+
         /// <summary>
         /// Löschen aller Entities
         /// </summary>
@@ -585,7 +640,7 @@ namespace mko.BI.Repositories
         /// Aktualisierungen am ORMContext mit der Datenbank abgleichen
         /// </summary>
         public abstract void SubmitChanges();
-
+        
     }
 }
 
