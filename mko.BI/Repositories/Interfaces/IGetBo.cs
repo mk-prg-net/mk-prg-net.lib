@@ -61,6 +61,15 @@ namespace mko.BI.Repositories.Interfaces
         /// <returns></returns>
         TBo GetBo(TBoId id);
 
+        IEnumerable<TBo> Get(System.Linq.Expressions.Expression<Func<TBo, bool>> filter = null,
+                             Func<IQueryable<TBo>, IOrderedQueryable<TBo>> orderBy = null,
+                             string includeProperties = "");
+
+
+        //IEnumerable<TBo> Get(IEnumerable<IFilter<TBo>> filters, 
+        //                     IEnumerable<ISorter<TBo>> sorter = null,
+        //                    string includeProperties = "");
+
 
         /// <summary>
         /// 14.3.2016, mko

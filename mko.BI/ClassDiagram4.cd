@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Interface Name="mko.BI.Repositories.Interfaces.ICreateUpdate&lt;TBoId&gt;">
+    <Position X="5.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\ICreateUpdate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.BI.Repositories.Interfaces.ICrud&lt;TBo, TBoId&gt;">
+    <Position X="0.5" Y="3.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAACAAAAAAAAIAAAAAAAAAQAAIAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\ICrud.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.BI.Repositories.Interfaces.IGetBo&lt;TBo, TBoId&gt;">
+    <Position X="5.5" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\IGetBo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.BI.Repositories.Interfaces.IGetBoBuilder&lt;TBoBuilder, TBoId&gt;">
+    <Position X="5.5" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\IGetBoBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.BI.Repositories.Interfaces.IRemove&lt;TBoId&gt;">
+    <Position X="5.5" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\IRemove.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mko.BI.Repositories.Interfaces.ISubmitChanges">
+    <Position X="5.5" Y="6.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Interfaces\ISubmitChanges.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

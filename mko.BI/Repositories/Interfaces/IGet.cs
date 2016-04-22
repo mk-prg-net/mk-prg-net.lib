@@ -2,12 +2,12 @@
 //----------------------------------------------------------------
 //
 // Martin Korneffel: IT Beratung/Softwareentwicklung
-// Stuttgart, den 13.3.2016
+// Stuttgart, den 28.9.2016
 //
 //  Projekt.......: mko.BI
-//  Name..........: ICreateUpdate.cs
-//  Aufgabe/Fkt...: Schnitstelle zum Anlegen und Aktualisieren innerhalb von Repositories
-//                  Hervorgegangen aus ICrud vom 18.9.2015
+//  Name..........: IGet.cs
+//  Aufgabe/Fkt...: Schnittstelle von Repositories, die den Zugriff auf Geschäftsobjekte ermöglicht.
+//                  Abgeleitet aus IGetBo
 //
 //
 //
@@ -25,14 +25,16 @@
 //<unit_history>
 //------------------------------------------------------------------
 //
-//  Version.......: 1.1
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 
-//  Änderungen....: 
-//
+//  Datum.........: 21.4.2016
+//  Änderungen....: Umgewandelt in die Schnittstelle IGet, welche 
+//                  Get- Methoden anbietet, mit der auch Mengen von 
+//                  Geschäftsobjekten gefiltert und sortiert werden 
+//                  können.
 //</unit_history>
 //</unit_header>        
         
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,16 +43,24 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface ICreateUpdate<TBoId>
+    interface IGet<TBo, TBoId>
     {
-        /// <summary>
-        /// Ein neues Geschäftsobjekt wird unter der Id angelegt und der vom Repository verwalteten Collection hinzugefügt.
-        /// Durch Aufruf von SubmitChanges (siehe unten) werden die Änerungen schließlich übernommen und das
-        /// neue Objekt permanen in der Collection aufgenommen. 
-        /// </summary>
-        /// <returns></returns>
-        void CreateBoAndAddToCollection(TBoId id);
 
+        /// <summary>
+        /// 25.7.2014, mko    
+        /// Zugriff auf einzelnes Entity mit der gegebenen id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        TBo Get(TBoId id);
+
+        /// <summary>
+        /// 14.3.2016, mko
+        /// Prüfen, ob zu einem gegebenen Schlüssel ein Eintrag existiert
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        bool Any(TBoId id);
 
     }
 }

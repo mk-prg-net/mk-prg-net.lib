@@ -42,10 +42,9 @@
 //<unit_history>
 //------------------------------------------------------------------
 //
-//  Version.......: 1.1
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 17.1.2015
-//  Änderungen....: 
+//  Datum.........: 20.3.2016
+//  Änderungen....: Schnittstellenabhängigkeit ICoreData eliminiert
 //
 //</unit_history>
 //</unit_header>        
@@ -66,22 +65,16 @@ namespace mko.BI.ChangeTracking
     /// Klasse dient
     /// </summary>
     /// <typeparam name="TBo">Typ der Datenbasis, für die das Change- Tracking durchzuführen ist</typeparam>
-    public abstract class BoWithChangeTracking<TBo> : Bo.ICoreData<TBo>
+    public abstract class BoWithChangeTracking<TBo> // : Bo.ICoreData<TBo>
     {
 
         /// <summary>
-        /// Implementiert IWritable
+        /// Liefert das Geschäftsobjekt, dessen Änderung von Eigens chaften aufgezeichnet werden sollen
         /// </summary>
-        public TBo GetCore
+        public abstract TBo Bo
         {
-            get { return GetCoreBo(); }
+            get;
         }
-
-        /// <summary>
-        /// Liefert das Geschäftsobjekt, für das eine Änderungsverfolgung hier implementiert wird
-        /// </summary>
-        /// <returns></returns>
-        protected abstract TBo GetCoreBo();
 
         public enum ChangeStateEnum
         {
@@ -159,7 +152,7 @@ namespace mko.BI.ChangeTracking
         public void SetProperty<TProp>(TProp Value, Action<TProp, TBo> PropertySetter)
         {
             // Ausgewählte Eigenschaft im lokalen Entity der View setzen
-            PropertySetter(Value, GetCore);
+            PropertySetter(Value, Bo);
 
             // Aktualisierungsauftrag für externes Entity aufgeben
             var job = PropertySetter.Curry(Value);
@@ -179,7 +172,7 @@ namespace mko.BI.ChangeTracking
             if (Value.HasValue)
             {
                 // Ausgewählte Eigenschaft im lokalen Entity der View setzen
-                PropertySetter(Value.Value, GetCore);
+                PropertySetter(Value.Value, Bo);
 
                 // Aktualisierungsauftrag für externes Entity aufgeben
                 var job = PropertySetter.Curry(Value.Value);
@@ -188,16 +181,27 @@ namespace mko.BI.ChangeTracking
         }
        
 
+        ///// <summary>
+        ///// Alle aktualisierungsaufträge werden auf einem Entity ausgeführt, das z.B. aus einem 
+        ///// EF- Datenkontext einer Datenbank stammt
+        ///// </summary>
+        ///// <param name="exTBoTarget">Referenz auf externes Entity</param>
+        //public void UpdateExternalBo(Bo.ICoreData<TBo> exTBoTarget, bool PreserveChangeTrackingItems = false)
+        //{
+        //    Debug.Assert(exTBoTarget != this);
+        //    BoWithChangeTracking<TBo>.UpdateBo(exTBoTarget, QueuedJobsForPropertiesUpdate, PreserveChangeTrackingItems);
+        //}
+
         /// <summary>
         /// Alle aktualisierungsaufträge werden auf einem Entity ausgeführt, das z.B. aus einem 
         /// EF- Datenkontext einer Datenbank stammt
         /// </summary>
         /// <param name="exTBoTarget">Referenz auf externes Entity</param>
-        public void UpdateExternalBo(Bo.ICoreData<TBo> exTBoTarget, bool PreserveChangeTrackingItems = false)
-        {
-            Debug.Assert(exTBoTarget != this);
+        public void UpdateExternalBo(TBo exTBoTarget, bool PreserveChangeTrackingItems = false)
+        {            
             BoWithChangeTracking<TBo>.UpdateBo(exTBoTarget, QueuedJobsForPropertiesUpdate, PreserveChangeTrackingItems);
         }
+
 
         /// <summary>
         /// Implementieren des Löschens der Liste mit den Einträgen der Änderungsverfolgung
@@ -209,13 +213,36 @@ namespace mko.BI.ChangeTracking
 
 
 
+        ///// <summary>
+        ///// Führt alle Aktualisierungsaufträge aus der Queue auf dem Entity aus. 
+        ///// Wenn erfolgreich, dann ist die UpdateJobs Queue leer
+        ///// </summary>
+        ///// <param name="BoTarget">zu aktualisierendes Entity</param>
+        ///// <param name="QueuedJobsForPropertiesUpdate">Warteschlange mit Aktualsierungsaufträgen</param>
+        //public static void UpdateBo(Bo.ICoreData<TBo> BoTarget, Queue<Action<TBo>> QueuedJobsForPropertiesUpdate, bool PreserveChangeTrackingItems = false)
+        //{
+        //    if (!PreserveChangeTrackingItems)
+        //    {
+        //        while (QueuedJobsForPropertiesUpdate.Any())
+        //        {
+        //            // Der schnöngefinkelte Lambdaausdruck wird ausgeführt, wodurch die Aktualisierung der 
+        //            // Entity- Eigenschaft implementiert wird
+        //            QueuedJobsForPropertiesUpdate.Dequeue()(BoTarget.GetCore);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        UpdateBoAndPreserveChangeTrackingItems(BoTarget, QueuedJobsForPropertiesUpdate);
+        //    }
+        //}
+
         /// <summary>
         /// Führt alle Aktualisierungsaufträge aus der Queue auf dem Entity aus. 
         /// Wenn erfolgreich, dann ist die UpdateJobs Queue leer
         /// </summary>
         /// <param name="BoTarget">zu aktualisierendes Entity</param>
         /// <param name="QueuedJobsForPropertiesUpdate">Warteschlange mit Aktualsierungsaufträgen</param>
-        public static void UpdateBo(Bo.ICoreData<TBo> BoTarget, Queue<Action<TBo>> QueuedJobsForPropertiesUpdate, bool PreserveChangeTrackingItems = false)
+        static void UpdateBo(TBo BoTarget, Queue<Action<TBo>> QueuedJobsForPropertiesUpdate, bool PreserveChangeTrackingItems = false)
         {
             if (!PreserveChangeTrackingItems)
             {
@@ -223,37 +250,49 @@ namespace mko.BI.ChangeTracking
                 {
                     // Der schnöngefinkelte Lambdaausdruck wird ausgeführt, wodurch die Aktualisierung der 
                     // Entity- Eigenschaft implementiert wird
-                    QueuedJobsForPropertiesUpdate.Dequeue()(BoTarget.GetCore);
+                    QueuedJobsForPropertiesUpdate.Dequeue()(BoTarget);
                 }
             }
             else
             {
-                UpdateBoAndPreserveChangeTrackingItems(BoTarget, QueuedJobsForPropertiesUpdate);
+                int Count = QueuedJobsForPropertiesUpdate.Count;
+                for (int i = 0; i < Count; i++)
+                {
+                    // Aktualisierungsauftrag der Warteschlange entnehmen
+                    var updJob = QueuedJobsForPropertiesUpdate.Dequeue();
+
+                    // Der schnöngefinkelte Lambdaausdruck wird ausgeführt, wodurch die Aktualisierung der 
+                    // Entity- Eigenschaft implementiert wird
+                    updJob(BoTarget);
+                    // Ausgeführten Job wieder in Warteschlange einstellen
+                    QueuedJobsForPropertiesUpdate.Enqueue(updJob);
+                }
             }
         }
 
-        /// <summary>
-        /// Führt alle Aktualisierungsaufträge aus der UpdateJobs- Queue auf dem 
-        /// Entity aus und stellt die Aktualisierungaufträge für eine wiederholte
-        /// Ausführung in die Queue wieder ein.
-        /// </summary>
-        /// <param name="BoTarget">zu aktualisierendes Entity</param>
-        /// <param name="QueuedJobsForPropertiesUpdate">Warteschlange mit Aktualisierungsaufträgen</param>
-        static void UpdateBoAndPreserveChangeTrackingItems(Bo.ICoreData<TBo> BoTarget, Queue<Action<TBo>> QueuedJobsForPropertiesUpdate)
-        {
-            int Count = QueuedJobsForPropertiesUpdate.Count;
-            for (int i = 0; i < Count; i++)
-            {
-                // Aktualisierungsauftrag der Warteschlange entnehmen
-                var updJob = QueuedJobsForPropertiesUpdate.Dequeue();
 
-                // Der schnöngefinkelte Lambdaausdruck wird ausgeführt, wodurch die Aktualisierung der 
-                // Entity- Eigenschaft implementiert wird
-                updJob(BoTarget.GetCore);
-                // Ausgeführten Job wieder in Warteschlange einstellen
-                QueuedJobsForPropertiesUpdate.Enqueue(updJob);
-            }
-        }
+        ///// <summary>
+        ///// Führt alle Aktualisierungsaufträge aus der UpdateJobs- Queue auf dem 
+        ///// Entity aus und stellt die Aktualisierungaufträge für eine wiederholte
+        ///// Ausführung in die Queue wieder ein.
+        ///// </summary>
+        ///// <param name="BoTarget">zu aktualisierendes Entity</param>
+        ///// <param name="QueuedJobsForPropertiesUpdate">Warteschlange mit Aktualisierungsaufträgen</param>
+        //static void UpdateBoAndPreserveChangeTrackingItems(Bo.ICoreData<TBo> BoTarget, Queue<Action<TBo>> QueuedJobsForPropertiesUpdate)
+        //{
+        //    int Count = QueuedJobsForPropertiesUpdate.Count;
+        //    for (int i = 0; i < Count; i++)
+        //    {
+        //        // Aktualisierungsauftrag der Warteschlange entnehmen
+        //        var updJob = QueuedJobsForPropertiesUpdate.Dequeue();
+
+        //        // Der schnöngefinkelte Lambdaausdruck wird ausgeführt, wodurch die Aktualisierung der 
+        //        // Entity- Eigenschaft implementiert wird
+        //        updJob(BoTarget.GetCore);
+        //        // Ausgeführten Job wieder in Warteschlange einstellen
+        //        QueuedJobsForPropertiesUpdate.Enqueue(updJob);
+        //    }
+        //}
 
         
     }

@@ -2,12 +2,12 @@
 //----------------------------------------------------------------
 //
 // Martin Korneffel: IT Beratung/Softwareentwicklung
-// Stuttgart, den 13.3.2016
+// Stuttgart, den 15.3.2016
 //
 //  Projekt.......: mko.BI
-//  Name..........: ICreateUpdate.cs
-//  Aufgabe/Fkt...: Schnitstelle zum Anlegen und Aktualisieren innerhalb von Repositories
-//                  Hervorgegangen aus ICrud vom 18.9.2015
+//  Name..........: IGetBoBuilder
+//  Aufgabe/Fkt...: Liefert zu  einem Objekt aus einem Repository einen
+//                  Builder, mit dem seine Eigenschaften überschrieben/verändert werden können.
 //
 //
 //
@@ -33,6 +33,7 @@
 //</unit_history>
 //</unit_header>        
         
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,16 +42,14 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface ICreateUpdate<TBoId>
+    public interface IGetBoBuilder<TBoBuilder, TBoId>
     {
         /// <summary>
-        /// Ein neues Geschäftsobjekt wird unter der Id angelegt und der vom Repository verwalteten Collection hinzugefügt.
-        /// Durch Aufruf von SubmitChanges (siehe unten) werden die Änerungen schließlich übernommen und das
-        /// neue Objekt permanen in der Collection aufgenommen. 
+        /// 25.7.2014, mko    
+        /// Zugriff auf einzelnes Entity mit der gegebenen id
         /// </summary>
+        /// <param name="id"></param>
         /// <returns></returns>
-        void CreateBoAndAddToCollection(TBoId id);
-
-
+        TBoBuilder GetBoBuilder(TBoId id);
     }
 }

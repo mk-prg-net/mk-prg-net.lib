@@ -2,12 +2,12 @@
 //----------------------------------------------------------------
 //
 // Martin Korneffel: IT Beratung/Softwareentwicklung
-// Stuttgart, den 13.3.2016
+// Stuttgart, den 21.4.2016
 //
 //  Projekt.......: mko.BI
-//  Name..........: ICreateUpdate.cs
-//  Aufgabe/Fkt...: Schnitstelle zum Anlegen und Aktualisieren innerhalb von Repositories
-//                  Hervorgegangen aus ICrud vom 18.9.2015
+//  Name..........: IFilteredSortedSetBuilder.cs
+//  Aufgabe/Fkt...: Schnittstelle für Objekte, die ein IFilteredSortedSet- Objekt
+//                  Erzeugen. Builder- Designpattern
 //
 //
 //
@@ -41,16 +41,15 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface ICreateUpdate<TBoId>
+    /// <summary>
+    /// Über Eigenschaften und Konfigurationskommandos werden Einschränkungen durch Filterbedingungen und Sortierkriterien
+    /// auf einer Menge definiert. Schließlich kann die so definierte Menge mittels GetSet() abgerufen werden.
+    /// Die Konfigurationskommandos sollten mit dem Präfix def... beginnnen.
+    /// </summary>
+    /// <typeparam name="TBo"></typeparam>
+    public interface IFilteredSortedSetBuilder<out TBo>
     {
-        /// <summary>
-        /// Ein neues Geschäftsobjekt wird unter der Id angelegt und der vom Repository verwalteten Collection hinzugefügt.
-        /// Durch Aufruf von SubmitChanges (siehe unten) werden die Änerungen schließlich übernommen und das
-        /// neue Objekt permanen in der Collection aufgenommen. 
-        /// </summary>
-        /// <returns></returns>
-        void CreateBoAndAddToCollection(TBoId id);
 
-
+        IFilteredSortedSet<TBo> GetSet();
     }
 }

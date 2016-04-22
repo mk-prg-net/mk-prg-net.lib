@@ -640,7 +640,19 @@ namespace mko.BI.Repositories
         /// Aktualisierungen am ORMContext mit der Datenbank abgleichen
         /// </summary>
         public abstract void SubmitChanges();
-        
+
+
+
+        public IEnumerable<TBo> Get(Expression<Func<TBo, bool>> filter = null, Func<IQueryable<TBo>, IOrderedQueryable<TBo>> orderBy = null, string includeProperties = "")
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public IEnumerable<TBo> Get(IEnumerable<Interfaces.IFilter<TBo>> filters, IEnumerable<Interfaces.ISorter<TBo>> sorter = null, string includeProperties = "")
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

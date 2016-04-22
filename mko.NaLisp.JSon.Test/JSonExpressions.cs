@@ -11,9 +11,18 @@ namespace mko.NaLisp.JSon.Test
     [TestClass]
     public class JSonExpressions
     {
+        class Schiff
+        {
+            public int AnzLeben {get; set;}
+        }
+
         [TestMethod]
         public void JSonToNalisp_simple_terms()
         {
+
+            dynamic schiff = new Schiff(); // new{ AnzLeben = 100, Name="Bismark"};
+            schiesseAuf(schiff);
+
             // 3 * (A + 5*B)
             var jsonString = @"{'mul': [{'const': 3}, {'add': [{'varInt': 'A'}, {'varInt': 'B'}]}]}";
 
@@ -27,6 +36,11 @@ namespace mko.NaLisp.JSon.Test
             parseFunc(reader);
             Debug.WriteLine("");
 
+        }
+
+        void schiesseAuf(dynamic Fig)
+        {
+            Fig.AnzLeben -= 10;
         }
 
         /// <summary>

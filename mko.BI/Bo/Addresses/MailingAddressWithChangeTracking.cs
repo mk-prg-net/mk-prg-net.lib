@@ -25,14 +25,13 @@
 //<unit_history>
 //------------------------------------------------------------------
 //
-//  Version.......: 1.1
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 
-//  Änderungen....: 
+//  Datum.........: 20.3.2016
+//  Änderungen....: Schnittstellenabhängigkeit ICoreData eliminiert
 //
 //</unit_history>
 //</unit_header>        
-        
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,16 +43,20 @@ namespace mko.BI.Bo.Addresses
     public class MailingAddressCompanyWithChangeTracking : mko.BI.ChangeTracking.BoWithChangeTracking<mko.BI.Bo.Addresses.MailingAddressCompany>, mko.BI.Bo.Addresses.IMailingAddressCompany
     {
         mko.BI.Bo.Addresses.MailingAddressCompany _Adr = new Bo.Addresses.MailingAddressCompany();
-        protected override Bo.Addresses.MailingAddressCompany GetCoreBo()
+        public override Bo.Addresses.MailingAddressCompany Bo
         {
-            return _Adr;
+            get
+            {
+                return _Adr;
+            }
+
         }
 
         public string CompanyName
         {
             get
             {
-                return GetCore.CompanyName;
+                return Bo.CompanyName;
             }
             set
             {
@@ -65,7 +68,7 @@ namespace mko.BI.Bo.Addresses
         {
             get
             {
-                return GetCore.Street;
+                return Bo.Street;
             }
             set
             {
@@ -77,7 +80,7 @@ namespace mko.BI.Bo.Addresses
         {
             get
             {
-                return GetCore.City;
+                return Bo.City;
             }
             set
             {
@@ -89,7 +92,7 @@ namespace mko.BI.Bo.Addresses
         {
             get
             {
-                return GetCore.Country;
+                return Bo.Country;
             }
             set
             {
@@ -101,7 +104,7 @@ namespace mko.BI.Bo.Addresses
         {
             get
             {
-                return GetCore.PostalCode;
+                return Bo.PostalCode;
             }
             set
             {

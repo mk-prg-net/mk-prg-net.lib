@@ -2,12 +2,12 @@
 //----------------------------------------------------------------
 //
 // Martin Korneffel: IT Beratung/Softwareentwicklung
-// Stuttgart, den 13.3.2016
+// Stuttgart, den 21.04.2016
 //
 //  Projekt.......: mko.BI
-//  Name..........: ICreateUpdate.cs
-//  Aufgabe/Fkt...: Schnitstelle zum Anlegen und Aktualisieren innerhalb von Repositories
-//                  Hervorgegangen aus ICrud vom 18.9.2015
+//  Name..........: IFilteredSotedSet.cs
+//  Aufgabe/Fkt...: Schnittstelle für Objekte, welche Mengen darstellen, die 
+//                  durch Filter- und Sortierkriterien eingeschränkt wurden.
 //
 //
 //
@@ -41,16 +41,34 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface ICreateUpdate<TBoId>
+    /// <summary>
+    /// Wird von Objekten implementiert, die Mengen darstellen, welche durch Filterbedingungen und Sortierkriterien 
+    /// eingeschränkt wurden.
+    /// </summary>
+    /// <typeparam name="TBo"></typeparam>
+    public interface IFilteredSortedSet<out TBo>
     {
         /// <summary>
-        /// Ein neues Geschäftsobjekt wird unter der Id angelegt und der vom Repository verwalteten Collection hinzugefügt.
-        /// Durch Aufruf von SubmitChanges (siehe unten) werden die Änerungen schließlich übernommen und das
-        /// neue Objekt permanen in der Collection aufgenommen. 
+        /// True, wenn die Menge Elemente enthält
         /// </summary>
         /// <returns></returns>
-        void CreateBoAndAddToCollection(TBoId id);
+        bool Any();
+
+        /// <summary>
+        /// Anzahl der Elemente in der Menge
+        /// </summary>
+        /// <returns></returns>
+        long Count();
 
 
+        /// <summary>
+        /// Liefert alle Elemente der Menge
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<TBo> Get();
+        
     }
+
+
+    
 }

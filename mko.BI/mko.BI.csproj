@@ -56,23 +56,37 @@
     <Compile Include="Bo\ICoreData.cs" />
     <Compile Include="Bo\Interval.cs" />
     <Compile Include="ChangeTracking\BoWithChangeTracking.cs" />
+    <Compile Include="IClassFactory.cs" />
     <Compile Include="IMailingAddress.cs" />
     <Compile Include="ITelComAddress.cs" />
     <Compile Include="MailingAddress.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Addresses\CompanyAddresses.cs" />
+    <Compile Include="Repositories\Addresses\CompanyAddresses.FiltererdSets.cs" />
+    <Compile Include="Repositories\Addresses\InMem\CompanyAddresses.cs" />
+    <Compile Include="Repositories\Addresses\InMem\CompanyAddresses.FilteredSets.cs" />
     <Compile Include="Repositories\BoCo.cs" />
     <Compile Include="Repositories\BoCoBase.cs" />
     <Compile Include="Repositories\DefSortOrder.cs" />
     <Compile Include="Repositories\DefSortOrderCol.cs" />
     <Compile Include="Repositories\FilterController.cs" />
+    <Compile Include="Repositories\FilteredSortedSet.cs" />
     <Compile Include="Repositories\FilterFunctor.cs" />
     <Compile Include="Repositories\FiltersCombine.cs" />
     <Compile Include="Repositories\Interfaces\ICreateUpdate.cs" />
     <Compile Include="Repositories\Interfaces\ICrud.cs" />
+    <Compile Include="Repositories\Interfaces\IFilter.cs" />
     <Compile Include="Repositories\Interfaces\IFilterAndSort.cs" />
+    <Compile Include="Repositories\Interfaces\IFilteredSortedSet.cs" />
+    <Compile Include="Repositories\Interfaces\IFilteredSortedSetBuilder.cs" />
+    <Compile Include="Repositories\Interfaces\IFilterSort.cs" />
+    <Compile Include="Repositories\Interfaces\IGet.cs" />
     <Compile Include="Repositories\Interfaces\IGetBo.cs" />
+    <Compile Include="Repositories\Interfaces\IGetBoBuilder.cs" />
     <Compile Include="Repositories\Interfaces\IRemove.cs" />
+    <Compile Include="Repositories\Interfaces\ISubmitChanges.cs" />
+    <Compile Include="Repositories\Interfaces\ISorter.cs" />
     <Compile Include="Repositories\TraceEnv.cs" />
     <Compile Include="StateMachine\Behavior\SingleStateMachineBehavior.cs" />
     <Compile Include="StateMachine\Behavior\IStateBehavior.cs" />
@@ -94,6 +108,7 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
     <None Include="mko.BI.nuspec" />
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,6 @@ namespace mko.BI.Test
         {
             var mkNetPrg = new mko.BI.Bo.Addresses.MailingAddressCompanyWithChangeTracking();
 
-
             mkNetPrg.CompanyName = "mko IT";
             mkNetPrg.City = "Stuttgart";
             mkNetPrg.Country = "de";
@@ -19,13 +18,17 @@ namespace mko.BI.Test
             mkNetPrg.Street = "Hans-Kächele-Str. 11";
 
             var copyAdr = new mko.BI.Bo.Addresses.MailingAddressCompanyWithChangeTracking();
-            mkNetPrg.UpdateExternalBo(copyAdr);
+            mkNetPrg.UpdateExternalBo(copyAdr.Bo, true);
+
+            var copyAdr2 = new mko.BI.Bo.Addresses.MailingAddressCompany(); //WithChangeTracking();
+            mkNetPrg.UpdateExternalBo(copyAdr2, false);
 
             Assert.AreEqual("mko IT", copyAdr.CompanyName);
             Assert.AreEqual("70599", copyAdr.PostalCode);
 
             mkNetPrg.CompanyName = "mk-net-prg";
-            mkNetPrg.UpdateExternalBo(copyAdr);
+            mkNetPrg.UpdateExternalBo(copyAdr.Bo, false);
+            mkNetPrg.UpdateExternalBo(copyAdr2);
 
             Assert.AreEqual("mk-net-prg", copyAdr.CompanyName);
             Assert.AreEqual("70599", copyAdr.PostalCode);

@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ChangeTracking.cs" />
     <Compile Include="IntervalTests.cs" />
+    <Compile Include="RepositoriesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DB.Kepler.EF60\DB.Kepler.EF60.csproj">

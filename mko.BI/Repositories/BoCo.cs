@@ -96,6 +96,11 @@
 //  Datum.........: 13.3.2016
 //  Änderungen....: Mehtoden, die das Liskovsche Substitutionsprinzip verletzen wie CreateBo(), AddToEntityCollection(TBo bo) und Insert(TBo bo) 
 //                  entfernt
+//  Version.......: 2.4
+//  Autor.........: Martin Korneffel (mko)
+//  Datum.........: 15.3.2016
+//  Änderungen....: Auf Implementierung der IFilterSort- Schnittstelle beschränkt. Alle anderen Schnittstellen sind optional der 
+//                  bei der konkreten Implementierung eines Repositories hinzuzufügen
 //</unit_history>
 //</unit_header>        
 
@@ -116,7 +121,7 @@ using System.Reflection.Emit;
 namespace mko.BI.Repositories
 {
 
-    public abstract class BoCo<TBo, TBoId> : Interfaces.IGetBo<TBo, TBoId>, Interfaces.ICreateUpdate<TBo, TBoId>, Interfaces.IRemove<TBoId>, Interfaces.IFilterAndSort<TBo>
+    public abstract class BoCo<TBo> : Interfaces.IFilterSort<TBo>
         where TBo : class //, new()
     {
 
@@ -343,7 +348,7 @@ namespace mko.BI.Repositories
         /// </summary>
         /// <returns></returns>
         /// 
-        Interfaces.BoSetDescriptorEntry[] Interfaces.IFilterAndSort<TBo>.GetBoSetDescriptor()
+        Interfaces.BoSetDescriptorEntry[] Interfaces.IFilterSort<TBo>.GetBoSetDescriptor()
         {
             var descriptor = new List<Interfaces.BoSetDescriptorEntry>();
 
@@ -398,12 +403,6 @@ namespace mko.BI.Repositories
         //----------------------------------------------------------------------------------------------------------------
         // Test auf Id       
 
-        /// <summary>
-        /// Liefert einen Lambda- Ausdruck zurück, mittels der ein Entity auf seine ID abbildet
-        /// Entity --> ID
-        /// </summary>
-        /// <returns></returns>
-        public abstract Func<TBo, bool> GetBoIDTest(TBoId id);
 
         /// <summary>
         /// Erzeugt ein Filter, welches nur Datensätze passieren lässt mit der übergebenen Id
@@ -423,13 +422,6 @@ namespace mko.BI.Repositories
         {
             return BoCollection.Any();
         }
-
-        /// <summary>
-        /// Prüft, ob zu einem gegebenen ID ein Entity existiert
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public abstract bool Any(TBoId id);
 
         /// <summary>
         /// Prüft, ob überhaupt ein Element in der Menge enthalten ist
@@ -453,30 +445,12 @@ namespace mko.BI.Repositories
         // Teilmengen von Entities oder EntityViews berechnen
 
         /// <summary>
-        /// Zugriff auf alle Entities
+        /// Alle Geschäftsobjekte ohne Filterung abrufen
         /// </summary>
         /// <returns></returns>
         public IQueryable<TBo> GetAllBo()
         {
-            try
-            {
-                return BoCollection;
-            }
-            catch (Exception ex)
-            {
-                throw BoCoException.Create("GetEntities", ex);
-            }
-        }
-
-        /// <summary>
-        /// 25.7.2014, mko    
-        /// Zugriff auf einzelnes Entity mit der gegebenen id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public TBo GetBo(TBoId id)
-        {
-            return BoCollection.FirstOrDefault(GetBoIDTest(id));
+            return BoCollection;
         }
 
         /// <summary>
@@ -514,6 +488,15 @@ namespace mko.BI.Repositories
             }
         }
 
+        /// <summary>
+        /// Anzahl  aller Einträge bestimmen
+        /// </summary>
+        /// <returns></returns>
+        public long CountAllBo()
+        {
+            return BoCollection.Count();
+        }
+
 
         /// <summary>
         /// Zählt alle Entities nach der Filterung durch.
@@ -532,22 +515,6 @@ namespace mko.BI.Repositories
             }
         }
 
-        /// <summary>
-        /// Zählt alle Entities durch
-        /// </summary>
-        /// <returns></returns>
-        public long CountAllBo()
-        {
-            try
-            {
-                return BoCollection.Count();
-            }
-            catch (Exception ex)
-            {
-                throw BoCoException.Create("CountAllEntities", ex);
-            }
-        }
-
 
         //----------------------------------------------------------------------------------------------------------------
         // Einfügen, Löschen und Aktualisieren
@@ -560,31 +527,6 @@ namespace mko.BI.Repositories
             get;
         }
 
-
-        /// <summary>
-        /// Erzeugt ein neues Entity und fügt dieses sofort der Collection hinzu.
-        /// Einsatz sinnvoll, wenn die Darstellung der Geschäftsobjekte in der Collection 
-        /// erheblich von der Darstellung als TBo abweicht.
-        /// </summary>
-        /// <returns></returns>
-        public abstract TBo CreateBoAndAddToCollection(TBoId id);
-
-        /// <summary>
-        /// Löschen des durch die ID definierten Entity
-        /// </summary>
-        /// <param name="id"></param>
-        public abstract void RemoveFromCollection(TBoId id);
-        
-        /// <summary>
-        /// Löschen aller Entities
-        /// </summary>
-        public abstract void RemoveAll();
-
-
-        /// <summary>
-        /// Aktualisierungen am ORMContext mit der Datenbank abgleichen
-        /// </summary>
-        public abstract void SubmitChanges();
 
     }
 }

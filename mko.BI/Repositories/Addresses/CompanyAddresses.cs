@@ -2,12 +2,12 @@
 //----------------------------------------------------------------
 //
 // Martin Korneffel: IT Beratung/Softwareentwicklung
-// Stuttgart, den 13.3.2016
+// Stuttgart, den 21.4.2016
 //
 //  Projekt.......: mko.BI
-//  Name..........: ICreateUpdate.cs
-//  Aufgabe/Fkt...: Schnitstelle zum Anlegen und Aktualisieren innerhalb von Repositories
-//                  Hervorgegangen aus ICrud vom 18.9.2015
+//  Name..........: CompanyAddresses.cs
+//  Aufgabe/Fkt...: Allegemeine Struktur  eines Repository für Firmenanschriften
+//                  
 //
 //
 //
@@ -39,18 +39,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mko.BI.Repositories.Interfaces
+namespace mko.BI.Repositories.Addresses
 {
-    public interface ICreateUpdate<TBoId>
+    public abstract partial class CompanyAddresses : 
+        Interfaces.ICreateUpdate<string>,
+        Interfaces.IGet<Bo.Addresses.IMailingAddressCompany, string>,
+        Interfaces.IRemove<string>,
+        Interfaces.ISubmitChanges
     {
-        /// <summary>
-        /// Ein neues Geschäftsobjekt wird unter der Id angelegt und der vom Repository verwalteten Collection hinzugefügt.
-        /// Durch Aufruf von SubmitChanges (siehe unten) werden die Änerungen schließlich übernommen und das
-        /// neue Objekt permanen in der Collection aufgenommen. 
-        /// </summary>
-        /// <returns></returns>
-        void CreateBoAndAddToCollection(TBoId id);
 
+        public abstract void CreateBoAndAddToCollection(string id);
 
+        public abstract Bo.Addresses.IMailingAddressCompany Get(string id);
+
+        public abstract bool Any(string id);
+
+        public abstract void RemoveFromCollection(string id);
+
+        public abstract void RemoveAll();
+
+        public abstract void SubmitChanges();
+
+        
     }
 }

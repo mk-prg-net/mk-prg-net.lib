@@ -2,12 +2,12 @@
 //----------------------------------------------------------------
 //
 // Martin Korneffel: IT Beratung/Softwareentwicklung
-// Stuttgart, den 13.3.2016
+// Stuttgart, den 20.4.2016
 //
-//  Projekt.......: mko.BI
-//  Name..........: ICreateUpdate.cs
-//  Aufgabe/Fkt...: Schnitstelle zum Anlegen und Aktualisieren innerhalb von Repositories
-//                  Hervorgegangen aus ICrud vom 18.9.2015
+//  Projekt.......: mko.BI.Repositories
+//  Name..........: ISorter.cs
+//  Aufgabe/Fkt...: Allgemeine Schnittstelle eines Sortieralgorithmusses (Funktors) auf Link- Basis
+//                  
 //
 //
 //
@@ -41,16 +41,8 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface ICreateUpdate<TBoId>
+    public interface ISorter<TBo>
     {
-        /// <summary>
-        /// Ein neues Geschäftsobjekt wird unter der Id angelegt und der vom Repository verwalteten Collection hinzugefügt.
-        /// Durch Aufruf von SubmitChanges (siehe unten) werden die Änerungen schließlich übernommen und das
-        /// neue Objekt permanen in der Collection aufgenommen. 
-        /// </summary>
-        /// <returns></returns>
-        void CreateBoAndAddToCollection(TBoId id);
-
-
+        IOrderedQueryable<TBo> sort(IQueryable<TBo> BoList);
     }
 }
