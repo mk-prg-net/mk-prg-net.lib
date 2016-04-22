@@ -8,7 +8,7 @@ namespace mko.BI.TestMockUps.AutomatDrehkreuz.Zu
 {
     public class Base : mko.BI.StateMachine.State
     {
-        public Base() : base(mko.BI.StateMachine.State.CreateStartStateBehavior()) { }
+        public Base() : base(mko.BI.StateMachine.State.CreateNormalStateBehavior()) { }
 
     }
 }

@@ -41,7 +41,7 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface ICreateUpdate<TBoId>
+    public interface ICreate<TBoId>
     {
         /// <summary>
         /// Ein neues Geschäftsobjekt wird unter der Id angelegt und der vom Repository verwalteten Collection hinzugefügt.
@@ -49,7 +49,7 @@ namespace mko.BI.Repositories.Interfaces
         /// neue Objekt permanen in der Collection aufgenommen. 
         /// </summary>
         /// <returns></returns>
-        void CreateBoAndAddToCollection(TBoId id);
+        void CreateBoAndAdd(TBoId id);
 
 
     }

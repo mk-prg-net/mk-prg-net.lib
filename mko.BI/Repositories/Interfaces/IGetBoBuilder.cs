@@ -7,10 +7,10 @@
 //  Projekt.......: mko.BI
 //  Name..........: IGetBoBuilder
 //  Aufgabe/Fkt...: Liefert zu  einem Objekt aus einem Repository einen
-//                  Builder, mit dem seine Eigenschaften überschrieben/verändert werden können.
-//
-//
-//
+//                  Builder, mit dem seine Eigenschaften überschrieben/verändert werden können,
+//                  bzw. mit dem ein komplexer Objektgraph aufgebaut werden kann. Die Wurzel
+//                  des Objektgraphen ist zuvor mittels ICreate.CreateBoAndAddToCollection(id)
+//                  angelegt worden.
 //
 //<unit_environment>
 //------------------------------------------------------------------

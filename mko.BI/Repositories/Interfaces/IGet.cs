@@ -52,7 +52,7 @@ namespace mko.BI.Repositories.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        TBo Get(TBoId id);
+        TBo GetBo(TBoId id);
 
         /// <summary>
         /// 14.3.2016, mko
@@ -60,7 +60,7 @@ namespace mko.BI.Repositories.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        bool Any(TBoId id);
+        bool ExistsBo(TBoId id);
 
     }
 }

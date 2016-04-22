@@ -47,12 +47,12 @@ namespace mko.BI.Repositories.Interfaces
         /// Löschen des durch die ID definierten Entity
         /// </summary>
         /// <param name="id"></param>
-        void RemoveFromCollection(TBoId id);
+        void RemoveBo(TBoId id);
 
         /// <summary>
         /// Löschen aller Entities
         /// </summary>
-        void RemoveAll();
+        void RemoveAllBo();
 
     }
 }

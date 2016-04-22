@@ -13,19 +13,26 @@ namespace mko.BI.TestMockUps.AutomatDrehkreuz.Auf
             tueNix,
             passiere
         }
-    }
+    }    
 
 
     public class Context : Base, mko.BI.StateMachine.IStateTransition<Input, Input.Tags, StateFactory>
     {
+        public string Meldung
+        {
+            get
+            {
+                return "Tor ist auf";
+            }
+        }
+
         public StateFactory StateFactory
         {
             get
             {
                 return new StateFactory();
             }
-            set {
-            }
+            set { }
         }
 
         public StateMachine.State Transition(Input input)

@@ -42,21 +42,21 @@ using System.Threading.Tasks;
 namespace mko.BI.Repositories.Addresses
 {
     public abstract partial class CompanyAddresses : 
-        Interfaces.ICreateUpdate<string>,
+        Interfaces.ICreate<string>,
         Interfaces.IGet<Bo.Addresses.IMailingAddressCompany, string>,
         Interfaces.IRemove<string>,
         Interfaces.ISubmitChanges
     {
 
-        public abstract void CreateBoAndAddToCollection(string id);
+        public abstract void CreateBoAndAdd(string id);
 
-        public abstract Bo.Addresses.IMailingAddressCompany Get(string id);
+        public abstract Bo.Addresses.IMailingAddressCompany GetBo(string id);
 
-        public abstract bool Any(string id);
+        public abstract bool ExistsBo(string id);
 
-        public abstract void RemoveFromCollection(string id);
+        public abstract void RemoveBo(string id);
 
-        public abstract void RemoveAll();
+        public abstract void RemoveAllBo();
 
         public abstract void SubmitChanges();
 
