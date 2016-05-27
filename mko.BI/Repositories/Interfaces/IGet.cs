@@ -43,7 +43,7 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    interface IGet<TBo, TBoId>
+    public interface IGet<TBo, TBoId>
     {
 
         /// <summary>
