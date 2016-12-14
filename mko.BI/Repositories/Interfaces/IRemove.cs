@@ -25,10 +25,9 @@
 //<unit_history>
 //------------------------------------------------------------------
 //
-//  Version.......: 1.1
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 
-//  Änderungen....: 
+//  Datum.........: 30.11.2016
+//  Änderungen....: Contravarianz zugelassen
 //
 //</unit_history>
 //</unit_header>        
@@ -41,7 +40,7 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface IRemove<TBoId>
+    public interface IRemove<in TBoId>
     {
         /// <summary>
         /// Löschen des durch die ID definierten Entity

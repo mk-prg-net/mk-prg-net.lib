@@ -25,10 +25,9 @@
 //<unit_history>
 //------------------------------------------------------------------
 //
-//  Version.......: 1.1
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 
-//  Änderungen....: 
+//  Datum.........: 30.11.2016
+//  Änderungen....: Co- und Contravarianz zugelassen
 //
 //</unit_history>
 //</unit_header>        
@@ -42,7 +41,7 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface IGetBoBuilder<TBoBuilder, TBoId>
+    public interface IGetBoBuilder<out TBoBuilder, in TBoId>
     {
         /// <summary>
         /// 25.7.2014, mko    

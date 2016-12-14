@@ -80,6 +80,7 @@
     <Compile Include="Repositories\Interfaces\IFilteredSortedSet.cs" />
     <Compile Include="Repositories\Interfaces\IFilteredSortedSetBuilder.cs" />
     <Compile Include="Repositories\Interfaces\deprecated\IFilterSort.cs" />
+    <Compile Include="Repositories\Interfaces\IFilteredSortedSetBuilderAsync.cs" />
     <Compile Include="Repositories\Interfaces\IGet.cs" />
     <Compile Include="Repositories\Interfaces\deprecated\IGetBo.cs" />
     <Compile Include="Repositories\Interfaces\IGetBoBuilder.cs" />

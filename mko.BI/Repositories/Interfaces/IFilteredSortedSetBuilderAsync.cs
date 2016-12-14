@@ -2,12 +2,13 @@
 //----------------------------------------------------------------
 //
 // Martin Korneffel: IT Beratung/Softwareentwicklung
-// Stuttgart, den 13.3.2016
+// Stuttgart, den 30.11.2016
 //
 //  Projekt.......: mko.BI
-//  Name..........: ICreateUpdate.cs
-//  Aufgabe/Fkt...: Schnitstelle zum Anlegen und Aktualisieren innerhalb von Repositories
-//                  Hervorgegangen aus ICrud vom 18.9.2015
+//  Name..........: IFilteredSortedSetBuilderAsync.cs
+//  Aufgabe/Fkt...: Schnittstelle für Objekte, die ein IFilteredSortedSet- Objekt
+//                  Erzeugen. Builder- Designpattern. Asynchrone Implementierung
+//                  
 //
 //
 //
@@ -26,8 +27,8 @@
 //------------------------------------------------------------------
 //
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 30.11.2016
-//  Änderungen....: Contravarianz zugelassen
+//  Datum.........: 
+//  Änderungen....: 
 //
 //</unit_history>
 //</unit_header>        
@@ -40,16 +41,15 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    public interface ICreate<in TBoId>
+    public interface IFilteredSortedSetBuilderAsync<TBo>
     {
-        /// <summary>
-        /// Ein neues Geschäftsobjekt wird unter der Id angelegt und der vom Repository verwalteten Collection hinzugefügt.
-        /// Durch Aufruf von SubmitChanges (siehe unten) werden die Änerungen schließlich übernommen und das
-        /// neue Objekt permanen in der Collection aufgenommen. 
-        /// </summary>
-        /// <returns></returns>
-        void CreateBoAndAdd(TBoId id);
-
-
+        Task<IFilteredSortedSet<TBo>> GetSetAsync();
     }
+
+    //public interface IFilteredSortedSetBuilderAsync<TFSS, out TBo>
+    //    where TFSS : IFilteredSortedSet<TBo>
+    //{
+    //    Task<TFSS> GetSetAsync();
+    //}
+
 }
