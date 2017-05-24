@@ -100,9 +100,14 @@
 //                  Hierdurch können abstrakter Repositiories, die statt Objekte Schnittstellen auf diese liefern, ohne Einschränkungen implementiert
 //                  werden. 
 //
+//  Autor.........: Martin Korneffel (mko)
+//  Datum.........: 10.3.2017
+//  Änderungen....: Skip- und Take Funktionalität eingebaut
+
+//
 //</unit_history>
 //</unit_header>        
-        
+
 
 using System;
 using System.Collections.Generic;
@@ -116,13 +121,17 @@ namespace mko.BI.Repositories
         where TBo : class
     {
 
-        public FilteredSortedSet(IQueryable<TBo> query, IEnumerable<DefSortOrder<TBo>> DefSortOrders)
+        public FilteredSortedSet(IQueryable<TBo> query, IEnumerable<DefSortOrder<TBo>> DefSortOrders, int Skip = -1, int Take = -1)
         {
             _query = query;
             _DefSortOrders = DefSortOrders;
+            _Skip = Skip;
+            _Take = Take;
         }
 
         IQueryable<TBo> _query;
+        int _Skip;
+        int _Take;
 
         protected IEnumerable<DefSortOrder<TBo>> _DefSortOrders;
 
@@ -139,6 +148,7 @@ namespace mko.BI.Repositories
                     {
                         otab = defOrder.ThenOrder(otab);
                     }
+
                     return otab;
                 }
                 else
@@ -159,33 +169,81 @@ namespace mko.BI.Repositories
             {
                 throw new Exception(mko.TraceHlp.FormatErrMsg(this, "Any"), ex);
             }
-            
+
         }
 
         public long Count()
         {
             try
-            {
-                return _query.Count();
+            {                
+
+                var c = _query.Count();
+
+                if (_Skip == -1 && _Take == -1)
+                {
+                    return c;
+                }
+                else if (_Skip > -1 && _Take == -1)
+                {                    
+                    if(_Skip > c)
+                    {
+                        return 0;
+                    } else
+                    {
+                        return c - _Skip;
+                    }                    
+                }
+                else if (_Skip == -1 && _Take > -1)
+                {
+                    return Math.Min(c, _Take);
+                }
+                else
+                {
+                    if (_Skip > c)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return Math.Min(c - _Skip, _Take);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 throw new Exception(mko.TraceHlp.FormatErrMsg(this, "Count"), ex);
             }
-            
+
         }
 
         public IEnumerable<TBo> Get()
         {
             try
             {
-                return MultiSort(_query);
+                var q = MultiSort(_query);
+
+                if (_Skip == -1 && _Take == -1)
+                {
+                    return q;
+                }
+                else if (_Skip > -1 && _Take == -1)
+                {
+                    return q.Skip(_Skip);
+                }
+                else if (_Skip == -1 && _Take > -1)
+                {
+                    return q.Take(_Take);
+                }
+                else 
+                {
+                    return q.Skip(_Skip).Take(_Take);
+                }
             }
             catch (Exception ex)
             {
                 throw new Exception(mko.TraceHlp.FormatErrMsg(this, "Get"), ex);
             }
-            
+
         }
     }
 }

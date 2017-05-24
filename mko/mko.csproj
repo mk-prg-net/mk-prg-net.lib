@@ -97,6 +97,8 @@
     <Compile Include="LogServer\mkoLogDebugLogHandler.cs" />
     <Compile Include="LogServer\mkoLogMemLogHandler.cs" />
     <Compile Include="LogServer\mkoLogRCContainerLogHnd.cs" />
+    <Compile Include="ReadOnlyDictionaryWrapper.cs" />
+    <Compile Include="ReadOnlyListWrapper.cs" />
     <Compile Include="ReturnCode\IReturnValueContainer.cs" />
     <Compile Include="MemberwiseClone.cs" />
     <Compile Include="mkoExceptionMessageFlat.cs" />

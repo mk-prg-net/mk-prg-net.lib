@@ -71,6 +71,7 @@
     <Compile Include="Repositories\DefSortOrder.cs" />
     <Compile Include="Repositories\DefSortOrderCol.cs" />
     <Compile Include="Repositories\deprecated\FilterController.cs" />
+    <Compile Include="Repositories\FilterClassification.cs" />
     <Compile Include="Repositories\FilteredSortedSet.cs" />
     <Compile Include="Repositories\deprecated\FilterFunctor.cs" />
     <Compile Include="Repositories\deprecated\FiltersCombine.cs" />
