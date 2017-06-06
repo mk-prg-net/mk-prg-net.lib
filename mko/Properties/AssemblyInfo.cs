@@ -34,8 +34,8 @@ using System.Security;
 //
 // Sie können alle Werte angeben oder die standardmäßigen Revisions- und Buildnummern 
 // übernehmen, indem Sie "*" eingeben:
-[assembly: AssemblyVersion("7.3.2.0")]
-[assembly: AssemblyFileVersion("7.3.2.0")]
+[assembly: AssemblyVersion("7.3.3.0")]
+[assembly: AssemblyFileVersion("7.3.3.0")]
 [assembly: NeutralResourcesLanguageAttribute("de-DE")]
 
 [assembly: AllowPartiallyTrustedCallers]

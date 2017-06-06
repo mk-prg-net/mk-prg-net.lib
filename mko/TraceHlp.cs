@@ -32,7 +32,10 @@
 //  Autor.........: Martin Korneffel (mko)
 //  Datum.........: 28.3.2017
 //  Änderungen....: Throw...If Methoden implementiert
-
+//
+//  Autor.........: Martin Korneffel (mko)
+//  Datum.........: 05.6.2017
+//  Änderungen....: Throw...If Methoden einheitlich um innerException erweitert
 //
 //</unit_history>
 //</unit_header>        
@@ -54,7 +57,7 @@ namespace mko
         /// <param name="msg">Fehlermeldung, falls Bedingung nicht erfüllt ist</param>
         /// <param name="callerName">Name der aufrufenden Funktion, siehe https://msdn.microsoft.com/en-us/library/mt653988.aspx </param>
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-        public static void ThrowArgExIfNot(bool condition, string msg, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
+        public static void ThrowArgExIfNot(bool condition, string msg, Exception innerException = null, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
         {
             var mth = new System.Diagnostics.StackTrace().GetFrame(1).GetMethod();
             var cls = mth.ReflectedType.Name;
@@ -62,7 +65,7 @@ namespace mko
 
             if (!condition)
             {
-                throw new ArgumentException(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg));
+                throw new ArgumentException(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg), innerException);
             }
         }
 
@@ -73,7 +76,7 @@ namespace mko
         /// <param name="condition"></param>
         /// <param name="msg"></param>
         /// <param name="callerName"></param>
-        public static void ThrowArgExIf(bool condition, string msg, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
+        public static void ThrowArgExIf(bool condition, string msg, Exception innerException = null, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
         {
             var mth = new System.Diagnostics.StackTrace().GetFrame(1).GetMethod();
             var cls = mth.ReflectedType.Name;
@@ -81,7 +84,7 @@ namespace mko
 
             if (condition)
             {
-                throw new ArgumentException(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg));
+                throw new ArgumentException(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg), innerException);
             }
         }
 
@@ -94,13 +97,13 @@ namespace mko
         /// <param name="msg">Fehlermeldung, falls Bedingung nicht erfüllt ist</param>
         /// <param name="callerName">Name der aufrufenden Funktion, siehe https://msdn.microsoft.com/en-us/library/mt653988.aspx </param>
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-        public static void ThrowArgEx(string msg, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
+        public static void ThrowArgEx(string msg, Exception innerException = null, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
         {
             var mth = new System.Diagnostics.StackTrace().GetFrame(1).GetMethod();
             var cls = mth.ReflectedType.Name;
             var assembly = mth.ReflectedType.Assembly.GetName().Name;
 
-            throw new ArgumentException(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg));
+            throw new ArgumentException(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg), innerException);
         }
 
         /// <summary>
@@ -110,7 +113,7 @@ namespace mko
         /// <param name="condition"></param>
         /// <param name="msg"></param>
         /// <param name="callerName"></param>
-        public static void ThrowExIfNot(bool condition, string msg, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
+        public static void ThrowExIfNot(bool condition, string msg, Exception innerException = null, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
         {
             var mth = new System.Diagnostics.StackTrace().GetFrame(1).GetMethod();
             var cls = mth.ReflectedType.Name;
@@ -118,7 +121,7 @@ namespace mko
 
             if (!condition)
             {
-                throw new Exception(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg));
+                throw new Exception(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg), innerException);
             }
         }
 
@@ -129,7 +132,7 @@ namespace mko
         /// <param name="condition"></param>
         /// <param name="msg"></param>
         /// <param name="callerName"></param>
-        public static void ThrowExIf(bool condition, string msg, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
+        public static void ThrowExIf(bool condition, string msg, Exception innerException = null, [System.Runtime.CompilerServices.CallerMemberName] string callerName = "")
         {
             var mth = new System.Diagnostics.StackTrace().GetFrame(1).GetMethod();
             var cls = mth.ReflectedType.Name;
@@ -137,7 +140,7 @@ namespace mko
 
             if (condition)
             {
-                throw new Exception(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg));
+                throw new Exception(mko.TraceHlp.FormatErrMsg(assembly, cls, callerName, msg), innerException);
             }
         }
 

@@ -51,7 +51,7 @@ namespace mko.RPN.AspMvcHelper.Models
             ParamTag =  Key;            
 
             Parser.Parse(fSubtree);
-            mko.TraceHlp.ThrowExIfNot(Parser.Succsessful, Properties.Resources.PNParseFailed);
+            mko.TraceHlp.ThrowExIfNot(Parser.Succsessful, string.Format(Properties.Resources.PNParseFailed, fSubtree.ToPNString(), Parser.Stack.ToArray().ToPNString()), Parser.LastException);
             mko.TraceHlp.ThrowArgExIfNot(Parser.Stack.Count == 1, Properties.Resources.PNParseFailed);            
 
             SortDescending = GetDirection(Parser.Stack.Peek());

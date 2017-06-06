@@ -108,12 +108,43 @@ namespace mko.RPN
 
         public virtual string Str(string value)
         {
-            return pn(fn.constStr, value);
+            if (value.Contains(' '))
+            {
+                // Invarianz bezüglich bereits vorhandenen Delimitern implementieren
+                if (value[0] == BasicTokenizer.Delimiter && value[value.Length - 1] == BasicTokenizer.Delimiter)
+                {
+                    return pn(fn.constStr, value);
+                }
+                else
+                {
+                    return pn(fn.constStr, BasicTokenizer.Delimiter + value + BasicTokenizer.Delimiter);
+                }
+            }
+            else
+            {
+                return pn(fn.constStr, value);
+            }
+
+
         }
 
         public virtual string rStr(string value)
         {
-            return rpn(fn.constStr, value);
+            if (value.Contains(' '))
+            {
+                // Invarianz bezüglich bereits vorhandenen Delimitern implementieren
+                if(value[0] == BasicTokenizer.Delimiter && value[value.Length-1] == BasicTokenizer.Delimiter)
+                {
+                    return rpn(fn.constStr, value);
+                } else
+                {
+                    return rpn(fn.constStr, BasicTokenizer.Delimiter + value + BasicTokenizer.Delimiter);
+                }                
+            }
+            else
+            {
+                return rpn(fn.constStr, value);
+            }
         }
 
 

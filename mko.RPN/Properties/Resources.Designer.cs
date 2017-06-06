@@ -212,5 +212,14 @@ namespace mko.RPN.Properties {
                 return ResourceManager.GetString("tokenizing_failed", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Einem durch Delimiter begrenzten String fehlt der abschließende Delimiter. .
+        /// </summary>
+        internal static string tokenizing_failed_final_string_delimiter_missing {
+            get {
+                return ResourceManager.GetString("tokenizing_failed_final_string_delimiter_missing", resourceCulture);
+            }
+        }
     }
 }

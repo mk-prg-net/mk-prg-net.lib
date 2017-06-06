@@ -57,6 +57,12 @@ namespace mko.RPN.AspMvcHelper.Models
             pnFSubtree = fSubtree.ToPNString();
             pnWithoutFunction = tokens.RemoveFunction(fSubtree.FunctionName()).ToPNString();
 
+            var ix_func = tokens.LastIndexOfFunction(fSubtree.FunctionName());
+
+            pnRight = tokens.Take(ix_func.IX - ix_func.CountOfEvaluatedTokens + 1).ToArray().ToPNString();
+            pnLeft = tokens.Skip(ix_func.IX + 1).ToArray().ToPNString();
+
+
             this.ControllerName = ControllerName;
             this.fn = fn;
             this.Name = fSubtree.FunctionName();
@@ -126,6 +132,18 @@ namespace mko.RPN.AspMvcHelper.Models
         /// Model präsentiert wird. Dient zur Implemntierung von Filter.delete
         /// </summary>
         public string pnWithoutFunction { get; }
+
+        /// <summary>
+        /// Alle rechts vom zu analysierenden PN- Term stehenden Terme
+        /// </summary>
+        public string pnRight { get; }
+
+
+        /// <summary>
+        /// Alle links vom zu analysierenden PN- Term stehenden Terme
+        /// </summary>
+        public string pnLeft { get; }
+
 
 
         /// <summary>

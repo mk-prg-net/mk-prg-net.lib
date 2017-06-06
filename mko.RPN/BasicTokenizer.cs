@@ -38,6 +38,11 @@
 //  Autor.........: Martin Korneffel (mko)
 //  Datum.........: 15.3.2017
 //  Änderungen....: Kultur der Tokens jetzt über den Konstruktor definierbar (vorher fest US- Kultur)
+//
+//  Autor.........: Martin Korneffel (mko)
+//  Datum.........: 24.3.2017
+//  Änderungen....: Durch '...' begrenzte Stringliterale implementiert. 
+
 
 //</unit_history>
 //</unit_header>        
@@ -59,13 +64,18 @@ namespace mko.RPN
     {
         System.IO.StreamReader streamReader;
 
+        /// <summary>
+        /// Begrenzungszeichen von Strings
+        /// </summary>
+        public const char Delimiter = '\'';
+
         static BasicTokenizer()
         {
             rpnCult = new System.Globalization.CultureInfo("en-US");
         }
 
         public BasicTokenizer()
-        {   
+        {
         }
 
         /// <summary>
@@ -73,7 +83,7 @@ namespace mko.RPN
         /// </summary>
         /// <param name="reader">Datenstrom, die Typ 2 Sprachterme in Reverse Polish Notation (RPN) enthält</param>
         public BasicTokenizer(System.IO.StreamReader reader)
-        {         
+        {
             streamReader = reader;
         }
 
@@ -188,65 +198,86 @@ namespace mko.RPN
             {
                 eatWhitespace();
                 if (!streamReader.EndOfStream)
-                {                
+                {
 
-                    // Lerraumzeichen begrenzen die Tokens
+                    // Lerraumzeichen oder '...' begrenzen die Tokens
+                    bool stringBeg = (char)streamReader.Peek() == Delimiter;
+                    if (stringBeg)
+                    {
+                        // Delimiter übersrpingen
+                        streamReader.Read();
+                    }
+
+                    // Token einlesen bis zum abschiessenden Delimiter
                     var bld = new System.Text.StringBuilder();
-                    while (!streamReader.EndOfStream && !Char.IsWhiteSpace((Char)streamReader.Peek()))
+                    while (!streamReader.EndOfStream
+                            && ((!stringBeg && !char.IsWhiteSpace((char)streamReader.Peek())) || (stringBeg && Delimiter != (char)streamReader.Peek())))
                     {
                         bld.Append((char)streamReader.Read());
                     }
 
-                    var rawToken = bld.ToString();
-
-                    int intValue = 0;
-                    double dblValue = 0.0;
-                    bool boolValue = false;
-                    IToken token = null;
-
-                    var cultBackup = System.Threading.Thread.CurrentThread.CurrentCulture;
-
-                    System.Threading.Thread.CurrentThread.CurrentCulture = rpnCult;
-
-                    try
+                    // Prüfen, ob ein begrenzter String eingelesen wurde
+                    if (stringBeg)
                     {
-                        if (!string.IsNullOrEmpty(rawToken))
+                        mko.TraceHlp.ThrowExIf(streamReader.EndOfStream, Properties.Resources.tokenizing_failed_final_string_delimiter_missing);
+
+                        // Abschlissenden Delimiter aus dem Datenstrom entfernen
+                        streamReader.Read();
+                        _currentToken = new StringToken(bld.ToString());
+
+                    } else
+                    {
+                        // Einlesen unbegrenzter Tokens
+
+                        var rawToken = bld.ToString();
+
+                        int intValue = 0;
+                        double dblValue = 0.0;
+                        bool boolValue = false;
+                        IToken token = null;
+
+                        var cultBackup = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+                        System.Threading.Thread.CurrentThread.CurrentCulture = rpnCult;
+
+                        try
                         {
-                            if (rawToken == "'")
+                            if (!string.IsNullOrEmpty(rawToken))
                             {
-                                throw new NotImplementedException();
-                            }
-                            else if (TryParseFunctionName(rawToken, out token))
-                            {
-                                _currentToken = token;
-                            }
-                            else if (int.TryParse(rawToken, out intValue))
-                            {
-                                _currentToken = new IntToken(intValue);
-                            }
-                            else if (double.TryParse(rawToken, out dblValue))
-                            {
-                                _currentToken = new DoubleToken(dblValue);
-                            }
-                            else if (bool.TryParse(rawToken, out boolValue))
-                            {
-                                _currentToken = new BoolToken(boolValue);
-                            }
-                            else
-                            {
-                                _currentToken = new StringToken(rawToken);
+                                if (TryParseFunctionName(rawToken, out token))
+                                {
+                                    _currentToken = token;
+                                }
+                                else if (int.TryParse(rawToken, out intValue))
+                                {
+                                    _currentToken = new IntToken(intValue);
+                                }
+                                else if (double.TryParse(rawToken, out dblValue))
+                                {
+                                    _currentToken = new DoubleToken(dblValue);
+                                }
+                                else if (bool.TryParse(rawToken, out boolValue))
+                                {
+                                    _currentToken = new BoolToken(boolValue);
+                                }
+                                else
+                                {
+                                    _currentToken = new StringToken(rawToken);
+                                }
                             }
                         }
+                        finally
+                        {
+                            System.Threading.Thread.CurrentThread.CurrentCulture = cultBackup;
+                        }
                     }
-                    finally
-                    {
-                        System.Threading.Thread.CurrentThread.CurrentCulture = cultBackup;
-                    }
-                } else
+                }
+                else
                 {
                     _EOF = true;
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 mko.TraceHlp.ThrowEx(Properties.Resources.tokenizing_failed, ex);
             }

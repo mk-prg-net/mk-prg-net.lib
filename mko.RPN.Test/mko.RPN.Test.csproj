@@ -45,7 +45,9 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -54,6 +56,7 @@
     <Compile Include="ComposerStrong.cs" />
     <Compile Include="mkoRPN_Composer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="mkoRPN_Tokenizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\mko.RPN\mko.RPN.csproj">

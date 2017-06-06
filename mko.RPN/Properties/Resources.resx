@@ -169,4 +169,7 @@
   <data name="boolean_literal_expected" xml:space="preserve">
     <value>In dem String wurde ein boolsches Literal wie true oder false erwartet</value>
   </data>
+  <data name="tokenizing_failed_final_string_delimiter_missing" xml:space="preserve">
+    <value>Einem durch Delimiter begrenzten String fehlt der abschließende Delimiter. </value>
+  </data>
 </root>

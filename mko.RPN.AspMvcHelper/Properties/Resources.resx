@@ -121,7 +121,7 @@
     <value>Der darzustellenden RPN- Term muss mit eine Funktion sein</value>
   </data>
   <data name="PNParseFailed" xml:space="preserve">
-    <value>PN- Term in URL konnte nicht korrekt geparst werden:</value>
+    <value>PN- Term in URL konnte nicht korrekt geparst werden. PN: {0}, Stack: {1}</value>
   </data>
   <data name="RpnRngFlt_ParameterCount_2_expected" xml:space="preserve">
     <value>Das Range- Filter erwartet genau zwei Parameter (begin, end)</value>

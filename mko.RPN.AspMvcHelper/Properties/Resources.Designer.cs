@@ -70,7 +70,7 @@ namespace mko.RPN.AspMvcHelper.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PN- Term in URL konnte nicht korrekt geparst werden:.
+        ///   Looks up a localized string similar to PN- Term in URL konnte nicht korrekt geparst werden. PN: {0}, Stack: {1}.
         /// </summary>
         internal static string PNParseFailed {
             get {

@@ -78,6 +78,9 @@ namespace mko.RPN
         /// <returns></returns>
         public static string ToRPNString(this mko.RPN.IToken[] Tokens, int begin = 0, int end = -1)
         {
+            var comp = new Composer(new FunctionNamesLight());
+
+
             mko.TraceHlp.ThrowArgExIfNot(Tokens != null, Properties.Resources.Null_Ref_Tokens);
             mko.TraceHlp.ThrowArgExIfNot(end == -1 || begin <= end, Properties.Resources.begin_greater_then_end);
 
@@ -99,7 +102,14 @@ namespace mko.RPN
                     var bld = new System.Text.StringBuilder();
                     for (int i = begin; i <= end; i++)
                     {
-                        bld.Append(Tokens[i].Value);
+                        if (StringToken.Test(Tokens[i]))
+                        {
+                            bld.Append(comp.Str(Tokens[i].Value));
+                        }
+                        else
+                        {
+                            bld.Append(Tokens[i].Value);
+                        }
                         bld.Append(" ");
                     }
                     return bld.ToString();
@@ -129,6 +139,8 @@ namespace mko.RPN
             mko.TraceHlp.ThrowArgExIfNot(Tokens != null, Properties.Resources.Null_Ref_Tokens);
             mko.TraceHlp.ThrowArgExIfNot(end == -1 || begin <= end, Properties.Resources.begin_greater_then_end);
 
+            var comp = new Composer(new FunctionNamesLight());
+
             // RPN- Terme werden immer in der US- Cultur dargestellt    
             var currentCultBak = System.Globalization.CultureInfo.CurrentCulture;
             System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
@@ -148,7 +160,14 @@ namespace mko.RPN
                     var bld = new System.Text.StringBuilder();
                     foreach (var token in section)
                     {
-                        bld.Append(token.Value);
+                        if (StringToken.Test(token))
+                        {
+                            bld.Append(comp.Str(token.Value));
+                        } else
+                        {
+                            bld.Append(token.Value);
+                        }
+                        
                         bld.Append(" ");
                     }
                     return bld.ToString();

@@ -15,7 +15,7 @@
     <copyright>Copyright Martin Korneffel, Stuttgart 2014</copyright>
     <tags>Allgemeine Geschaeftsobjekte</tags>
     <dependencies>
-      <dependency id="mko" version="7.3.2"/>
+      <dependency id="mko" version="7.3.3"/>
       <dependency id="mko.Algo" version="1.2.2"/>
     </dependencies>
   </metadata>

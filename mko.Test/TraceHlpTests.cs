@@ -43,7 +43,7 @@ namespace mko.Test
     {
         public void MyMethodWithArgEx()
         {
-            mko.TraceHlp.ThrowArgExIfNot(false, "ein Testfehler");
+            mko.TraceHlp.ThrowArgExIfNot(false, "ein Testfehler", new Exception("innere Testexception"));
         }
 
         public void MyMethodWithEx()
