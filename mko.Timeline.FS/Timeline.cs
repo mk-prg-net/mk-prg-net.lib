@@ -40,6 +40,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using mko.Timeline;
+using tmc = mko.Timeline.Timeline;
 
 namespace mko.Timeline.FS
 {
@@ -59,8 +60,8 @@ namespace mko.Timeline.FS
         string GetKey(IAppointment appointment)
         {
             return GetKey(appointment.Owner,
-                mko.Timeline.Timeline.ToDateTime(appointment.BeginDate, appointment.BeginTime),
-                mko.Timeline.Timeline.ToDateTime(appointment.EndDate, appointment.EndTime));
+                tmc.ToDateTime(appointment.BeginDate, appointment.BeginTime),
+                tmc.ToDateTime(appointment.EndDate, appointment.EndTime));
         }
 
         string GetKey(string Owner, DateTime begin, DateTime end)
@@ -108,25 +109,25 @@ namespace mko.Timeline.FS
         public void Delete(IAppointment appointment)
         {
             DeleteJobQueue.Enqueue(GetKey(appointment.Owner,
-                mko.Timeline.Timeline.ToDateTime(appointment.BeginDate, appointment.BeginTime),
-                mko.Timeline.Timeline.ToDateTime(appointment.EndDate, appointment.EndTime)));
+                tmc.ToDateTime(appointment.BeginDate, appointment.BeginTime),
+                tmc.ToDateTime(appointment.EndDate, appointment.EndTime)));
         }
 
-        public void Delete(string Owner, DateTime begin, DateTime end)
+
+        public bool Exists(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime)
         {
-            DeleteJobQueue.Enqueue(GetKey(Owner, begin, end));
+            return System.IO.File.Exists(Filename(GetKey(Owner,
+                                                        tmc.ToDateTime(beginDate, beginTime),
+                                                        tmc.ToDateTime(endDate, endTime))));
         }
 
-        public bool Exists(string Owner, DateTime begin, DateTime end)
+        public IAppointment Get(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime)
         {
-            return System.IO.File.Exists(Filename(GetKey(Owner, begin, end)));
-        }
+            mko.TraceHlp.ThrowArgExIfNot(Exists(Owner, beginDate, beginTime, endDate, endTime), "Termin existiert nicht");
 
-        public IAppointment Get(string Owner, DateTime begin, DateTime end)
-        {
-            mko.TraceHlp.ThrowArgExIfNot(Exists(Owner, begin, end), "Termin existiert nicht");
-
-            using (System.IO.StreamReader reader = new System.IO.StreamReader(Filename(GetKey(Owner, begin, end))))
+            using (System.IO.StreamReader reader = new System.IO.StreamReader(Filename(GetKey(Owner,
+                                                        tmc.ToDateTime(beginDate, beginTime),
+                                                        tmc.ToDateTime(endDate, endTime)))))
             {
                 // Json Deserialisierung.
                 // Achtung. Appointments sind nur lesbar. Nur ein AppointmentBuilder kann zum erzeugen eines neuen Termins dienen.
@@ -138,6 +139,12 @@ namespace mko.Timeline.FS
                 return abld.Create();
             }
         }
+
+        public void Delete(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime)
+        {
+            DeleteJobQueue.Enqueue(GetKey(Owner,tmc.ToDateTime(beginDate, beginTime), tmc.ToDateTime(endDate, endTime)));
+        }
+
 
         public void Rollback()
         {
@@ -168,7 +175,7 @@ namespace mko.Timeline.FS
                 using (System.IO.StreamWriter writer = new System.IO.StreamWriter(filename))
                 {
                     writer.Write(Newtonsoft.Json.JsonConvert.SerializeObject(appointment, Newtonsoft.Json.Formatting.Indented));
-                    writer.Flush();                 
+                    writer.Flush();
                 }
             }
 
@@ -183,5 +190,6 @@ namespace mko.Timeline.FS
                 System.IO.File.Delete(filename);
             }
         }
+
     }
 }

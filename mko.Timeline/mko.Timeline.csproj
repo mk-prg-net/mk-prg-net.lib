@@ -70,9 +70,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\NET\2017-06-12-Zeiss-Jena-cs-intro\mk-prg-net.lib\mko.Algo\mko.Algo.csproj">
       <Project>{e4390e39-d913-4a9a-9227-5e2cdcf04a4e}</Project>
       <Name>mko.Algo</Name>

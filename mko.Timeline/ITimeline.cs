@@ -52,41 +52,56 @@ namespace mko.Timeline
         /// </summary>
         int Count { get; }
 
+
         /// <summary>
         /// Prüft, ob ein Termin mit dem übergebenen Terminschlüssel existiert
         /// </summary>
-        /// <param name="User"></param>
-        /// <param name="begin"></param>
-        /// <param name="end"></param>
+        /// <param name="Owner"></param>
+        /// <param name="beginDate"></param>
+        /// <param name="beginTime"></param>
+        /// <param name="endDate"></param>
+        /// <param name="endTime"></param>
         /// <returns></returns>
-        bool Exists(string Owner, DateTime begin, DateTime end);
+        bool Exists(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime);
 
 
         /// <summary>
         /// Erzeugt einen neuen Terminbuilder. Dieser kann konfiguriert werden. 
         /// Am Ende sollte SaveChanges aufgerufen werden, um den neuen Termin in der DB zu 
         /// übernehmen.
+        /// Es wurde bewusst auf eine GetBld(...) Funktion, die ein Update ermöglichen 
+        /// würde, verzichtet. Stattdessen wird ein Update durch ein Delete des 
+        /// alten Termins, und Create() eines Termins mit den aktualisierten Daten
+        /// implementiert. Vorteil:  die zugrundeliegende Collection muss nicht 
+        /// über eventuell aufwändig zu implementierende Updates verfügen. Die Einträge
+        /// müssen nur lesbar sein ! 
         /// </summary>
         /// <returns></returns>
         IAppointmentBuilder Create();
 
         /// <summary>
-        /// Zugriff auf einen Termin über den Schlüssel
+        /// Lesender Zugriff auf einen einzelnen Termin. 
+        /// Fachschlüssel setzt sich aus Besitzer, Start- und Endzeitpunkt zusammen
         /// </summary>
-        /// <param name="User"></param>
-        /// <param name="begin"></param>
-        /// <param name="end"></param>
+        /// <param name="Owner"></param>
+        /// <param name="beginDate"></param>
+        /// <param name="beginTime"></param>
+        /// <param name="endDate"></param>
+        /// <param name="endTime"></param>
         /// <returns></returns>
-        IAppointment Get(string Owner, DateTime begin, DateTime end);
+        IAppointment Get(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime);
+                
 
 
         /// <summary>
-        /// Löscht einen Termin mit dem gegeben Schlüssel
+        /// Löscht Termin mit dem übergebnen Fachschlüssel
         /// </summary>
-        /// <param name="User"></param>
-        /// <param name="begin"></param>
-        /// <param name="end"></param>
-        void Delete(string Owner, DateTime begin, DateTime end);
+        /// <param name="Owner"></param>
+        /// <param name="beginDate"></param>
+        /// <param name="beginTime"></param>
+        /// <param name="endDate"></param>
+        /// <param name="endTime"></param>
+        void Delete(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime);
 
         /// <summary>
         /// Der übergebene Termin wird im Repository gelöscht

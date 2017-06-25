@@ -107,9 +107,9 @@ namespace mko.Timeline.FS.Test
             tl.SaveChanges();
             Assert.AreEqual(3, tl.Count);
 
-            Assert.IsTrue(tl.Exists("ich", new DateTime(2017, 12, 24, 16, 0, 0), new DateTime(2017, 12, 25)));
+            Assert.IsTrue(tl.Exists("ich", new Date(2017, 12, 24), new Time(16, 0, 0), new Date(2017, 12, 25), new Time()));
 
-            var weihnachten = tl.Get("ich", new DateTime(2017, 12, 24, 16, 0, 0), new DateTime(2017, 12, 25));
+            var weihnachten = tl.Get("ich", new Date(2017, 12, 24), new Time(16, 0, 0), new Date(2017, 12, 25), new Time());
             Assert.IsNotNull(weihnachten);
             Assert.AreEqual("Geschenke!", weihnachten.Details);
 
@@ -118,7 +118,7 @@ namespace mko.Timeline.FS.Test
             tl.SaveChanges();
 
             Assert.AreEqual(2, tl.Count);
-            Assert.IsFalse(tl.Exists("ich", new DateTime(2017, 12, 24, 16, 0, 0), new DateTime(2017, 12, 25)));
+            Assert.IsFalse(tl.Exists("ich", new Date(2017, 12, 24), new Time(16, 0, 0), new Date(2017, 12, 25), new Time()));
 
         }
 

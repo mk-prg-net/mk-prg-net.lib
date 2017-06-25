@@ -89,10 +89,11 @@ namespace mko.Timeline
             return new FSSBld(_timelineDict);
         }
 
-        public IAppointment Get(string Owner, DateTime begin, DateTime end)
+        public IAppointment Get(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime)
         {
-            return _timelineDict[GetKey(Owner, begin, end)];
+            return _timelineDict[GetKey(Owner, ToDateTime(beginDate, beginTime),  ToDateTime(endDate, endTime))];
         }
+
 
         // Implementierungsdetails
 
@@ -113,9 +114,18 @@ namespace mko.Timeline
             return String.Join("", md5.Select(b => b.ToString("x2")).ToArray());
         }
 
-        public bool Exists(string Owner, DateTime begin, DateTime end)
+        /// <summary>
+        /// Prüft die Existenz eines Termines ab
+        /// </summary>
+        /// <param name="Owner"></param>
+        /// <param name="beginDate"></param>
+        /// <param name="beginTime"></param>
+        /// <param name="endDate"></param>
+        /// <param name="endTime"></param>
+        /// <returns></returns>
+        public bool Exists(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime)
         {
-            return _timelineDict.ContainsKey(GetKey(Owner, begin, end));
+            return _timelineDict.ContainsKey(GetKey(Owner, ToDateTime(beginDate, beginTime), ToDateTime(endDate, endTime)));
         }
 
         public IAppointmentBuilder Create()
@@ -123,17 +133,17 @@ namespace mko.Timeline
             var bld = new AppointmentBuilder();
             CreateJobQueue.Enqueue(bld);
             return bld;
-
         }
 
-        public void Delete(string Owner, DateTime begin, DateTime end)
+        public void Delete(string Owner, IDate beginDate, ITime beginTime, IDate endDate, ITime endTime)
         {
-            DeleteJobQueue.Enqueue(GetKey(Owner, begin, end));
+            DeleteJobQueue.Enqueue(GetKey(Owner, ToDateTime(beginDate, beginTime), ToDateTime(endDate, endTime)));
         }
+
 
         public void Delete(IAppointment appointment)
         {
-            DeleteJobQueue.Enqueue(GetKey(appointment.Owner, ToDateTime(appointment.BeginDate, appointment.BeginTime), ToDateTime(appointment.EndDate, appointment.EndTime)));
+            Delete(appointment.Owner, appointment.BeginDate, appointment.BeginTime, appointment.EndDate, appointment.EndTime);
         }
 
 
@@ -183,6 +193,7 @@ namespace mko.Timeline
               return Newtonsoft.Json.JsonConvert.SerializeObject(_timelineDict);
 #endif
         }
+
 
         Queue<AppointmentBuilder> CreateJobQueue = new Queue<AppointmentBuilder>();
 

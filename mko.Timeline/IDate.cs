@@ -18,7 +18,7 @@
 //  Betriebssystem: Windows 7 mit .NET 4.5
 //  Werkzeuge.....: Visual Studio 2013
 //  Autor.........: Martin Korneffel (mko)
-//  Version 1.0...: 
+//  Version 1.0...: uuu
 //
 // </unit_environment>
 //

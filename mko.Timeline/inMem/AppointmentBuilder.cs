@@ -62,6 +62,29 @@ namespace mko.Timeline
             _endTime = new Time(now);
         }
 
+        /// <summary>
+        /// Erstell AppointmentBuilder für einen vorhandenen Termin
+        /// </summary>
+        /// <param name="appointment"></param>
+        public AppointmentBuilder(IAppointment appointment)
+        {
+            _Owner = appointment.Owner;
+            _beginDate = new Date(appointment.BeginDate);
+            _beginTime = new Time(appointment.BeginTime);
+            _endDate = new Date(appointment.EndDate);
+            _endTime = new Time(appointment.EndTime);
+            _details = appointment.Details;
+            _cat = appointment.Category;
+            _loc = new BI.Bo.Addresses.Location()
+            {
+                City = appointment.Location.City,
+                PostalCode = appointment.Location.PostalCode,
+                Country = appointment.Location.Country,
+                Street = appointment.Location.Street
+            };        
+        }
+
+
         [Newtonsoft.Json.JsonConstructor]
         public AppointmentBuilder(
                 Date BeginDate,
