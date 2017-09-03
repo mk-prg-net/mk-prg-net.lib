@@ -11,8 +11,6 @@ namespace mko.BI.TestMockUps.AutomatDrehkreuz
         public override StateFactory StateFactory
         {
             get { return new StateFactory(); }
-        }
-
-        
+        }        
     }
 }

@@ -1,4 +1,39 @@
-﻿using System;
+﻿//<unit_header>
+//----------------------------------------------------------------
+//
+// Martin Korneffel: IT Beratung/Softwareentwicklung
+// Stuttgart, den 20.7.2013
+//
+//  Projekt.......: mko.Algo
+//  Name..........: ListprocessingFunctional.cs
+//  Aufgabe/Fkt...: Elementare Listenverarbeitung, funktional implementiert
+//                  
+//
+//
+//
+//
+//<unit_environment>
+//------------------------------------------------------------------
+//  Zielmaschine..: PC 
+//  Betriebssystem: Windows 7 mit .NET 4.5
+//  Werkzeuge.....: Visual Studio 2013
+//  Autor.........: Martin Korneffel (mko)
+//  Version 1.0...: 
+//
+// </unit_environment>
+//
+//<unit_history>
+//------------------------------------------------------------------
+//
+//  Autor.........: Martin Korneffel (mko)
+//  Datum.........: 2.8.2017
+//  Version.......: 1.2.3
+//  Änderungen....: Array- Kontsruktoren hinzugefügt
+//
+//</unit_history>
+//</unit_header>        
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +71,28 @@ namespace mko.Algo.Listprocessing
         {
             return Elements;
         }
+
+        /// <summary>
+        /// Erzeugt eine leeres Arry
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T[] A<T>()
+        {
+            return new T[] { };
+        }
+
+        /// <summary>
+        /// Erzeugt ein Array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Elements"></param>
+        /// <returns></returns>
+        public static T[] A<T>(params T[] Elements)
+        {
+            return Elements;
+        }
+
 
         /// <summary>
         /// Liefert das erste Element einer Liste

@@ -25,10 +25,9 @@
 //<unit_history>
 //------------------------------------------------------------------
 //
-//  Version.......: 1.1
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 
-//  Änderungen....: 
+//  Datum.........: 30.11.2016
+//  Änderungen....: Erweitert um asynchrones GetSet
 //
 //</unit_history>
 //</unit_header>        
@@ -49,7 +48,6 @@ namespace mko.BI.Repositories.Interfaces
     /// <typeparam name="TBo"></typeparam>
     public interface IFilteredSortedSetBuilder<out TBo>
     {
-
         IFilteredSortedSet<TBo> GetSet();
     }
 }

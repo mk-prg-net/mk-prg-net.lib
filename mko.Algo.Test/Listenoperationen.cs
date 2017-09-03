@@ -16,6 +16,8 @@ namespace mko.Algo.Test
     {
         Lint PrimListe = Fn.L(2, 3, 5, 7, 11, 13, 17, 19);
 
+        int[] PrimArray = Fn.A(2, 3, 5, 7, 11, 13, 17, 19);
+
         [TestMethod]
         public void ListprocessingFunctionalTest()
         {

@@ -12,7 +12,7 @@ namespace mko.BI.Repositories.Addresses.InMem
 
         Queue<Action> _cudActions = new Queue<Action>();
 
-        public override void CreateBoAndAddToCollection(string id)
+        public override void CreateBoAndAdd(string id)
         {
             if (_all.Any(r => r.CompanyName == id))
             {
@@ -24,7 +24,7 @@ namespace mko.BI.Repositories.Addresses.InMem
             }
         }
 
-        public override Bo.Addresses.IMailingAddressCompany Get(string id)
+        public override Bo.Addresses.IMailingAddressCompany GetBo(string id)
         {
             if (_all.Any(r => r.CompanyName == id))
             {
@@ -36,12 +36,12 @@ namespace mko.BI.Repositories.Addresses.InMem
             }
         }
 
-        public override bool Any(string id)
+        public override bool ExistsBo(string id)
         {
             return _all.Any(r => r.CompanyName == id);
         }
 
-        public override void RemoveFromCollection(string id)
+        public override void RemoveBo(string id)
         {
             if (_all.Any(r => r.CompanyName == id))
             {
@@ -50,7 +50,7 @@ namespace mko.BI.Repositories.Addresses.InMem
             }
         }
 
-        public override void RemoveAll()
+        public override void RemoveAllBo()
         {
             _cudActions.Enqueue(() => _all.Clear());
         }

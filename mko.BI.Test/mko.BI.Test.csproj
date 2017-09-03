@@ -61,15 +61,16 @@
     <Compile Include="ChangeTracking.cs" />
     <Compile Include="IntervalTests.cs" />
     <Compile Include="RepositoriesTest.cs" />
+    <Compile Include="StateMachineTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DB.Kepler.EF60\DB.Kepler.EF60.csproj">
-      <Project>{5435103b-0dfa-4767-af62-f37d580b1f6d}</Project>
-      <Name>DB.Kepler.EF60</Name>
-    </ProjectReference>
     <ProjectReference Include="..\mko.Algo\mko.Algo.csproj">
       <Project>{e4390e39-d913-4a9a-9227-5e2cdcf04a4e}</Project>
       <Name>mko.Algo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko.BI.TestMockUps\mko.BI.TestMockUps.csproj">
+      <Project>{210fc757-0719-443a-a4f6-d7e657759614}</Project>
+      <Name>mko.BI.TestMockUps</Name>
     </ProjectReference>
     <ProjectReference Include="..\mko.BI\mko.BI.csproj">
       <Project>{9c1fc4c5-5be2-4efd-87d9-6bd6f12ac07e}</Project>

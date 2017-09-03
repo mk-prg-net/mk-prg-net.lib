@@ -31,6 +31,10 @@
 //                  Get- Methoden anbietet, mit der auch Mengen von 
 //                  Geschäftsobjekten gefiltert und sortiert werden 
 //                  können.
+//
+//  Autor.........: Martin Korneffel (mko)
+//  Datum.........: 30.11.2016
+//  Änderungen....: IGet kovariant gemacht
 //</unit_history>
 //</unit_header>        
         
@@ -43,7 +47,7 @@ using System.Threading.Tasks;
 
 namespace mko.BI.Repositories.Interfaces
 {
-    interface IGet<TBo, TBoId>
+    public interface IGet<out TBo, in TBoId>
     {
 
         /// <summary>
@@ -52,7 +56,7 @@ namespace mko.BI.Repositories.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        TBo Get(TBoId id);
+        TBo GetBo(TBoId id);
 
         /// <summary>
         /// 14.3.2016, mko
@@ -60,7 +64,7 @@ namespace mko.BI.Repositories.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        bool Any(TBoId id);
+        bool ExistsBo(TBoId id);
 
     }
 }

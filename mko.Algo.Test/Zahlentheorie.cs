@@ -33,6 +33,8 @@ namespace mko.Algo.Test
 
             Assert.IsTrue(PrimeFactors.scan(1, 10000).SequenceEqual(PrimeFactors.scanParallel(1, 10000, false)));
 
+            PrimeFactors.scanParallel(1, 100000000, false);
+
 
             long l1 = 13;
 

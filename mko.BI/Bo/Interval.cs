@@ -37,6 +37,12 @@
 //  Änderungen....: Klasse mko.Intervall aus Projekt mko.Algo in mko.BI übertragen. 
 //                  Klasse in eine Datenstruktur umgewandelt.
 //
+//  Version.......: 2.1
+//  Autor.........: Martin Korneffel (mko)
+//  Datum.........: 4.4.2017
+//  Änderungen....: Erweitert um Equal und die Operatoren == und !=. Klassenfabrik hinzugefügt
+//                  
+//
 //</unit_history>
 //</unit_header>        
 
@@ -63,7 +69,6 @@ namespace mko.BI.Bo
             this.Begin = Begin;
             this.End = End;            
         }
-
 
 
         /// <summary>
@@ -180,6 +185,50 @@ namespace mko.BI.Bo
             T newEnd = (End.CompareTo(Second.End) >= 0) ? End : Second.End;
 
             return new Interval<T>(newBegin, newEnd);
+        }
+        
+
+        public override bool Equals(object obj)
+        {
+            var Second = (Interval<T>)obj;
+            return Begin.CompareTo(Second.Begin) == 0 && End.CompareTo(Second.End) == 0;
+        }
+
+        public static bool operator==(Interval<T> a, Interval<T> b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator !=(Interval<T> a, Interval<T> b)
+        {
+            return !a.Equals(b);
+        }
+    }
+
+
+    /// <summary>
+    /// Hilfsklasse zum Fomrulieren der Klassenfabrik
+    /// </summary>
+    public static class Interval
+    {
+        public static Interval<T> Create<T>(T begin, T end)
+            where T : IComparable<T>, new()
+        {
+            return new Interval<T>(begin, end);
+        }
+
+        /// <summary>
+        /// Exklusive Vergleich auf Identität für Interval.double
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="accuracy"></param>
+        /// <returns></returns>
+        public static bool Equals(Interval<double> a, Interval<double> b, int accuracy = 15)
+        {
+
+            return Math.Round(a.Begin, accuracy) == Math.Round(b.Begin, accuracy) && Math.Round(a.End, accuracy) == Math.Round(b.End);
+
         }
 
     }

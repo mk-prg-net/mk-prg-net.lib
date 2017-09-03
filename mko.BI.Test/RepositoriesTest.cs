@@ -19,98 +19,98 @@ namespace mko.BI.Test
         {
             repo = new Repositories.Addresses.InMem.CompanyAddresses();
 
-            repo.CreateBoAndAddToCollection("mk-prg-net");
+            repo.CreateBoAndAdd("mk-prg-net");
             repo.SubmitChanges();
-            var adr = repo.Get("mk-prg-net");
+            var adr = repo.GetBo("mk-prg-net");
             adr.City = "Stuttgart";
             adr.Country = "de";
             adr.PostalCode = "70599";
             adr.Street = "Hans-Kächele-Str. 11";
 
-            repo.CreateBoAndAddToCollection("DagobertBank");
+            repo.CreateBoAndAdd("DagobertBank");
             repo.SubmitChanges();
-            adr = repo.Get("DagobertBank");
+            adr = repo.GetBo("DagobertBank");
             adr.City = "Entenhausen";
             adr.Country = "de";
             adr.PostalCode = "12345";
             adr.Street = "Goldtalerallee 1";
 
-            repo.CreateBoAndAddToCollection("Tante Emma Laden");
+            repo.CreateBoAndAdd("Tante Emma Laden");
             repo.SubmitChanges();
-            adr = repo.Get("Tante Emma Laden");
+            adr = repo.GetBo("Tante Emma Laden");
             adr.City = "Entenhausen";
             adr.Country = "de";
             adr.PostalCode = "12345";
             adr.Street = "Goldtalerallee 2";
 
-            repo.CreateBoAndAddToCollection("Donald - Allrounder");
+            repo.CreateBoAndAdd("Donald - Allrounder");
             repo.SubmitChanges();
-            adr = repo.Get("Donald - Allrounder");
+            adr = repo.GetBo("Donald - Allrounder");
             adr.City = "Entenhausen";
             adr.Country = "de";
             adr.PostalCode = "12346";
             adr.Street = "Wurschtelgasse 3";
 
-            repo.CreateBoAndAddToCollection("Mineralbad Leuze");
+            repo.CreateBoAndAdd("Mineralbad Leuze");
             repo.SubmitChanges();
-            adr = repo.Get("Mineralbad Leuze");
+            adr = repo.GetBo("Mineralbad Leuze");
             adr.City = "Stuttgart";
             adr.Country = "de";
             adr.PostalCode = "70190";
             adr.Street = "Am Leuzebad 2";
 
-            repo.CreateBoAndAddToCollection("Claas Clever - Immobilien");
+            repo.CreateBoAndAdd("Claas Clever - Immobilien");
             repo.SubmitChanges();
-            adr = repo.Get("Claas Clever - Immobilien");
+            adr = repo.GetBo("Claas Clever - Immobilien");
             adr.City = "Entenhausen";
             adr.Country = "de";
             adr.PostalCode = "12344";
             adr.Street = "Schlauer Weg 1";
 
-            repo.CreateBoAndAddToCollection("Staatsgalerie Stuttgart");
+            repo.CreateBoAndAdd("Staatsgalerie Stuttgart");
             repo.SubmitChanges();
-            adr = repo.Get("Staatsgalerie Stuttgart");
+            adr = repo.GetBo("Staatsgalerie Stuttgart");
             adr.City = "Stuttgart";
             adr.Country = "de";
             adr.PostalCode = "70173";
             adr.Street = "Konrad-Adenauer-Str. 30-32";
 
-            repo.CreateBoAndAddToCollection("Reichstag");
+            repo.CreateBoAndAdd("Reichstag");
             repo.SubmitChanges();
-            adr = repo.Get("Reichstag");
+            adr = repo.GetBo("Reichstag");
             adr.City = "Berlin";
             adr.Country = "de";
             adr.PostalCode = "10557";
             adr.Street = "Scheidemannstraße 2";
 
-            repo.CreateBoAndAddToCollection("Fernsehturm Berlin");
+            repo.CreateBoAndAdd("Fernsehturm Berlin");
             repo.SubmitChanges();
-            adr = repo.Get("Fernsehturm Berlin");
+            adr = repo.GetBo("Fernsehturm Berlin");
             adr.City = "Berlin";
             adr.Country = "de";
             adr.PostalCode = "10178";
             adr.Street = "Panoramastraße 1A";
 
-            repo.CreateBoAndAddToCollection("Fernsehturm Stuttgart");
+            repo.CreateBoAndAdd("Fernsehturm Stuttgart");
             repo.SubmitChanges();
-            adr = repo.Get("Fernsehturm Stuttgart");
+            adr = repo.GetBo("Fernsehturm Stuttgart");
             adr.City = "Stuttgart";
             adr.Country = "de";
             adr.PostalCode = "70597";
             adr.Street = "Jahnstraße 120";
 
 
-            repo.CreateBoAndAddToCollection("Eiffelturm");
+            repo.CreateBoAndAdd("Eiffelturm");
             repo.SubmitChanges();
-            adr = repo.Get("Eiffelturm");
+            adr = repo.GetBo("Eiffelturm");
             adr.City = "Paris";
             adr.Country = "fr";
             adr.PostalCode = "75007";
             adr.Street = "Champ de Mars, 5 Avenue Anatole";
 
-            repo.CreateBoAndAddToCollection("Siegessäule");
+            repo.CreateBoAndAdd("Siegessäule");
             repo.SubmitChanges();
-            adr = repo.Get("Siegessäule");
+            adr = repo.GetBo("Siegessäule");
             adr.City = "Berlin";
             adr.Country = "de";
             adr.PostalCode = "10557";
@@ -122,7 +122,7 @@ namespace mko.BI.Test
         [TestCleanup]
         public void Cleanup()
         {
-            repo.RemoveAll();
+            repo.RemoveAllBo();
             repo.SubmitChanges();
         }
 
@@ -131,12 +131,12 @@ namespace mko.BI.Test
         public void Repositories_GetBo()
         {           
 
-            var bo = repo.Get("Siegessäule");
+            var bo = repo.GetBo("Siegessäule");
             Assert.IsNotNull(bo, "Die Siegessäule sollte als Adresse erfasst sein");
             Assert.AreEqual("Großer Stern 1", bo.Street, "Die Siegesäule sollte auf dem Großen Stern stehen");
 
-            Assert.IsTrue(repo.Any("Fernsehturm Stuttgart"));
-            bo = repo.Get("Fernsehturm Stuttgart");
+            Assert.IsTrue(repo.ExistsBo("Fernsehturm Stuttgart"));
+            bo = repo.GetBo("Fernsehturm Stuttgart");
             Assert.IsNotNull(bo, "Der Stuttgarter Fernsehtumr sollte als Adresse erfasst sein");
             Assert.AreEqual("Jahnstraße 120", bo.Street, "Der Fernsehturm in Stuttgart sollte in der Jahnstrasse stehen.");
         }

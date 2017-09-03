@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{335DB9C3-B580-4BFC-BFFE-65CBC6EE1E3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MkPrgNet.Pattern.Automaton</RootNamespace>
+    <AssemblyName>MkPrgNet.Pattern.Automaton</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mko, Version=7.3.3.0, Culture=neutral, PublicKeyToken=f4d93f46e53e0656, processorArchitecture=MSIL">
+      <HintPath>..\packages\mko.7.3.3\lib\net45\mko.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builder\IMelayAutomatonBuilder.cs" />
+    <Compile Include="Builder\IMelayOutputFunctionBuilder.cs" />
+    <Compile Include="Builder\IMelayTransistionFunctionBuilder.cs" />
+    <Compile Include="Builder\IMooreAutomatonBuilder.cs" />
+    <Compile Include="Builder\IMooreOutputFunctionBuilder.cs" />
+    <Compile Include="Builder\IMooreTransitionFunctionBuilder.cs" />
+    <Compile Include="Builder\Impl\MooreAutomatonBuilder.cs" />
+    <Compile Include="Builder\Impl\MooreTransistionFunctionBuilder.cs" />
+    <Compile Include="Builder\Impl\MoorOutputFunctionBuilder.cs" />
+    <Compile Include="Builder\Impl\StateDecorator.cs" />
+    <Compile Include="Builder\Impl\TransistionFunctionBuilder.cs" />
+    <Compile Include="Builder\IStateDecoratorBuilder.cs" />
+    <Compile Include="Builder\IStateTransitionsBuilder.cs" />
+    <Compile Include="Inputs\Error.cs" />
+    <Compile Include="Inputs\IInput.cs" />
+    <Compile Include="Inputs\InputBase.cs" />
+    <Compile Include="Inputs\NullInput.cs" />
+    <Compile Include="IAutomaton.cs" />
+    <Compile Include="MelayAutomaton.cs" />
+    <Compile Include="MooreAutomaton.cs" />
+    <Compile Include="Output\IOutput.cs" />
+    <Compile Include="Output\NullOutput.cs" />
+    <Compile Include="Output\OutputFunctor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\Impl\StateDecorator.cs" />
+    <Compile Include="States\IStateDecorator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MkPrgNet.Pattern.Automaton.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

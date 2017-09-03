@@ -24,12 +24,27 @@ namespace mko.BI.Test
             Assert.IsTrue(iEmpty.Empty);
 
             // Einelementiges Intervall
-            var i1 = new mko.BI.Bo.Interval<int>(1, 1);
+            var i1 = Bo.Interval.Create(1, 1);
+            var i11 = Bo.Interval.Create(1, 1);
 
             Assert.IsFalse(i1.Empty);
+            Assert.IsTrue(i1 == i11);
+
+            double begin = (3.0 / 5000.0) * 5000.0;
+            double end = 0.2;
+            end *= 10.0;
+
+            var dbl1 = Bo.Interval.Create(begin, 10.0 );
+            var dbl11 = Bo.Interval.Create(3.0, 10.0);
+
+            Assert.IsFalse(dbl1 == dbl11);
+
+            Assert.IsTrue(Bo.Interval.Equals(dbl1, dbl11));
+
+
 
             // Intervall von 0-10
-            var i0_10 = new mko.BI.Bo.Interval<int>(0, 10);
+            var i0_10 = Bo.Interval.Create(0, 10);
 
             Assert.IsFalse(i0_10.Empty);
             Assert.IsTrue(i0_10.Contains(0));
@@ -120,12 +135,12 @@ namespace mko.BI.Test
 
             // Einelementiges Intervall
             var Now = DateTime.Now;
-            var i1 = new mko.BI.Bo.Interval<DateTime>(Now, Now);
+            var i1 = Bo.Interval.Create(Now, Now);
 
             Assert.IsFalse(i1.Empty);
 
             // Intervall von 0-10
-            var i0_10 = new mko.BI.Bo.Interval<DateTime>(Now, Now.AddHours(10));
+            var i0_10 = Bo.Interval.Create(Now, Now.AddHours(10));
 
             Assert.IsFalse(i0_10.Empty);
             Assert.IsTrue(i0_10.Contains(Now));
@@ -140,21 +155,21 @@ namespace mko.BI.Test
             Assert.AreEqual(Now, iInter1.End);
 
             // Intervalle schneiden
-            var iInter2 = i0_10.Intersect(new mko.BI.Bo.Interval<DateTime>(Now.AddHours(3), Now.AddHours(6)));
+            var iInter2 = i0_10.Intersect(Bo.Interval.Create(Now.AddHours(3), Now.AddHours(6)));
 
             Assert.IsFalse(iInter2.Empty);
             Assert.AreEqual(Now.AddHours(3), iInter2.Begin);
             Assert.AreEqual(Now.AddHours(6), iInter2.End);
 
             // Intervalle schneiden
-            var iInter3 = i0_10.Intersect(new mko.BI.Bo.Interval<DateTime>(Now.AddHours(-1), Now.AddHours(6)));
+            var iInter3 = i0_10.Intersect(Bo.Interval.Create(Now.AddHours(-1), Now.AddHours(6)));
 
             Assert.IsFalse(iInter3.Empty);
             Assert.AreEqual(Now.AddHours(0), iInter3.Begin);
             Assert.AreEqual(Now.AddHours(6), iInter3.End);
 
             // Intervalle schneiden
-            var iInter4 = i0_10.Intersect(new mko.BI.Bo.Interval<DateTime>(Now.AddHours(3), Now.AddHours(12)));
+            var iInter4 = i0_10.Intersect(Bo.Interval.Create(Now.AddHours(3), Now.AddHours(12)));
 
             Assert.IsFalse(iInter4.Empty);
             Assert.AreEqual(Now.AddHours(3), iInter4.Begin);
@@ -162,14 +177,14 @@ namespace mko.BI.Test
 
 
             // Intervalle schneiden
-            var iInter5 = i0_10.Intersect(new mko.BI.Bo.Interval<DateTime>(Now.AddHours(11), Now.AddHours(12)));
+            var iInter5 = i0_10.Intersect(Bo.Interval.Create(Now.AddHours(11), Now.AddHours(12)));
 
             Assert.IsTrue(iInter5.Empty);
             Assert.AreEqual(Now.AddHours(11), iInter5.Begin);
             Assert.AreEqual(Now.AddHours(10), iInter5.End);
 
             // var Intervalle vereinigen
-            var sum = i0_10.Union(new BI.Bo.Interval<DateTime>(Now.AddHours(-24), Now));
+            var sum = i0_10.Union(Bo.Interval.Create(Now.AddHours(-24), Now));
 
             Assert.IsFalse(sum.Empty);
             Assert.AreEqual(Now.AddHours(-24), sum.Begin);
