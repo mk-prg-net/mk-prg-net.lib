@@ -51,6 +51,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\mko.Algo\mko.Algo.csproj">
+      <Project>{e4390e39-d913-4a9a-9227-5e2cdcf04a4e}</Project>
+      <Name>mko.Algo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\mko.BI\mko.BI.csproj">
       <Project>{9c1fc4c5-5be2-4efd-87d9-6bd6f12ac07e}</Project>
       <Name>mko.BI</Name>
