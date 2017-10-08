@@ -40,9 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassifyByComponents.cs" />
+    <Compile Include="IClassifier.cs" />
     <Compile Include="IProgressor.cs" />
     <Compile Include="ProgressorStatisticallyBasedPrediction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mko\mko.csproj">
+      <Project>{fd808f4f-00bd-4bc6-8142-ef944200c901}</Project>
+      <Name>mko</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
