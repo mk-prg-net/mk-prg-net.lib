@@ -267,10 +267,6 @@ namespace mko
         {
             return DateTime.Now.ToShortTimeString() + " INFO  " + ClassName + "." + MethodName + " " + MsgsToString(msgs);
         }
-
-
-
-
     }
 
 }

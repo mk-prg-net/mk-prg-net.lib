@@ -94,9 +94,13 @@
     <Compile Include="Get.cs" />
     <Compile Include="InfosSerializer.cs" />
     <Compile Include="Intervall.cs" />
+    <Compile Include="Logging\ISucceeded.cs" />
+    <Compile Include="Logging\ITraceInfo.cs" />
+    <Compile Include="Logging\StartTimeSingleton.cs" />
     <Compile Include="LogServer\mkoLogDebugLogHandler.cs" />
     <Compile Include="LogServer\mkoLogMemLogHandler.cs" />
     <Compile Include="LogServer\mkoLogRCContainerLogHnd.cs" />
+    <Compile Include="Logging\RCV2.cs" />
     <Compile Include="ReadOnlyDictionaryWrapper.cs" />
     <Compile Include="ReadOnlyListWrapper.cs" />
     <Compile Include="ReturnCode\IReturnValueContainer.cs" />
@@ -125,6 +129,7 @@
     <Compile Include="DB\SPAdapterTemplate.cs" />
     <Compile Include="CLog\SystemEventLogHnd.cs" />
     <Compile Include="TextUtils.cs" />
+    <Compile Include="Logging\TI.cs" />
     <Compile Include="TraceHlp.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
