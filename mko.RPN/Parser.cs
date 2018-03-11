@@ -12,7 +12,7 @@
 //                  wie 2 3 ADD 5 MUL <=> (2 + 3) * 5 
 //                  wird eingelesen, analysiert und im Falle eines korrekten 
 //                  Ausdruckes ausgewertet.
-//                  Der Parser ist generisch Implementiert, und kann 
+//                  Der Parser ist generisch implementiert, und kann 
 //                  zum Einlesen bliebiger Typ 2- Sprachenterme verwendet werden.
 //                  Das Motiv zur Entwicklung war ein System von Filter und Sortierausdrücken
 //                  in Uri's zu implementieren. Sollen z.B. in einem Webkatalog für 

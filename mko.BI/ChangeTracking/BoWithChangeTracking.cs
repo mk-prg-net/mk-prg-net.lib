@@ -69,7 +69,7 @@ namespace mko.BI.ChangeTracking
     {
 
         /// <summary>
-        /// Liefert das Geschäftsobjekt, dessen Änderung von Eigens chaften aufgezeichnet werden sollen
+        /// Liefert das Geschäftsobjekt, dessen Änderung von Eigenschaften aufgezeichnet werden sollen
         /// </summary>
         public abstract TBo Bo
         {
@@ -193,7 +193,7 @@ namespace mko.BI.ChangeTracking
         //}
 
         /// <summary>
-        /// Alle aktualisierungsaufträge werden auf einem Entity ausgeführt, das z.B. aus einem 
+        /// Alle Aktualisierungsaufträge werden auf einem Entity ausgeführt, das z.B. aus einem 
         /// EF- Datenkontext einer Datenbank stammt
         /// </summary>
         /// <param name="exTBoTarget">Referenz auf externes Entity</param>

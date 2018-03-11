@@ -109,7 +109,9 @@
     <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
     <None Include="ClassDiagram4.cd" />
-    <None Include="mko.BI.nuspec" />
+    <None Include="mko.BI.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt">

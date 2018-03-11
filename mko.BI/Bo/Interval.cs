@@ -96,6 +96,8 @@ namespace mko.BI.Bo
 
         public bool Contains(T value)
         {
+            // Begin <= value <= End
+            // if(Begin <= value && value <= End) return true; else return false;
             return (Begin.CompareTo(value) <= 0 && End.CompareTo(value) >= 0);
 
         }

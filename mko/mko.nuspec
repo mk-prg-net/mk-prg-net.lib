@@ -13,6 +13,6 @@
     <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright Martin Korneffel, Stuttgart 2013</copyright>
-    <tags>Debughelper Logserver Serializationhelper</tags>
+    <tags>Debug helper Logserver Serialization helper</tags>
   </metadata>
 </package>
