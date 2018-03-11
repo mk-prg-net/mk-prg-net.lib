@@ -321,7 +321,6 @@ namespace mko.RPN
             }
         }
 
-
         /// <summary>
         /// Löst einen Quelltext in der umgekehrten polnischen Notation in eine Liste von 
         /// Tokens auf. Die Token- Liste wird in der RPN zurückgegeben !

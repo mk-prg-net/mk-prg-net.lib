@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 using System.Linq;
 using mko.RPN;
+using System.Diagnostics;
 
 namespace mko.RPN.Arithmetik.Test
 {
@@ -13,6 +14,7 @@ namespace mko.RPN.Arithmetik.Test
     {
 
         readonly Parser Parser;
+        readonly ParserV2 PV2;
 
 
         mko.RPN.IFunctionNames fnBase;
@@ -99,6 +101,7 @@ namespace mko.RPN.Arithmetik.Test
 
             //Tokenizer = new Tokenizer(TermReader);
             Parser = new Parser(evalTab.FuncEvaluators);
+            PV2 = new ParserV2(evalTab.FuncEvaluators);
         }
 
         [TestInitialize]
@@ -467,12 +470,70 @@ namespace mko.RPN.Arithmetik.Test
 
             //var myTokenizer = new Tokenizer();
 
+            var add = composer.rADD(composer.Dbl(4.7), composer.Dbl(2.3));
             Parser.Parse(composer.rADD(composer.Dbl(4.7), composer.Dbl(2.3)));
 
-            Assert.IsTrue(Parser.Succsessful);
-            Assert.AreEqual(1, Parser.Stack.Count);
-            Assert.IsInstanceOfType(Parser.Stack.Peek(), typeof(DoubleToken));
-            Assert.AreEqual(7.0, (DoubleToken)Parser.Stack.Peek());
+
+            var rcTokenize = BasicTokenizer.TokenizeRPN(add, evalTab.FunctionNames());
+            Assert.IsTrue(rcTokenize.Succeeded);
+
+            var rcParse = PV2.Parse(rcTokenize.Value);
+            Assert.IsTrue(rcParse.Succeeded);
+            
+            Assert.AreEqual(1, rcParse.Value.Stack.Count);
+            Assert.IsInstanceOfType(rcParse.Value.Stack.Peek(), typeof(DoubleToken));
+            Assert.AreEqual(7.0, (DoubleToken)rcParse.Value.Stack.Peek());
+        }
+
+
+        [TestMethod]
+        public void RPNArithmetik_ADD_2()
+        {
+            {
+                var rcTokens = BasicTokenizer.TokenizePN(".add 2.4 hallo", evalTab.FunctionNames());
+                Assert.IsTrue(rcTokens.Succeeded);
+
+                var rcParse = PV2.Parse(rcTokens.Value);
+                Assert.IsFalse(rcParse.Succeeded);
+
+                Debug.WriteLine(rcParse.Message);
+                Assert.AreEqual(2, rcParse.Value.IndexOfLastEvaluatedToken);
+            }
+
+            {
+                var rcTokens = BasicTokenizer.TokenizePN(".add hallo 2.4", evalTab.FunctionNames());
+                Assert.IsTrue(rcTokens.Succeeded);
+
+                var rcParse = PV2.Parse(rcTokens.Value);
+                Assert.IsFalse(rcParse.Succeeded);
+
+                Debug.WriteLine(rcParse.Message);
+                Assert.AreEqual(2, rcParse.Value.IndexOfLastEvaluatedToken);
+            }
+
+            {
+                var rcTokens = BasicTokenizer.TokenizePN(".add .add 1.6 hallo 2.4", evalTab.FunctionNames());
+                Assert.IsTrue(rcTokens.Succeeded);
+
+                var rcParse = PV2.Parse(rcTokens.Value);
+                Assert.IsFalse(rcParse.Succeeded);
+
+                Debug.WriteLine(rcParse.Message);
+                Assert.AreEqual(3, rcParse.Value.IndexOfLastEvaluatedToken);
+            }
+
+
+            {
+                var rcTokens = BasicTokenizer.TokenizePN(".add 2.4 1.6", evalTab.FunctionNames());
+                Assert.IsTrue(rcTokens.Succeeded);
+
+                var rcParse = PV2.Parse(rcTokens.Value);
+                Assert.IsTrue(rcParse.Succeeded);
+                
+                
+                Assert.AreEqual("4", rcParse.Value.Stack.Peek().Value);
+            }
+
         }
 
         [TestMethod]

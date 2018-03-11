@@ -25,10 +25,10 @@
 //<unit_history>
 //------------------------------------------------------------------
 //
-//  Version.......: 1.1
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 
-//  Änderungen....: 
+//  Datum.........: 11.3.2018
+//  Änderungen....: Eigenschaft FunctionNames, welche die Namen aller Funktionen auflistet,
+//                  zu denen Evaluatoren existieren.
 //
 //</unit_history>
 //</unit_header>        
@@ -73,5 +73,6 @@ namespace mko.RPN
                 return _NameEvalTab;
             }
         }
+
     }
 }

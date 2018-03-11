@@ -42,8 +42,12 @@
 //  Autor.........: Martin Korneffel (mko)
 //  Datum.........: 24.3.2017
 //  Änderungen....: Durch '...' begrenzte Stringliterale implementiert. 
-
-
+//
+//  Autor.........: Martin Korneffel (mko)
+//  Datum.........: 11.3.2017
+//  Änderungen....: TokenizePN und TokenizeRPN als statische Funktionen implementiert
+//                  (ursprünglich in class Parser)
+//
 //</unit_history>
 //</unit_header>        
 
@@ -52,6 +56,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using mko.Logging;
 
 namespace mko.RPN
 {
@@ -302,5 +308,82 @@ namespace mko.RPN
             get { return _currentToken; }
         }
         IToken _currentToken;
+
+
+        /// <summary>
+        /// mko, 11.3.2018
+        /// Löst einen Quelltext in der umgekehrten polnischen Notation in eine Liste von 
+        /// Tokens auf. Die Token- Liste wird in der RPN zurückgegeben !
+        /// Achtung: in RPN ist der erste Parameter der unmittelbar links neben dem 
+        /// Funktionsname stehende.
+        /// </summary>
+        /// <param name="sourceCode"></param>
+        /// <returns></returns>
+        public static RC<IToken[]> TokenizeRPN(string sourceCode, params string[] functionNames)
+        {
+            var rc = RC<IToken[]>.Failed(value: new IToken[] { });
+
+            var tokenizer = new BasicTokenizer(sourceCode);
+            tokenizer.DefFunctionNames(functionNames);
+
+            var tokens = new LinkedList<IToken>();
+
+            try
+            {   
+                tokenizer.Read();
+                while (!tokenizer.EOF)
+                {
+                    tokens.AddLast(tokenizer.Token);
+                    tokenizer.Read();
+                }
+
+                rc = RC<IToken[]>.Ok(value: tokens.ToArray());
+            }
+            catch (Exception ex)
+            {
+                rc = RC<IToken[]>.Failed(value: tokens.ToArray(), ErrorDescription: mko.ExceptionHelper.FlattenExceptionMessages(ex));                
+            }
+            return rc;
+        }
+
+        /// <summary>
+        /// mko, 11.3.2018
+        /// Löst einen Quelltext in der polnischen Notation in eine Liste von 
+        /// Tokens auf. Die Token- Liste wird in der umgekehrt polnischen Notation zurückgegeben !
+        /// Achtung: in RPN ist der erste Parameter der unmittelbar links neben dem 
+        /// Funktionsname stehende.
+        /// </summary>
+        /// <param name="sourceCode"></param>
+        /// <returns>list of tokens</returns>
+        public static RC<IToken[]> TokenizePN(string sourceCode, params string[] functionNames)
+        {
+            var rc = RC<IToken[]>.Failed(value: new IToken[] { });
+
+            var tokenizer = new BasicTokenizer(sourceCode);
+            tokenizer.DefFunctionNames(functionNames);
+
+            var tokens = new LinkedList<IToken>();
+
+            try
+            {
+                tokenizer.Read();
+                while (!tokenizer.EOF)
+                {
+                    tokens.AddFirst(tokenizer.Token);
+                    tokenizer.Read();
+                }
+
+                rc = RC<IToken[]>.Ok(value: tokens.ToArray());
+
+            }
+            catch (Exception ex)
+            {
+                rc = RC<IToken[]>.Failed(value: tokens.ToArray(), ErrorDescription: mko.ExceptionHelper.FlattenExceptionMessages(ex));
+            }
+
+            return rc;
+        }
+
+
     }
 }

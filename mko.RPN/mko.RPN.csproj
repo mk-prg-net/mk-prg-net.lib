@@ -53,6 +53,7 @@
     <Compile Include="EvalFunctionWithFixedParamCount.cs" />
     <Compile Include="EvalHelper.cs" />
     <Compile Include="FnameEvalMapper.cs" />
+    <Compile Include="FunctionEvaluatorTableExt.cs" />
     <Compile Include="FunctionNamesLight.cs" />
     <Compile Include="FunctionNamesStrong.cs" />
     <Compile Include="ListEndEval.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="NoFunctionToken.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="ParserHelper.cs" />
+    <Compile Include="ParserV2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
