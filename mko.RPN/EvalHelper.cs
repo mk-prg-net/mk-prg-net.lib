@@ -45,6 +45,9 @@ namespace mko.RPN
     {
         /// <summary>
         /// Liest alle Parameter einer variadischen Parameterliste ein, und führt für jeden die ReadParameter- Action aus
+        /// 
+        /// mko, 17.4.2018
+        /// Fall leere Liste berücksichtigt
         /// </summary>
         /// <param name="stack"></param>
         /// <param name="ReadParameter"></param>
@@ -52,9 +55,13 @@ namespace mko.RPN
         {
             int i = 0;
             do
-            {
-                ReadParameter(stack, i);
-                i++;
+            {                
+                if (stack.Peek().Value != ListEndSymbol)
+                {
+                    // Read only parameters, if list is not empty
+                    ReadParameter(stack, i);
+                    i++;
+                }                
             } while (stack.Count > 0 && !(stack.Peek().IsFunctionName && stack.Peek().Value == ListEndSymbol));
 
             // Parameterlistenende entfernen

@@ -56,6 +56,7 @@
     <Compile Include="FunctionEvaluatorTableExt.cs" />
     <Compile Include="FunctionNamesLight.cs" />
     <Compile Include="FunctionNamesStrong.cs" />
+    <Compile Include="IExpression.cs" />
     <Compile Include="ListEndEval.cs" />
     <Compile Include="FunctionEvaluatorTable.cs" />
     <Compile Include="FunctionNameToken.cs" />
@@ -80,6 +81,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SetPropertyBatchCmd.cs" />
+    <Compile Include="plxEval\IFunctionNamesStd.cs" />
     <Compile Include="StringToken.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +100,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
