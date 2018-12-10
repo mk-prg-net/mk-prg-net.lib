@@ -43,14 +43,16 @@ namespace mko.RPN.Arithmetik
 {
     public class FnameEvalMapperFunctor: IFnameEvalMapper        
     {
-        public FnameEvalMapperFunctor(IFunctionNames fn, string ListEndSymbol)
+        public FnameEvalMapperFunctor(IFunctionNames fn, string ListEndSymbol, IFormatProvider pfmt)
         {
             this.fn = fn;
             this.ListEndSymbol = ListEndSymbol;
+            this.pfmt = pfmt;
         }
 
         IFunctionNames fn;
         string ListEndSymbol;
+        IFormatProvider pfmt;
 
         public void MapFnameToEvalIn(Dictionary<string, IEval> dict)
         {
@@ -58,7 +60,7 @@ namespace mko.RPN.Arithmetik
             dict[fn.DIV] = new Div();
             dict[fn.MUL] = new Mul();
             dict[fn.SUB] = new Sub();
-            dict[fn.SUMAT] = new SumatEval(ListEndSymbol);
+            dict[fn.SUMAT] = new SumatEval(ListEndSymbol, pfmt);
 
         }
     }

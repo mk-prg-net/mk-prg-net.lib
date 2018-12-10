@@ -20,7 +20,12 @@
 //                 Input n ---|--------> Output---|---> Ausgabe
 //                            +-------------------+
 //
-//
+//                 Achtung: Die Eingänge können mit Prioritäten verknüpft sein.
+//                          Ohne Beschränkung der Allgemeinheit kann wie im Bild
+//                          angenommen werden, das Input 1 die höchste und Input n die 
+//                          niedrigste Priorität hat. Sind mehrere Eingänge gleichzeitig aktiv,
+//                          dann wird der Eingang mit der höchsten Priorität innerhalb einer
+//                          Zustandsüberführungsfunktion verarbeitet.
 //
 //<unit_environment>
 //------------------------------------------------------------------

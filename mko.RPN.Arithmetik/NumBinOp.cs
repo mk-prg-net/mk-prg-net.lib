@@ -42,8 +42,14 @@ namespace mko.RPN.Arithmetik
 {
     public abstract class NumBinOp : BasicEvaluator
     {
+        IFormatProvider pfmt;
 
-        public NumBinOp() : base(2) 
+        public NumBinOp(IFormatProvider pfmt) : base(2) 
+        {
+            this.pfmt = pfmt;
+        }
+
+        public NumBinOp() : this(new System.Globalization.CultureInfo("en-US"))
         {            
         }
         protected abstract double Func(double a, double b);
@@ -53,7 +59,7 @@ namespace mko.RPN.Arithmetik
             var a = PopNummeric(stack);
             var b = PopNummeric(stack);
 
-            var res = new DoubleToken(Func(a.Item1, b.Item1), a.Item2.CountOfEvaluatedTokens + b.Item2.CountOfEvaluatedTokens + 1);
+            var res = new DoubleToken(Func(a.Item1, b.Item1), pfmt, a.Item2.CountOfEvaluatedTokens + b.Item2.CountOfEvaluatedTokens + 1);
             stack.Push(res);
         }
     }

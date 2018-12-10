@@ -54,7 +54,14 @@ namespace mko.RPN
         public Composer(IFunctionNames fn) //(Tfn fn)
         {
             this.fn = fn;
-            pfmt = BasicTokenizer.rpnCult;
+            this.pfmt = new System.Globalization.CultureInfo("en-US");
+        }
+
+
+        public Composer(IFunctionNames fn, IFormatProvider pfmt) //(Tfn fn)
+        {
+            this.fn = fn;
+            this.pfmt = pfmt;
         }
 
 

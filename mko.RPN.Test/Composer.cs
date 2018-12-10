@@ -43,9 +43,11 @@ namespace mko.RPN.Test
 {
     public class Composer : mko.RPN.Composer
     {
-
         public Composer(mko.RPN.IFunctionNames fn)
             : base(fn) { }
+
+        public Composer(mko.RPN.IFunctionNames fn, IFormatProvider pfmt)
+            : base(fn, pfmt) { }
 
         public string Trio(int a, int b, int c)
         {

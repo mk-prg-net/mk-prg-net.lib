@@ -51,12 +51,14 @@ namespace mko.RPN.Arithmetik
         /// 
         /// </summary>
         /// <param name="ListEndSymbol">Symbol, welches das Ende einer variablen Parameterliste anzeigt</param>
-        public SumatEval(string ListEndSymbol)
+        public SumatEval(string ListEndSymbol, IFormatProvider pfmt)
         {
             this.ListEndSymbol = ListEndSymbol;
+            this.pfmt = pfmt;
         }
 
         string ListEndSymbol;
+        IFormatProvider pfmt;
 
         public override void ReadParametersAndEvaluate(Stack<IToken> stack)
         {
@@ -79,7 +81,7 @@ namespace mko.RPN.Arithmetik
             });
 
             // Ergebnis auf dem Stapel speichern
-            stack.Push(new DoubleToken(sum, CountEvaluated+1));
+            stack.Push(new DoubleToken(sum, pfmt, CountEvaluated+1));
 
         }
     }

@@ -12,7 +12,7 @@ namespace mko.RPN.StdEval
     /// Bachus Naur Form: 
     /// 'plx := 'propName 'propValue
     /// 'propValue := 'const | 'List
-    /// 'List := 'listStart plx0 ... plxN 'listEnd
+    /// 'List := 'listStart 'plx0 ... 'plxN 'listEnd
     /// </summary>
     public interface IFunctionNamesStd : IFunctionNames
     {

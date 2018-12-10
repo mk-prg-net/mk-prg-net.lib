@@ -4,4 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\mko.RPN\mko.RPN.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Eval\" />
+    <Folder Include="Fmt\" />
+  </ItemGroup>
+
 </Project>

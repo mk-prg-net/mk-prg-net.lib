@@ -8,7 +8,7 @@ namespace MkPrgNet.Tools.Async
 {
     /// <summary>
     /// (c) Martin Korneffel, Stuttgart 2017
-    /// Manages long runnig Tasks. Infomrs any time about processing status    
+    /// Manages long runnig Tasks. Informs any time about processing status    
     /// </summary>
     public interface IProgressor
     {

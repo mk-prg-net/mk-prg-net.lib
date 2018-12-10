@@ -51,7 +51,7 @@
 //
 //  Autor.........: Martin Korneffel (mko)
 //  Datum.........: 11.3.2018
-//  Änderungen....: Neue Version ParserV2, die eine reimplementierung der Klasse Parser aus den Vorversionen
+//  Änderungen....: Neue Version ParserV2, die eine Reimplementierung der Klasse Parser aus den Vorversionen
 //                  darstellt.
 //                  Reimplementierung des Parsers. Vorversion dokumentierte unzureichend die beim Parsen 
 //                  eine PN/RPN Strings gefundenen Fehler. Konfiguration des Parsers war auf vielfältige 
@@ -80,7 +80,7 @@ namespace mko.RPN
     /// Reimplementierung des Parsers. Vorversion dokumentierte unzureichend die beim Parsen 
     /// eine PN/RPN Strings gefundenen Fehler. Konfiguration des Parsers war auf vielfältige 
     /// weise möglich.
-    /// 1) Verinfachte Konfiguration (Evaluator- Tabelle nur noch im Konstruktor injezieren)
+    /// 1) Vereinfachte Konfiguration (Evaluator- Tabelle nur noch im Konstruktor injezieren)
     /// 2) Rückmeldung von syntaktischen Fehlern im Parser in strukturierter Form
     /// 3) Anstatt mit Exceptions mit mko.Logging.RC Fehler rückmelden
     /// </summary>

@@ -45,12 +45,12 @@ namespace mko.RPN.Arithmetik.Test
 
         public RPNArithmetik()
         {
-
+            var pfmt = new System.Globalization.CultureInfo("en-US");
 
             fnBase = new FunctionNamesLight();
             fn = new BasicFunctionNames(fnBase);
 
-            evalTab = new FunctionEvaluatorTable(new mko.RPN.FnameEvalMapper(fnBase), new FnameEvalMapperFunctor(fn, fnBase.ListEnd));
+            evalTab = new FunctionEvaluatorTable(new mko.RPN.FnameEvalMapper(fnBase), new FnameEvalMapperFunctor(fn, fnBase.ListEnd, pfmt));
 
             composer = new Composer(fnBase, fn);
 

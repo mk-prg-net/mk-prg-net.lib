@@ -40,36 +40,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicTokenizer.cs" />
-    <Compile Include="BoolEval.cs" />
-    <Compile Include="BoolToken.cs" />
-    <Compile Include="BufferedTokenizer.cs" />
+    <Compile Include="Token\BasicTokenizer.cs" />
+    <Compile Include="Eval\BoolEval.cs" />
+    <Compile Include="Token\BoolToken.cs" />
+    <Compile Include="Token\BufferedTokenizer.cs" />
     <Compile Include="Composer.cs" />
-    <Compile Include="DerivedToken.cs" />
-    <Compile Include="DoubleEval.cs" />
-    <Compile Include="DoubleToken.cs" />
-    <Compile Include="BasicEvaluator.cs" />
-    <Compile Include="EvalBase.cs" />
-    <Compile Include="EvalFunctionWithFixedParamCount.cs" />
-    <Compile Include="EvalHelper.cs" />
-    <Compile Include="FnameEvalMapper.cs" />
-    <Compile Include="FunctionEvaluatorTableExt.cs" />
+    <Compile Include="Token\DerivedToken.cs" />
+    <Compile Include="Eval\DoubleEval.cs" />
+    <Compile Include="Token\DoubleToken.cs" />
+    <Compile Include="Eval\BasicEvaluator.cs" />
+    <Compile Include="Eval\EvalBase.cs" />
+    <Compile Include="Eval\EvalFunctionWithFixedParamCount.cs" />
+    <Compile Include="Eval\EvalHelper.cs" />
+    <Compile Include="Eval\FnameEvalMapper.cs" />
+    <Compile Include="Eval\FunctionEvaluatorTableExt.cs" />
     <Compile Include="FunctionNamesLight.cs" />
     <Compile Include="FunctionNamesStrong.cs" />
-    <Compile Include="IExpression.cs" />
-    <Compile Include="ListEndEval.cs" />
-    <Compile Include="FunctionEvaluatorTable.cs" />
-    <Compile Include="FunctionNameToken.cs" />
+    <Compile Include="Token\IExpression.cs" />
+    <Compile Include="Eval\ListEndEval.cs" />
+    <Compile Include="Eval\FunctionEvaluatorTable.cs" />
+    <Compile Include="Token\FunctionNameToken.cs" />
     <Compile Include="IDateTimeFunctionNames.cs" />
-    <Compile Include="IEval.cs" />
-    <Compile Include="IFnameEvalMapper.cs" />
-    <Compile Include="IFunctionEvaluatorTable.cs" />
+    <Compile Include="Eval\IEval.cs" />
+    <Compile Include="Eval\IFnameEvalMapper.cs" />
+    <Compile Include="Eval\IFunctionEvaluatorTable.cs" />
     <Compile Include="IFunctionNames.cs" />
-    <Compile Include="IntEval.cs" />
-    <Compile Include="IntToken.cs" />
-    <Compile Include="IToken.cs" />
-    <Compile Include="ITokenizer.cs" />
-    <Compile Include="ListEndToken.cs" />
+    <Compile Include="Eval\IntEval.cs" />
+    <Compile Include="Token\IntToken.cs" />
+    <Compile Include="Token\IToken.cs" />
+    <Compile Include="Token\ITokenizer.cs" />
+    <Compile Include="Token\ListEndToken.cs" />
     <Compile Include="NoFunctionToken.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="ParserHelper.cs" />
@@ -80,9 +80,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SetPropertyBatchCmd.cs" />
+    <Compile Include="Token\SetPropertyBatchCmd.cs" />
     <Compile Include="plxEval\IFunctionNamesStd.cs" />
-    <Compile Include="StringToken.cs" />
+    <Compile Include="Token\StringToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="mko.RPN.nuspec" />
