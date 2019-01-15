@@ -12,7 +12,7 @@ namespace MkPrgNet.Woc
     /// werden können, bis schließlich kleine Cluster entstehen, aus denen die ID's direkt 
     /// hintereinander vergeben werden.
     /// </summary>
-    public interface ICluster
+    public interface IKeySet
     {
         /// <summary>
         /// Kurze, informelle Beschreibung des Clusters

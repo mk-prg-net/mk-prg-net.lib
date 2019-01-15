@@ -13,15 +13,26 @@ namespace MkPrgNet.Woc
     /// Jeder Kontinent ist ein Interval von z.B. [0, 2^60-1], [2^60, 2^61], ...
     /// Ein Kontinent wird auf Länder aufgeteilt usw..
     /// </summary>
-    public interface IGeographicalClusterScheme
+    public interface IGeographicalClusterScheme : IKeySet
     {
-        ICluster L0_Continents(Math.Sets.Interval<long> ival);
-
-        ICluster L1_Countrys(Math.Sets.Interval<long> ival);
-
-        ICluster L2_Regions(Math.Sets.Interval<long> ival);
-
-        ICluster L3_Locations(Math.Sets.Interval<long> ival);
-        
+        IContinent NextContinent(string Name);        
     }
+
+    public interface IContinent : IKeySet
+    {
+        ICountry NextCountry(string Name);
+    }
+
+    public interface ICountry : IKeySet
+    {
+        IRegion NextRegion(string Name);
+    }
+
+    public interface IRegion : IKeySet
+    {
+        IKeySet NextLocation(string Name);
+    }
+
+    
+
 }

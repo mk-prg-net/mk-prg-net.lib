@@ -192,5 +192,32 @@ namespace MkPrgNet.Math.Sets.Test
 
 
         }
+
+        [TestMethod]
+        public void Sets_SequenzOfIntervals_Test()
+        {
+            var s1 = new SequenceOfEqualIntervalsOverLong(0, 0x100L, 0x200);
+
+            Assert.IsTrue(s1.IsNotEmpty);
+            var i1 = s1.NextInterval;
+
+            Assert.AreEqual(0L, i1.Begin);
+            Assert.AreEqual(0x100L -1L, i1.End);
+
+            Assert.IsTrue(s1.IsNotEmpty);
+            var i2 = s1.NextInterval;
+
+            Assert.IsTrue(i1.End + 1 == i2.Begin);
+
+            Assert.IsFalse(s1.IsNotEmpty);
+
+            try
+            {
+                var i3 = s1.NextInterval;
+            }catch(Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(IndexOutOfRangeException));
+            }
+        }
     }
 }
