@@ -13,7 +13,7 @@ namespace MkPrgNet.Woc
         /// <summary>
         /// Erzeugt die allgemeinsten Teilmengen von Nodes
         /// </summary>
-        Math.Sets.ISequenzOfIntervals<long> NodeClusterSequnce { get; }
+        Math.Sets.ISequenceOfIntervalsOfEqualSize<long> NodeClusterSequnce { get; }
 
     }
 }

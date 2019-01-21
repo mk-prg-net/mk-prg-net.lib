@@ -32,6 +32,6 @@ namespace MkPrgNet.Woc
         /// <summary>
         /// Liefert das nächste, noch nicht belegte Subcluster.
         /// </summary>
-        Math.Sets.ISequenzOfIntervals<long> SubClusterSequenz { get; }
+        Math.Sets.ISequenceOfIntervalsOfEqualSize<long> SubClusterSequenz { get; }
     }
 }

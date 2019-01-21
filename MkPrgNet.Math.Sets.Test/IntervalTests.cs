@@ -34,7 +34,7 @@ namespace MkPrgNet.Math.Sets.Test
             double end = 0.2;
             end *= 10.0;
 
-            var dbl1 = Interval.Create(begin, 10.0 );
+            var dbl1 = Interval.Create(begin, 10.0);
             var dbl11 = Interval.Create(3.0, 10.0);
 
             Assert.IsFalse(dbl1 == dbl11);
@@ -196,28 +196,62 @@ namespace MkPrgNet.Math.Sets.Test
         [TestMethod]
         public void Sets_SequenzOfIntervals_Test()
         {
-            var s1 = new SequenceOfEqualIntervalsOverLong(0, 0x100L, 0x200);
+            var s1 = new SequenceOfIntervalsOfEqualSize(0, 0x100L, 0x200);
 
             Assert.IsTrue(s1.IsNotEmpty);
             var i1 = s1.NextInterval;
 
-            Assert.AreEqual(0L, i1.Begin);
-            Assert.AreEqual(0x100L -1L, i1.End);
+            Assert.AreEqual(0L, i1?.Begin);
+            Assert.AreEqual(0x100L - 1L, i1?.End);
 
             Assert.IsTrue(s1.IsNotEmpty);
             var i2 = s1.NextInterval;
 
-            Assert.IsTrue(i1.End + 1 == i2.Begin);
+            Assert.IsTrue(i1?.End + 1 == i2?.Begin);
 
             Assert.IsFalse(s1.IsNotEmpty);
 
-            try
-            {
-                var i3 = s1.NextInterval;
-            }catch(Exception ex)
-            {
-                Assert.IsInstanceOfType(ex, typeof(IndexOutOfRangeException));
-            }
+            var i3 = s1.NextInterval;
+
+            Assert.IsFalse(i3.HasValue);
+            Assert.IsTrue((i3 ?? new Interval<long>(0L, 0L)) == new Interval<long>(0L, 0L));
+
+
+            var s2 = new SequenceOfIntervalsOfDifferentSize(0, 0x200);
+
+            var i21 = s2.NextInterval(0x100);
+
+            Assert.IsTrue(i21.HasValue);
+            Assert.AreEqual(0L, i21?.Begin);
+            Assert.AreEqual(0x100L - 1L, i21?.End);
+
+            
+            var i22 = s2.NextInterval(0x80);
+
+            Assert.IsTrue(i21?.End + 1 == i22?.Begin);            
+
+            var i23 = s2.NextInterval(0x81);
+
+            Assert.IsFalse(i23.HasValue);
+
+            var i24 = s2.NextInterval(0x7F);
+
+            Assert.IsTrue(i24.HasValue);
+            Assert.IsTrue(i22?.End + 1 == i24?.Begin);
+
+            var i25 = s2.NextInterval(1);
+
+            Assert.IsTrue(i25.HasValue);
+            Assert.IsTrue(i24?.End + 1 == i25?.Begin);
+
+            var i26 = s2.NextInterval(0);
+
+
+            Assert.IsFalse(i26.HasValue);
+
+
+
+
         }
     }
 }

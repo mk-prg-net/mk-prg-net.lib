@@ -11,23 +11,17 @@ namespace MkPrgNet.Math.Sets
     /// 
     /// mko, 15.1.2019
     /// IsEmpty hinzugefügt.
+    /// 
+    /// mko, 21.1.2019
+    /// IsEmpty entfernt, da Komplikationen in multithreading Umgebung befürchtet.
+    /// Eigenschaft Range hinzugefügt
     /// </summary>
-    public interface ISequenzOfIntervals<T>
+    public interface ISequenceOfIntervals<T>
         where T : IComparable<T>, new()
-    {
+    {        
         /// <summary>
-        /// Creates a new interval, that is disjunct to all predecessors.
+        /// Definiert den Bereich, welcher durch die sequenz der Intervalle überdeckt wird.
         /// </summary>
-        /// <returns></returns>
-        Interval<T> NextInterval { get; }
-
-        /// <summary>
-        /// If true NextInterval will return with an new valid interval. 
-        /// If false NextInterval will throw an exception,
-        /// </summary>
-        bool IsNotEmpty
-        {
-            get;
-        }
+        Interval<T> Range { get; }
     }
 }

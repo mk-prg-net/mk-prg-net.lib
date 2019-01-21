@@ -4,23 +4,22 @@ using System.Text;
 
 namespace MkPrgNet.Math.Sets
 {
-    public class SequenceOfEqualIntervalsOverLong : ISequenzOfIntervals<long>
+    /// <summary>
+    /// mko, 21.1.2019
+    /// 
+    /// </summary>
+    public class SequenceOfIntervalsOfDifferentSize : ISequenceOfIntervalsOfDifferentSize<long>
     {
         /// <summary>
         /// Erzeug eine neue Intervallsequenz
         /// </summary>
         /// <param name="start">Beginn des ersten Intervalls, welches die Sequenz liefert</param>
         /// <param name="width">Breite der von der Sequenz ausgelieferten Intervalle</param>
-        public SequenceOfEqualIntervalsOverLong(long start, long width, long end = long.MaxValue)
+        public SequenceOfIntervalsOfDifferentSize(long start, long end = long.MaxValue)
         {
             _start = start;
             _nextStart = start;
-            _width = width;
             _end = end;
-        }
-
-        public SequenceOfEqualIntervalsOverLong()
-        {
         }
 
         /// <summary>
@@ -28,33 +27,25 @@ namespace MkPrgNet.Math.Sets
         /// </summary>
         long _start;
 
-        /// <summary>
-        /// Intervallbreite
-        /// </summary>
-        long _width;
-
         // Ende des Bereiches, welcher in Intervalle aufgeteilt wird.
         long _end;
 
         long _nextStart;
 
+        public Interval<long> Range =>new Interval<long>(_start, _end);
+
         /// <summary>
         /// Liefert das nächste disjunkte Intervall der Sequenz
         /// </summary>
         /// <returns></returns>
-        public Interval<long> NextInterval
+        public Interval<long>? NextInterval(long Size)
         {
-            get
-            {
-                if (!IsNotEmpty)
-                    throw new IndexOutOfRangeException(Base.TraceHlp.FormatErrMsg(this, "NewInterval", "stock of intervals exhausted"));
+            if (_nextStart + Size > _end || Size <= 0)
+                return new Interval<long>?();
 
-                var newI = Interval.Create<long>(_nextStart, _nextStart + _width - 1);
-                _nextStart = _nextStart + _width;
-                return newI;
-            }
+            var newI = Interval.Create<long>(_nextStart, _nextStart + Size - 1);
+            _nextStart = _nextStart + Size;
+            return newI;
         }
-
-        public bool IsNotEmpty => _nextStart + _width - 1 <= _end;
     }
 }
