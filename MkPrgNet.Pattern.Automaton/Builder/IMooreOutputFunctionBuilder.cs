@@ -25,11 +25,12 @@
 //<unit_history>
 //------------------------------------------------------------------
 //
-//  Version.......: 1.1
+//  Version.......: 19.3.2
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 
-//  Änderungen....: 
-//
+//  Datum.........: 22.3.2019
+//  Änderungen....: Neue Schnittstelle der Ausgabefunktoren: Write hat den 
+//                  zusätzlichen Parameter prevState.
+//                  Name von DefineOutputFunctorFor gekürtzt auf DefOutputFor
 //</unit_history>
 //</unit_header>        
 
@@ -49,7 +50,7 @@ namespace MkPrgNet.Pattern.Automaton
         /// </summary>        
         /// <param name="state">state as enum value</param>
         /// /// <param name="output">Output functor</param>
-        void DefineOutputFunctorFor(TStateEnum state, IOutput output);
+        void DefOutputFor(TStateEnum state, IOutput<TStateEnum> output);
 
         /// <summary>
         /// 

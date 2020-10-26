@@ -43,11 +43,7 @@ namespace mko.RPN
 {
     public class DoubleEval : BasicEvaluator        
     {
-        IFormatProvider pfmt;
-        public DoubleEval(IFormatProvider pfmt) : base(1)
-        {
-            this.pfmt = pfmt;
-        }
+        public DoubleEval() : base(1) { }
 
         public override void ReadParametersAndEvaluate(Stack<IToken> stack)
         {
@@ -55,10 +51,10 @@ namespace mko.RPN
             var tok = stack.Pop();
             if (tok.IsInteger)
             {
-                stack.Push(new DoubleToken((IntToken)tok, pfmt, tok.CountOfEvaluatedTokens + 1));
+                stack.Push(new DoubleToken((IntToken)tok, tok.CountOfEvaluatedTokens + 1));
             } else
             {
-                stack.Push(new DoubleToken((DoubleToken)tok, pfmt, tok.CountOfEvaluatedTokens + 1));
+                stack.Push(new DoubleToken((DoubleToken)tok, tok.CountOfEvaluatedTokens + 1));
             }
         }
     }

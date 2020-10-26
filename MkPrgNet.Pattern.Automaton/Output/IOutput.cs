@@ -43,12 +43,19 @@ namespace MkPrgNet.Pattern.Automaton
     /// <summary>
     /// Output funktor. 
     /// </summary>
-    public interface IOutput
+    public interface IOutput<TStateEnum>
+        where TStateEnum : struct
     {
         /// <summary>
         /// Computes the output
+        /// 
+        /// mko, 22.3.2019
+        /// Um den Parameter prevState erweitert. Dieser bezeichnet den vorausgegangenen Zustand- 
+        /// Nützlich in neuen Zuständen wie Error, die erklären sollen, wie sie erreicht wurden.
         /// </summary>
-        /// <param name="input"></param>
-        void Write(IInput input);
+        /// <param name="input">input in previos state, provided to this new state</param>
+        /// <param name="prevState">previos State of FSM</param>
+
+        void Write(IInput input, TStateEnum prevState);
     }
 }

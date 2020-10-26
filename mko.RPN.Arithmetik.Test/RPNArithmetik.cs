@@ -7,6 +7,8 @@ using System.Linq;
 using mko.RPN;
 using System.Diagnostics;
 
+using static mko.RPN.UrlSaveStringEncoder;
+
 namespace mko.RPN.Arithmetik.Test
 {
     [TestClass]
@@ -45,12 +47,12 @@ namespace mko.RPN.Arithmetik.Test
 
         public RPNArithmetik()
         {
-            var pfmt = new System.Globalization.CultureInfo("en-US");
+
 
             fnBase = new FunctionNamesLight();
             fn = new BasicFunctionNames(fnBase);
 
-            evalTab = new FunctionEvaluatorTable(new mko.RPN.FnameEvalMapper(fnBase), new FnameEvalMapperFunctor(fn, fnBase.ListEnd, pfmt));
+            evalTab = new FunctionEvaluatorTable(new mko.RPN.FnameEvalMapper(fnBase), new FnameEvalMapperFunctor(fn, fnBase.ListEnd));
 
             composer = new Composer(fnBase, fn);
 
@@ -112,13 +114,13 @@ namespace mko.RPN.Arithmetik.Test
         [TestMethod]
         public void Composer_Test()
         {
-            Assert.AreEqual("4.7 2.3 .add 0.5 2.5 .sub 2 .mul .add", rpn.Trim());
-            Assert.AreEqual(".add .mul 2 .sub 2.5 0.5 .add 2.3 4.7", pn.Trim());
-            Assert.AreEqual(".Lend 3 2 1 .sumat", rpnSumat);
-            Assert.AreEqual(".sumat 1 2 3 .Lend", pnSumat);
+            Assert.AreEqual("4.7 2.3 .add 0.5 2.5 .sub 2 .mul .add", rpn.Trim().RPNUrlSaveStringDecodeIf(true));
+            Assert.AreEqual(".add .mul 2 .sub 2.5 0.5 .add 2.3 4.7", pn.Trim().RPNUrlSaveStringDecodeIf(true));
+            Assert.AreEqual(".Lend 3 2 1 .sumat", rpnSumat.RPNUrlSaveStringDecodeIf(true));
+            Assert.AreEqual(".sumat 1 2 3 .Lend", pnSumat.RPNUrlSaveStringDecodeIf(true));
 
-            Assert.AreEqual("4.7 2.3 .add 0.5 2.5 .sub .Lend 3 2 1 .sumat .mul .add", rpnCplxSumat.Trim());
-            Assert.AreEqual(".add .mul .sumat 1 2 3 .Lend .sub 2.5 0.5 .add 2.3 4.7", pnCplxSumat.Trim());
+            Assert.AreEqual("4.7 2.3 .add 0.5 2.5 .sub .Lend 3 2 1 .sumat .mul .add", rpnCplxSumat.Trim().RPNUrlSaveStringDecodeIf(true));
+            Assert.AreEqual(".add .mul .sumat 1 2 3 .Lend .sub 2.5 0.5 .add 2.3 4.7", pnCplxSumat.Trim().RPNUrlSaveStringDecodeIf(true));
         }
 
         [TestMethod]
@@ -474,7 +476,7 @@ namespace mko.RPN.Arithmetik.Test
             Parser.Parse(composer.rADD(composer.Dbl(4.7), composer.Dbl(2.3)));
 
 
-            var rcTokenize = BasicTokenizer.TokenizeRPN(add, evalTab.FunctionNames());
+            var rcTokenize = BasicTokenizer.TokenizeRPN(add, true, evalTab.FunctionNames());
             Assert.IsTrue(rcTokenize.Succeeded);
 
             var rcParse = PV2.Parse(rcTokenize.Value);
@@ -490,7 +492,7 @@ namespace mko.RPN.Arithmetik.Test
         public void RPNArithmetik_ADD_2()
         {
             {
-                var rcTokens = BasicTokenizer.TokenizePN(".add 2.4 hallo", evalTab.FunctionNames());
+                var rcTokens = BasicTokenizer.TokenizePN(".add 2.4 hallo", true, evalTab.FunctionNames());
                 Assert.IsTrue(rcTokens.Succeeded);
 
                 var rcParse = PV2.Parse(rcTokens.Value);
@@ -501,7 +503,7 @@ namespace mko.RPN.Arithmetik.Test
             }
 
             {
-                var rcTokens = BasicTokenizer.TokenizePN(".add hallo 2.4", evalTab.FunctionNames());
+                var rcTokens = BasicTokenizer.TokenizePN(".add hallo 2.4", true, evalTab.FunctionNames());
                 Assert.IsTrue(rcTokens.Succeeded);
 
                 var rcParse = PV2.Parse(rcTokens.Value);
@@ -512,7 +514,7 @@ namespace mko.RPN.Arithmetik.Test
             }
 
             {
-                var rcTokens = BasicTokenizer.TokenizePN(".add .add 1.6 hallo 2.4", evalTab.FunctionNames());
+                var rcTokens = BasicTokenizer.TokenizePN(".add .add 1.6 hallo 2.4", true, evalTab.FunctionNames());
                 Assert.IsTrue(rcTokens.Succeeded);
 
                 var rcParse = PV2.Parse(rcTokens.Value);
@@ -524,7 +526,7 @@ namespace mko.RPN.Arithmetik.Test
 
 
             {
-                var rcTokens = BasicTokenizer.TokenizePN(".add 2.4 1.6", evalTab.FunctionNames());
+                var rcTokens = BasicTokenizer.TokenizePN(".add 2.4 1.6", true, evalTab.FunctionNames());
                 Assert.IsTrue(rcTokens.Succeeded);
 
                 var rcParse = PV2.Parse(rcTokens.Value);

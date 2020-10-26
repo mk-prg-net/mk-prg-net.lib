@@ -53,7 +53,7 @@ namespace MkPrgNet.Pattern.Automaton
         /// <param name="state"></param>
         /// <param name="input"></param>
         /// <param name="output"></param>
-        void DefineOutputFunctorFor(TStateEnum state, IInput input, IOutput output);
+        void DefineOutputFunctorFor(TStateEnum state, IInput input, IOutput<TStateEnum> output);
 
 
         /// <summary>

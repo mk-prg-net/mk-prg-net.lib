@@ -55,13 +55,13 @@ namespace MkPrgNet.Pattern.Automaton
         Tuple<TStateEnum, HashSet<TStateEnum>> stateDeco;
         HashSet<IInput> _Inputs;
         Dictionary<int, TStateEnum> Transistions;
-        Dictionary<TStateEnum, IOutput> outputs = new Dictionary<TStateEnum, IOutput>();
+        Dictionary<TStateEnum, IOutput<TStateEnum>> outputs = new Dictionary<TStateEnum, IOutput<TStateEnum>>();
 
 
         internal MooreAutomaton(Tuple<TStateEnum, HashSet<TStateEnum>> stateDeco,
                                 HashSet<IInput> Inputs,
                                 Dictionary<int, TStateEnum> Transistions,
-                                Dictionary<TStateEnum, IOutput> outputs)
+                                Dictionary<TStateEnum, IOutput<TStateEnum>> outputs)
         {
             this.stateDeco = stateDeco;
             StateProperties = new States.Impl.StateDecorator<TStateEnum>(stateDeco);
@@ -114,12 +114,18 @@ namespace MkPrgNet.Pattern.Automaton
                 // aktiven Input mit der höchsten Priorität bestimmen
                 var input = _Inputs.OrderByDescending(i => i.Priority).First(i => i.On);
 
+                var prevState = _current;
                 _current = Transistions[Tuple.Create(input, _current).GetHashCode()];
 
-                // Die mit dem Zustand verbundene Ausgabe durchführen
-                outputs[_current].Write(input);
-
+                // mko, 20.3.2019
+                // Vorher wurden die inputs nach Aufruf der outputs- Funktion 
+                // resetted. Dadurch wurden neue Eingaben in den outputs neutralisiert.
+                
                 input.Reset();
+
+                // Die mit dem Zustand verbundene Ausgabe durchführen
+                outputs[_current].Write(input, prevState);
+
             }
         }
     }

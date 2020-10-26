@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Hid.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MkPrgNet.Base\MkPrgNet.Base.csproj" />
   </ItemGroup>
 

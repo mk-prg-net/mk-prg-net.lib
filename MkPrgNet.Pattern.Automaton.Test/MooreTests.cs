@@ -143,17 +143,17 @@ namespace MkPrgNet.Pattern.Automaton.Test
 
             // ZustandsüberGänge definieren
             var transitions = states.CreateTransistionFunctionBuilder();
-            transitions.DefNewTransistionFor(Zahlen, Drehkreuz.Auf, Drehkreuz.Auf, Drehkreuz.Aus, Drehkreuz.Err);
-            transitions.DefNewTransistionFor(AmKreuz, Drehkreuz.Zu, Drehkreuz.Zu, Drehkreuz.Aus, Drehkreuz.Err);
-            transitions.DefNewTransistionFor(Aus, Drehkreuz.Aus, Drehkreuz.Aus, Drehkreuz.Aus, Drehkreuz.Aus);
-            transitions.DefNewTransistionFor(err, Drehkreuz.Err, Drehkreuz.Err, Drehkreuz.Err, Drehkreuz.Err);
+            transitions.DefTransistionFor(Zahlen, Drehkreuz.Auf, Drehkreuz.Auf, Drehkreuz.Aus, Drehkreuz.Err);
+            transitions.DefTransistionFor(AmKreuz, Drehkreuz.Zu, Drehkreuz.Zu, Drehkreuz.Aus, Drehkreuz.Err);
+            transitions.DefTransistionFor(Aus, Drehkreuz.Aus, Drehkreuz.Aus, Drehkreuz.Aus, Drehkreuz.Aus);
+            transitions.DefTransistionFor(err, Drehkreuz.Err, Drehkreuz.Err, Drehkreuz.Err, Drehkreuz.Err);
 
             // Ausgabefunktionen definieren
             var outputs = transitions.CreateOutputFunctionBuilder();
-            outputs.DefineOutputFunctorFor(Drehkreuz.Auf, new OutputFunctor((i) => Debug.WriteLine("Bin offen")));
-            outputs.DefineOutputFunctorFor(Drehkreuz.Zu, new OutputFunctor((i) => Debug.WriteLine("Bin zu")));
-            outputs.DefineOutputFunctorFor(Drehkreuz.Aus, new OutputFunctor((i) => Debug.WriteLine("Bin aus")));
-            outputs.DefineOutputFunctorFor(Drehkreuz.Err, new OutputFunctor((i) =>
+            outputs.DefOutputFor(Drehkreuz.Auf, new OutputFunctor<Drehkreuz>((i, preS) => Debug.WriteLine("Bin offen")));
+            outputs.DefOutputFor(Drehkreuz.Zu, new OutputFunctor<Drehkreuz>((i, preS) => Debug.WriteLine("Bin zu")));
+            outputs.DefOutputFor(Drehkreuz.Aus, new OutputFunctor<Drehkreuz>((i, preS) => Debug.WriteLine("Bin aus")));
+            outputs.DefOutputFor(Drehkreuz.Err, new OutputFunctor<Drehkreuz>((i, preS) =>
             {
                 if (i is Err)
                 {

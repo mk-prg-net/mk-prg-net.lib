@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+    <licenseUrl>http://fe0vm7871.de.bosch.com/DFC01/License-DFC-Lib.txt</licenseUrl>
+    <projectUrl>https://inside-docupedia.bosch.com/confluence/display/PAATMO1ICOWiki/DFC2_Windowsclient_EN</projectUrl>
+    <iconUrl>http://fe0vm7871.de.bosch.com/DFC01/bosch-logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<releaseNotes></releaseNotes>
+		<copyright>Copyright Robert Bosch Manufacturing GmbH, Stuttgart 2017</copyright>
+		<tags>Tools for logging and tracing</tags>
+		<dependencies>
+      <dependency id="mko" version="7.4.1"/>
+      <dependency id="mko.Algo" version="1.2.3"/>
+      <dependency id="mko.RPN" version="18.12.4"/>
+      <dependency id="mko.RPN.Arithmetik" version="18.12.1"/>
+    </dependencies>
+	</metadata>
+</package>

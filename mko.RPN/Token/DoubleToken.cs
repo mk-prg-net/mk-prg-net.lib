@@ -29,11 +29,6 @@
 //  Datum.........: 18.5.2017
 //  Änderungen....: Erweitert um double- Konvertierungsoperator
 //
-//  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 1.11.2018
-//  Änderungen....: Formatprovider, mit dem ein Double in einen kulturspezifischen String
-//                  gewandelt wird, wird jetzt via Konstruktor injeziert
-//
 //</unit_history>
 //</unit_header>        
 
@@ -47,14 +42,12 @@ namespace mko.RPN
 {
     public class DoubleToken : NoFunctionToken
     {
-        protected readonly IFormatProvider pfmt;
 
 
-        public DoubleToken(double Value, IFormatProvider pfmt, int CountOfEvaluatedTokens = 1)
+        public DoubleToken(double Value, int CountOfEvaluatedTokens = 1)
             : base(CountOfEvaluatedTokens)
         {
             _Value = Value;
-            this.pfmt = pfmt;
         }
 
         double _Value;
@@ -69,7 +62,7 @@ namespace mko.RPN
 
         protected override string ValueToString
         {
-            get { return _Value.ToString(pfmt); }
+            get { return _Value.ToString(BasicTokenizer.rpnCult); }
         }
 
         public override bool IsInteger
@@ -89,7 +82,7 @@ namespace mko.RPN
 
         public override IToken Copy()
         {
-            return new DoubleToken(_Value, pfmt, CountOfEvaluatedTokens);
+            return new DoubleToken(_Value, CountOfEvaluatedTokens);
         }
 
         public override string ToString()

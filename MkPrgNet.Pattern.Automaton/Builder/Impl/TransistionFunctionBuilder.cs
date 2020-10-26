@@ -17,7 +17,7 @@ namespace MkPrgNet.Pattern.Automaton.Builder.Impl
         /// </summary>        
         public Dictionary<int, TStateEnum> Transistions = new Dictionary<int, TStateEnum>();
 
-        public void DefNewTransistionFor(IInput input, params TStateEnum[] subsequentStates)
+        public void DefTransistionFor(IInput input, params TStateEnum[] subsequentStates)
         {
             Inputs.Add(input);
             TStateEnum[] states = (TStateEnum[])Enum.GetValues(typeof(TStateEnum));

@@ -12,7 +12,7 @@ namespace MkPrgNet.Pattern.Automaton.Builder.Impl
         Tuple<TStateEnum, HashSet<TStateEnum>> stateDeco;
         HashSet<IInput> Inputs;
         Dictionary<int, TStateEnum> Transistions;
-        Dictionary<TStateEnum, IOutput> outputs = new Dictionary<TStateEnum, IOutput>();
+        Dictionary<TStateEnum, IOutput<TStateEnum>> outputs = new Dictionary<TStateEnum, IOutput<TStateEnum>>();
 
         public MoorOutputFunctionBuilder(Tuple<TStateEnum, HashSet<TStateEnum>> stateDeco, HashSet<IInput> Inputs, Dictionary<int, TStateEnum> Transistions)
         {
@@ -26,7 +26,7 @@ namespace MkPrgNet.Pattern.Automaton.Builder.Impl
             return new global::MkPrgNet.Pattern.Automaton.MooreAutomaton<TStateEnum>(stateDeco, Inputs, Transistions, outputs);
         }
 
-        public void DefineOutputFunctorFor(TStateEnum state, IOutput output)
+        public void DefOutputFor(TStateEnum state, IOutput<TStateEnum> output)
         {
             outputs[state] = output;
         }

@@ -42,13 +42,18 @@ using System.Threading.Tasks;
 
 namespace MkPrgNet.Pattern.Automaton
 {
-    public class NullOutput : IOutput
+    public class NullOutput<TStateEnum> : IOutput<TStateEnum>
+        where TStateEnum : struct
     {
-        public static Lazy<NullOutput> Instance = new Lazy<NullOutput>(() => new NullOutput());
-
-        public void Write(IInput input)
+        public static Lazy<NullOutput<TStateEnum>> Instance = new Lazy<NullOutput<TStateEnum>>(() => new NullOutput<TStateEnum>());
+        
+        public void Write(IInput input, TStateEnum prevState)            
         {
             Debug.WriteLine("NullOutput: " + input.GetType().Name);
         }
     }
 }
+
+
+
+

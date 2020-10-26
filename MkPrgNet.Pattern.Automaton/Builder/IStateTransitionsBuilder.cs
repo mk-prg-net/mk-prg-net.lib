@@ -50,6 +50,6 @@ namespace MkPrgNet.Pattern.Automaton
     public interface IStateTransitionsBuilder<TStateEnum>
         where TStateEnum: struct
     {
-        void DefNewTransistionFor(IInput input, params TStateEnum[] subsequentStates);
+        void DefTransistionFor(IInput input, params TStateEnum[] subsequentStates);
     }
 }

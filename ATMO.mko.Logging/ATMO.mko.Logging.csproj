@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71E3A4B1-71F3-422C-93AB-31895043CC82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ATMO.mko.Logging</RootNamespace>
+    <AssemblyName>ATMO.mko.Logging</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MKO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_with_local_IIS|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug_with_local_IIS\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MKO</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
+    <OutputPath>bin\Beta\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attr\AttrFileWriter.cs" />
+    <Compile Include="Attr\IAttrFileWriter.cs" />
+    <Compile Include="CSV\CsvFileWriterV01.cs" />
+    <Compile Include="CSV\ICsvWriter.cs" />
+    <Compile Include="EnumLogTypeDFC.cs" />
+    <Compile Include="IDescriptor.cs" />
+    <Compile Include="IdSet\IdSet.cs" />
+    <Compile Include="IRCV2.cs" />
+    <Compile Include="IRCV3.cs" />
+    <Compile Include="ITraceInfo.cs" />
+    <Compile Include="ISucceeded.cs" />
+    <Compile Include="IValue.cs" />
+    <Compile Include="Logging\ILoggingHandler.cs" />
+    <Compile Include="Logging\ILoggingServer.cs" />
+    <Compile Include="Logging\ILogInfo18_12.cs" />
+    <Compile Include="Logging\LoggingServerV18_12.cs" />
+    <Compile Include="Logging\LogHandler\ConsoleLogHandler.cs" />
+    <Compile Include="Logging\LogHandler\FileLogHnd.cs" />
+    <Compile Include="Logging\LogHandler\MemLogHandler.cs" />
+    <Compile Include="LogHnd\ConsoleLogHandler.cs" />
+    <Compile Include="LogHnd\DebugLogHandler.cs" />
+    <Compile Include="LogHnd\FileLogHandler.cs" />
+    <Compile Include="LogHnd\PLX\IView.cs" />
+    <Compile Include="LogHnd\PLX\PlxLogHnd.cs" />
+    <Compile Include="ILogInfo.cs" />
+    <Compile Include="LogHandler.cs" />
+    <Compile Include="LogServer.cs" />
+    <Compile Include="LogHnd\MemLogHandler.cs" />
+    <Compile Include="Monitoring\IJob.cs" />
+    <Compile Include="Monitoring\IJobMonitoring.cs" />
+    <Compile Include="Monitoring\IJobMonitoringConsole.cs" />
+    <Compile Include="Monitoring\Job.cs" />
+    <Compile Include="Monitoring\JobMonitoringConsole.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\Composer.SubTrees.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\Composer.TechTerms.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\DocuEntityAsPropertyLinqDeco.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\DocuEntityHlp.PatternMatching.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\DocuEntityLinqDeco.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\DocuEntityWithNameLinqDeco.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\KillIfNot.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\ListToEmbed.cs" />
+    <Compile Include="PNDocuTerms\FnQs.cs" />
+    <Compile Include="PNDocuTerms\IFn.cs" />
+    <Compile Include="PNDocuTerms\Parser\ReturnEval.cs" />
+    <Compile Include="RC.cs" />
+    <Compile Include="LogHnd\RCContainerLogHnd.cs" />
+    <Compile Include="LogHnd\SystemEventLogHnd.cs" />
+    <Compile Include="LogHnd\WinformListBoxLogHnd.cs" />
+    <Compile Include="LogHnd\WinformMessageBoxLogHnd.cs" />
+    <Compile Include="LogHnd\WinFormStatusStripLogHnd.cs" />
+    <Compile Include="PNDocuTerms\Composer.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\Composer.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\DocuEntity.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\DocuEntityHlp.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\HTMLFormater.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\IComposer.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\IDocuEntity.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\IFormater.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\PNFormater.cs" />
+    <Compile Include="PNDocuTerms\DocuEntities\String.cs" />
+    <Compile Include="PNDocuTerms\Fn.cs" />
+    <Compile Include="PNDocuTerms\Parser\DateEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\EvalHlp.cs" />
+    <Compile Include="PNDocuTerms\Parser\EventEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\FunctionEvalMapperFunctor.cs" />
+    <Compile Include="PNDocuTerms\Parser\InstanceEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\MethodEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\ListEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\Parser.cs" />
+    <Compile Include="PNDocuTerms\Parser\PropertyEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\PropertySetEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\TextEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\TimeEval.cs" />
+    <Compile Include="PNDocuTerms\Parser\VersionEval.cs" />
+    <Compile Include="ProgressFunctor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RCV2.cs" />
+    <Compile Include="RCV2Ser.cs" />
+    <Compile Include="RCV2_T.cs" />
+    <Compile Include="RCV3.cs" />
+    <Compile Include="RCV3sV.cs" />
+    <Compile Include="RCV3_T.cs" />
+    <Compile Include="RCV3WithValue.cs" />
+    <Compile Include="SessionIdGenerator.cs" />
+    <Compile Include="StartTimeLogging.cs" />
+    <Compile Include="TI.cs" />
+    <Compile Include="Tools\EnumExt.cs" />
+    <Compile Include="TraceHlp.cs" />
+    <Compile Include="Trees\Hid.cs" />
+    <Compile Include="Url\UrlTools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ATMO.mko.Logging.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PNDocuTerms\DocuEntities\Docu\DocuEntitiesComposer.md" />
+    <None Include="PNDocuTerms\DocuEntities\Docu\readme-DocuEntities-language.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mko.Algo\mko.Algo.csproj">
+      <Project>{e4390e39-d913-4a9a-9227-5e2cdcf04a4e}</Project>
+      <Name>mko.Algo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko.RPN.Arithmetik\mko.RPN.Arithmetik.csproj">
+      <Project>{9f025918-eb9f-4c92-b18e-2382578d3db6}</Project>
+      <Name>mko.RPN.Arithmetik</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko.RPN\mko.RPN.csproj">
+      <Project>{31fa4574-e070-4bbc-af5c-5586b782cc0e}</Project>
+      <Name>mko.RPN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mko\mko.csproj">
+      <Project>{fd808f4f-00bd-4bc6-8142-ef944200c901}</Project>
+      <Name>mko</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

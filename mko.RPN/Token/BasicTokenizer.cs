@@ -49,11 +49,10 @@
 //                  (ursprünglich in class Parser)
 //
 //  Autor.........: Martin Korneffel (mko)
-//  Datum.........: 1.11.2018
-//  Änderungen....: Statische Eigenschaft rpnCult durch Instanz- Eigenschaft ersetzt. Dadurch wird Tokenizer
-//                  threadfest.
-//
-//  
+//  Datum.........: 6.12.2018
+//  Änderungen....: Strings werden beim Einlesen automatisch aus dem Url- sicheren Format 
+//                  (UrlSaveStringEncoder) decodiert. 
+//                  
 //
 //</unit_history>
 //</unit_header>        
@@ -65,6 +64,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using mko.Logging;
+
+using static mko.RPN.UrlSaveStringEncoder;
 
 namespace mko.RPN
 {
@@ -82,67 +83,58 @@ namespace mko.RPN
         /// </summary>
         public const char Delimiter = '\'';
 
-        //static BasicTokenizer()
-        //{
-        //    rpnCult = new System.Globalization.CultureInfo("en-US");
-        //}
-
-        public BasicTokenizer()
+        static BasicTokenizer()
         {
             rpnCult = new System.Globalization.CultureInfo("en-US");
         }
 
-        /// <summary>
-        /// mko, 1.11.2018
-        /// </summary>
-        /// <param name="cult"></param>
-        public BasicTokenizer(System.Globalization.CultureInfo cult)
+        bool doRPNUrlDecode;
+        public BasicTokenizer(bool doRPNUrlDecode = false)
         {
-            rpnCult = cult;
+            rpnCult = new System.Globalization.CultureInfo("en-US");
+            this.doRPNUrlDecode = doRPNUrlDecode;
         }
 
         /// <summary>
         /// Konstruktor der Basisimplementierung eines Tokenizers
         /// </summary>
         /// <param name="reader">Datenstrom, die Typ 2 Sprachterme in Reverse Polish Notation (RPN) enthält</param>
-        public BasicTokenizer(System.IO.StreamReader reader)
+        public BasicTokenizer(System.IO.StreamReader reader, bool doRPNUrlDecode = false)
         {
             rpnCult = new System.Globalization.CultureInfo("en-US");
             streamReader = reader;
+            this.doRPNUrlDecode = doRPNUrlDecode;
         }
 
-
-        /// <summary>
-        /// Konstruktor der Basisimplementierung eines Tokenizers
-        /// </summary>
-        /// <param name="reader"></param>
-        /// <param name="cult"></param>
-        public BasicTokenizer(System.IO.StreamReader reader, System.Globalization.CultureInfo cult)
-        {
-            rpnCult = cult;
-            streamReader = reader;
-        }
+        ///// <summary>
+        ///// Konstruktor der Basisimplementierung eines Tokenizers
+        ///// </summary>
+        ///// <param name="reader"></param>
+        ///// <param name="cult"></param>
+        //public BasicTokenizer(System.IO.StreamReader reader, System.Globalization.CultureInfo cult)
+        //{
+        //    rpnCult = cult;
+        //    streamReader = reader;
+        //}
 
         /// <summary>
         /// Konstruktor der Basisimplementierung eines Tokenizers
         /// </summary>
         /// <param name="term">Zeichenkette, die Typ 2 Sprachterme in Reverse Polish Notation (RPN) enthält</param>
-        public BasicTokenizer(string term)
+        public BasicTokenizer(string term, bool doRPNUrlDecode = false)
         {
             rpnCult = new System.Globalization.CultureInfo("en-US");
             SetSource(term);
+            this.doRPNUrlDecode = doRPNUrlDecode;
         }
 
-        /// <summary>
-        /// mko, 1.11.2018
-        /// </summary>
-        /// <param name="term"></param>
-        /// <param name="cult"></param>
         public BasicTokenizer(string term, System.Globalization.CultureInfo cult)
         {
             rpnCult = cult;
             SetSource(term);
         }
+
+
 
 
         /// <summary>
@@ -215,16 +207,12 @@ namespace mko.RPN
 
         /// <summary>
         /// Kultur, in der die Ausdrücke definiert wurden (z.B. en-US)
-        /// 
-        /// mko, 1.11.2018
-        /// Kultur von static in Instanzeigenschaft umgewandelt
         /// </summary>
-        //public static System.Globalization.CultureInfo rpnCult;
-        public System.Globalization.CultureInfo rpnCult;
+        public static System.Globalization.CultureInfo rpnCult;
 
         public void Read()
         {
-            TraceHlp.ThrowArgExIfNot(streamReader != null, Properties.Resources.missing_tokenizer_input_stream);
+            mko.TraceHlp.ThrowArgExIfNot(streamReader != null, Properties.Resources.missing_tokenizer_input_stream);
 
             try
             {
@@ -241,7 +229,7 @@ namespace mko.RPN
                     }
 
                     // Token einlesen bis zum abschiessenden Delimiter
-                    var bld = new StringBuilder();
+                    var bld = new System.Text.StringBuilder();
                     while (!streamReader.EndOfStream
                             && ((!stringBeg && !char.IsWhiteSpace((char)streamReader.Peek())) || (stringBeg && Delimiter != (char)streamReader.Peek())))
                     {
@@ -251,17 +239,22 @@ namespace mko.RPN
                     // Prüfen, ob ein begrenzter String eingelesen wurde
                     if (stringBeg)
                     {
-                        TraceHlp.ThrowExIf(streamReader.EndOfStream, Properties.Resources.tokenizing_failed_final_string_delimiter_missing);
+                        mko.TraceHlp.ThrowExIf(streamReader.EndOfStream, Properties.Resources.tokenizing_failed_final_string_delimiter_missing);
 
                         // Abschlissenden Delimiter aus dem Datenstrom entfernen
                         streamReader.Read();
-                        _currentToken = new StringToken(bld.ToString());
+
+                        // mko, 6.12.2018
+                        // Dekodieren aus Url- sicherem Format
+                        _currentToken = new StringToken(bld.ToString().RPNUrlSaveStringDecodeIf(doRPNUrlDecode));
 
                     } else
                     {
                         // Einlesen unbegrenzter Tokens
 
-                        var rawToken = bld.ToString();
+                        // mko, 6.12.2018
+                        // Dekodieren der tokens aus URL- sicherem Format
+                        var rawToken = bld.ToString().RPNUrlSaveStringDecodeIf(doRPNUrlDecode);
 
                         int intValue = 0;
                         double dblValue = 0.0;
@@ -286,7 +279,7 @@ namespace mko.RPN
                                 }
                                 else if (double.TryParse(rawToken, out dblValue))
                                 {
-                                    _currentToken = new DoubleToken(dblValue, rpnCult);
+                                    _currentToken = new DoubleToken(dblValue);
                                 }
                                 else if (bool.TryParse(rawToken, out boolValue))
                                 {
@@ -345,11 +338,11 @@ namespace mko.RPN
         /// </summary>
         /// <param name="sourceCode"></param>
         /// <returns></returns>
-        public static RC<IToken[]> TokenizeRPN(string sourceCode, params string[] functionNames)
+        public static RC<IToken[]> TokenizeRPN(string sourceCode, bool doURLDecode = false, params string[] functionNames)
         {
             var rc = RC<IToken[]>.Failed(value: new IToken[] { });
 
-            var tokenizer = new BasicTokenizer(sourceCode);
+            var tokenizer = new BasicTokenizer(sourceCode, doURLDecode);
             tokenizer.DefFunctionNames(functionNames);
 
             var tokens = new LinkedList<IToken>();
@@ -381,11 +374,11 @@ namespace mko.RPN
         /// </summary>
         /// <param name="sourceCode"></param>
         /// <returns>list of tokens</returns>
-        public static RC<IToken[]> TokenizePN(string sourceCode, params string[] functionNames)
+        public static RC<IToken[]> TokenizePN(string sourceCode, bool doURLDecode = false, params string[] functionNames)
         {
             var rc = RC<IToken[]>.Failed(value: new IToken[] { });
 
-            var tokenizer = new BasicTokenizer(sourceCode);
+            var tokenizer = new BasicTokenizer(sourceCode, doURLDecode);
             tokenizer.DefFunctionNames(functionNames);
 
             var tokens = new LinkedList<IToken>();

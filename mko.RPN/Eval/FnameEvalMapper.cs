@@ -46,23 +46,14 @@ namespace mko.RPN
         public FnameEvalMapper(IFunctionNames fn)
         {
             this.fn = fn;
-            this.pfmt = new System.Globalization.CultureInfo("en-US");
-        }
-
-
-        public FnameEvalMapper(IFunctionNames fn, IFormatProvider pfmt)
-        {
-            this.fn = fn;
-            this.pfmt = pfmt;
         }
 
         IFunctionNames fn;
-        IFormatProvider pfmt;
 
         public void MapFnameToEvalIn(Dictionary<string, IEval> dict)
         {
             dict[fn.ListEnd] = new ListEndEval(fn);
-            dict[fn.constDbl] = new DoubleEval(pfmt);
+            dict[fn.constDbl] = new DoubleEval();
             dict[fn.constInt] = new IntEval();
             dict[fn.constBool] = new BoolEval();
 

@@ -23,9 +23,9 @@ namespace MkPrgNet.Pattern.Automaton.Builder.Impl
             return new MoorOutputFunctionBuilder<TStateEnum>(stateDeco, tfb.Inputs, tfb.Transistions);
         }
 
-        public void DefNewTransistionFor(IInput input, params TStateEnum[] subsequentStates)
+        public void DefTransistionFor(IInput input, params TStateEnum[] subsequentStates)
         {
-            tfb.DefNewTransistionFor(input, subsequentStates);
+            tfb.DefTransistionFor(input, subsequentStates);
         }
     }
 }

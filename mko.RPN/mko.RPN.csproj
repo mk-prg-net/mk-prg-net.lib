@@ -70,7 +70,6 @@
     <Compile Include="Token\IToken.cs" />
     <Compile Include="Token\ITokenizer.cs" />
     <Compile Include="Token\ListEndToken.cs" />
-    <Compile Include="NoFunctionToken.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="ParserHelper.cs" />
     <Compile Include="ParserV2.cs" />
@@ -80,9 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Token\NoFunctionToken.cs" />
     <Compile Include="Token\SetPropertyBatchCmd.cs" />
     <Compile Include="plxEval\IFunctionNamesStd.cs" />
     <Compile Include="Token\StringToken.cs" />
+    <Compile Include="UrlSaveStringEncoder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="mko.RPN.nuspec" />

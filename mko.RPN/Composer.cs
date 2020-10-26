@@ -38,6 +38,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using static mko.RPN.UrlSaveStringEncoder;
+
 namespace mko.RPN
 {
     public class Composer
@@ -51,17 +53,13 @@ namespace mko.RPN
         /// </summary>
         public IFunctionNames fn { get; }
 
-        public Composer(IFunctionNames fn) //(Tfn fn)
+        bool doRPNUrlEncode;
+
+        public Composer(IFunctionNames fn, bool doRPNUrlEncode = false) //(Tfn fn)
         {
             this.fn = fn;
-            this.pfmt = new System.Globalization.CultureInfo("en-US");
-        }
-
-
-        public Composer(IFunctionNames fn, IFormatProvider pfmt) //(Tfn fn)
-        {
-            this.fn = fn;
-            this.pfmt = pfmt;
+            pfmt = BasicTokenizer.rpnCult;
+            this.doRPNUrlEncode = doRPNUrlEncode;
         }
 
 
@@ -92,11 +90,11 @@ namespace mko.RPN
         {
             if (accuracy >= 0)
             {
-                return pn(fn.constDbl, value.ToString("N" + accuracy, pfmt));
+                return pn(fn.constDbl, value.ToString("N" + accuracy, pfmt).RPNUrlSaveStringEncodeIf(doRPNUrlEncode));
             }
             else
             {
-                return pn(fn.constDbl, value.ToString(pfmt));
+                return pn(fn.constDbl, value.ToString(pfmt).RPNUrlSaveStringEncodeIf(doRPNUrlEncode));
             }
         }
 
@@ -104,11 +102,11 @@ namespace mko.RPN
         {
             if (accuracy >= 0)
             {
-                return rpn(fn.constDbl, value.ToString("N" + accuracy, pfmt));
+                return rpn(fn.constDbl, value.ToString("N" + accuracy, pfmt).RPNUrlSaveStringEncodeIf(doRPNUrlEncode));
             }
             else
             {
-                return rpn(fn.constDbl, value.ToString(pfmt));
+                return rpn(fn.constDbl, value.ToString(pfmt).RPNUrlSaveStringEncodeIf(doRPNUrlEncode));
             }
         }
 
@@ -120,16 +118,16 @@ namespace mko.RPN
                 // Invarianz bezüglich bereits vorhandenen Delimitern implementieren
                 if (value[0] == BasicTokenizer.Delimiter && value[value.Length - 1] == BasicTokenizer.Delimiter)
                 {
-                    return pn(fn.constStr, value);
+                    return pn(fn.constStr, value.Substring(1, value.Length -2).RPNUrlSaveStringEncodeIf(doRPNUrlEncode));
                 }
                 else
                 {
-                    return pn(fn.constStr, BasicTokenizer.Delimiter + value + BasicTokenizer.Delimiter);
+                    return pn(fn.constStr, BasicTokenizer.Delimiter + value.RPNUrlSaveStringEncodeIf(doRPNUrlEncode) + BasicTokenizer.Delimiter);
                 }
             }
             else
             {
-                return pn(fn.constStr, value);
+                return pn(fn.constStr, value.RPNUrlSaveStringEncodeIf(doRPNUrlEncode));
             }
 
 
@@ -142,15 +140,15 @@ namespace mko.RPN
                 // Invarianz bezüglich bereits vorhandenen Delimitern implementieren
                 if(value[0] == BasicTokenizer.Delimiter && value[value.Length-1] == BasicTokenizer.Delimiter)
                 {
-                    return rpn(fn.constStr, value);
+                    return rpn(fn.constStr, value.Substring(1, value.Length - 2).RPNUrlSaveStringEncodeIf(doRPNUrlEncode));
                 } else
                 {
-                    return rpn(fn.constStr, BasicTokenizer.Delimiter + value + BasicTokenizer.Delimiter);
+                    return rpn(fn.constStr, BasicTokenizer.Delimiter + value.RPNUrlSaveStringEncodeIf(doRPNUrlEncode) + BasicTokenizer.Delimiter);
                 }                
             }
             else
             {
-                return rpn(fn.constStr, value);
+                return rpn(fn.constStr, value.RPNUrlSaveStringEncodeIf(doRPNUrlEncode));
             }
         }
 
